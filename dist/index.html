@@ -573,6 +573,7 @@ footer img { height: 28px; filter: var(--logo-filter); opacity: .8; }
   <div class="wrap">
     <div class="page-head"><h1 data-ko="소식" data-en="News">소식</h1></div>
     <nav class="subtabs" aria-label="Sub pages"><a href="#news" data-sublink="news" data-ko="전체" data-en="All">전체</a><a href="#news-2026" data-sublink="news-2026" data-ko="2026" data-en="2026">2026</a><a href="#news-2025" data-sublink="news-2025" data-ko="2025" data-en="2025">2025</a><a href="#news-2024" data-sublink="news-2024" data-ko="2024" data-en="2024">2024</a><a href="#news-2023" data-sublink="news-2023" data-ko="2023" data-en="2023">2023</a></nav>
+    <div class="panel filters"><div class="chips" id="news-cats"></div></div>
     <div class="newsfeed" id="news-all"></div>
   </div>
 </section>
@@ -672,7 +673,8 @@ const GROUPS = { journals: ["sci", "kj"], conference: ["ic"], domestic: ["kc"], 
 const PAPER_KINDS = ["sci", "ic", "kj", "kc"];
 
 let lang = "ko";
-const state = { group: "all", theme: "all", q: "", msub: "all", year: "all", top: false };
+const state = { group: "all", theme: "all", q: "", msub: "all", year: "all", top: false, cat: "all" };
+const NEWS_CATS = ["Workshop", "Top Conference", "Award", "Exhibition", "International Cooperation", "Patent", "New research project", "News"];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const L = (ko, en) => lang === "ko" ? ko : (en || ko);
@@ -852,15 +854,22 @@ function renderPeople() {
 }
 
 function renderNews() {
+  const inYear = n => state.year === "all" || n.date.slice(0, 4) === state.year;
+  const pool = DATA.news.filter(inYear);
+  if (state.cat !== "all" && !pool.some(n => n.cat === state.cat)) state.cat = "all";  // year without that category
+  const chip = (key, label, n, on) => `<button class="chip" data-ncat="${esc(key)}" aria-pressed="${on}">${esc(label)}<span class="n">${n}</span></button>`;
+  $("news-cats").innerHTML = `<span class="lbl">${L("분류", "Type")}</span>` +
+    chip("all", L("전체", "All"), pool.length, state.cat === "all") +
+    NEWS_CATS.filter(c => pool.some(n => n.cat === c)).map(c => chip(c, catLabel(c), pool.filter(n => n.cat === c).length, state.cat === c)).join("");
   let html = "", lastY = null;
-  for (const n of DATA.news) {
+  for (const n of pool) {
+    if (state.cat !== "all" && n.cat !== state.cat) continue;
     const y = n.date.slice(0, 4);
-    if (state.year !== "all" && y !== state.year) continue;
     if (state.year === "all" && y !== lastY) { html += `<div class="year-sep">${y}</div>`; }
     lastY = y;
     html += newsCard(n);
   }
-  $("news-all").innerHTML = html;
+  $("news-all").innerHTML = html || `<div class="panel" style="padding:20px"><p class="note" style="margin:0">${L("해당 분류의 소식이 없습니다.", "No news in this category.")}</p></div>`;
 }
 
 function renderTalks() {
@@ -934,6 +943,7 @@ document.addEventListener("click", e => {
   if (e.target.id === "lightbox" || e.target.id === "lb-close") { $("lightbox").hidden = true; return; }
   const c = e.target.closest(".chip");
   if (c && c.dataset.top) { state.top = !state.top; renderChips(); renderPubs(); return; }
+  if (c && c.dataset.ncat) { state.cat = c.dataset.ncat; renderNews(); return; }
   if (c && c.dataset.key) { state.theme = c.dataset.key; renderChips(); renderPubs(); }
 });
 $("pub-search").addEventListener("input", e => { state.q = e.target.value; renderPubs(); });
