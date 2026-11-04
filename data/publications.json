@@ -11,8 +11,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kc",
@@ -25,8 +26,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kc",
@@ -40,8 +42,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kc",
@@ -52,8 +55,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kc",
@@ -67,8 +71,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kc",
@@ -81,8 +86,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "sci",
@@ -96,8 +102,9 @@
       "embedded"
     ],
     "if": "10.6",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2026,
+    "top": false
   },
   {
     "kind": "kj",
@@ -111,8 +118,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "ic",
@@ -125,8 +133,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -139,8 +148,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -153,8 +163,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -167,8 +178,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -181,8 +193,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "ic",
@@ -196,8 +209,9 @@
       "pqc"
     ],
     "if": "",
-    "top": true,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": true
   },
   {
     "kind": "sci",
@@ -210,8 +224,9 @@
       "quantum"
     ],
     "if": "3.8",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -224,8 +239,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -238,8 +254,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -252,8 +269,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -266,8 +284,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kc",
@@ -278,8 +297,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "ic",
@@ -293,8 +313,9 @@
       "embedded"
     ],
     "if": "",
-    "top": true,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": true
   },
   {
     "kind": "sci",
@@ -307,8 +328,9 @@
       "mobility"
     ],
     "if": "6.8",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "sci",
@@ -318,12 +340,12 @@
     "a": "Yuhao Bai, Soojin Lee, Seung-Hyun Seo",
     "v": "Sensors",
     "k": [
-      "embedded",
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "sci",
@@ -336,8 +358,9 @@
       "quantum"
     ],
     "if": "2.2",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2025,
+    "top": false
   },
   {
     "kind": "kj",
@@ -350,8 +373,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -364,8 +388,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -379,8 +404,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -394,8 +420,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -408,8 +435,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -422,8 +450,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -437,8 +466,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -451,8 +481,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -465,8 +496,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "sci",
@@ -479,8 +511,9 @@
       "embedded"
     ],
     "if": "7.7",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -493,8 +526,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -507,8 +541,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -521,8 +556,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "ic",
@@ -536,8 +572,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "sci",
@@ -551,8 +588,9 @@
       "pqc"
     ],
     "if": "3.8",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "sci",
@@ -565,8 +603,9 @@
       "mobility"
     ],
     "if": "2.1",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "ic",
@@ -579,8 +618,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "ic",
@@ -593,8 +633,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -607,8 +648,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -622,8 +664,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -636,8 +679,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kc",
@@ -650,8 +694,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kj",
@@ -664,8 +709,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "kj",
@@ -678,8 +724,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2024,
+    "top": false
   },
   {
     "kind": "ic",
@@ -692,8 +739,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -706,8 +754,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -720,8 +769,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -734,8 +784,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -746,8 +797,9 @@
     "v": "정보처리학회 추계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -758,8 +810,9 @@
     "v": "정보처리학회 추계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -772,8 +825,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "sci",
@@ -786,8 +840,9 @@
       "embedded"
     ],
     "if": "3.1",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kj",
@@ -800,8 +855,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -814,8 +870,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -828,8 +885,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "ic",
@@ -843,8 +901,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kj",
@@ -857,8 +916,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "ic",
@@ -869,8 +929,9 @@
     "v": "APNet",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -884,8 +945,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -898,8 +960,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -912,8 +975,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -926,8 +990,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -940,8 +1005,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -954,8 +1020,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -968,8 +1035,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -980,8 +1048,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -992,8 +1061,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1006,8 +1076,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1020,8 +1091,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1035,8 +1107,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1049,8 +1122,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2023,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1063,8 +1137,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1077,8 +1152,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1089,8 +1165,9 @@
     "v": "정보보호학회 동계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1104,8 +1181,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1118,8 +1196,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1132,8 +1211,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1146,8 +1226,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1158,8 +1239,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1170,8 +1252,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1182,8 +1265,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1194,8 +1278,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1208,8 +1293,9 @@
       "mobility"
     ],
     "if": "10.6",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1222,8 +1308,9 @@
       "mobility"
     ],
     "if": "6.8",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1237,8 +1324,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2022,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1251,8 +1339,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1263,8 +1352,9 @@
     "v": "통신학회 추계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1277,8 +1367,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1291,8 +1382,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1303,8 +1395,9 @@
     "v": "WISA",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1317,8 +1410,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1331,8 +1425,9 @@
       "embedded"
     ],
     "if": "3.9",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1345,8 +1440,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1359,8 +1455,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1371,8 +1468,9 @@
     "v": "정보처리학회 춘계학술대회",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1385,8 +1483,9 @@
       "quantum"
     ],
     "if": "2.7",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2021,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1399,8 +1498,9 @@
       "quantum"
     ],
     "if": "3.9",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1411,8 +1511,9 @@
     "v": "KSII Transactions on Internet and Information Systems",
     "k": [],
     "if": "1.5",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1425,8 +1526,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1439,8 +1541,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1453,8 +1556,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1467,8 +1571,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1481,8 +1586,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1495,8 +1601,9 @@
       "embedded"
     ],
     "if": "3.9",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2020,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1509,8 +1616,9 @@
       "quantum"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1523,8 +1631,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1537,8 +1646,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1552,8 +1662,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1566,8 +1677,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1580,8 +1692,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1594,8 +1707,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1608,8 +1722,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2019,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1622,8 +1737,9 @@
       "mobility"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "kc",
@@ -1637,8 +1753,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1651,8 +1768,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1665,8 +1783,9 @@
       "embedded"
     ],
     "if": "10.6",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1677,8 +1796,9 @@
     "v": "IEEE Access",
     "k": [],
     "if": "3.9",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1691,8 +1811,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2018,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1701,10 +1822,13 @@
     "t": "The Congestion Control Model for Unmanned Aircraft System Traffic Management",
     "a": "Jung-In Choi, Seung-Hyun Seo, Taenam Cho",
     "v": "Advances in Computer Science and Ubiquitous Computing",
-    "k": [],
+    "k": [
+      "embedded"
+    ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1713,10 +1837,13 @@
     "t": "The Congestion Control Model for Unmanned Aircraft System Traffic Management",
     "a": "최정인, 서승현, 조태남",
     "v": "CUTE",
-    "k": [],
+    "k": [
+      "embedded"
+    ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1729,8 +1856,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1744,8 +1872,9 @@
       "mobility"
     ],
     "if": "7.9",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1759,8 +1888,9 @@
       "embedded"
     ],
     "if": "3.9",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1771,8 +1901,9 @@
     "v": "정보과학회논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1783,8 +1914,9 @@
     "v": "Journal of Internet Services and Information Security",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2017,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1797,8 +1929,9 @@
       "embedded"
     ],
     "if": "2.3",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2016,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1811,8 +1944,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2016,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1826,8 +1960,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2016,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1840,8 +1975,9 @@
       "embedded"
     ],
     "if": "3.7",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1854,8 +1990,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "kj",
@@ -1868,8 +2005,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1882,8 +2020,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1896,8 +2035,9 @@
       "embedded"
     ],
     "if": "1.5",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1910,8 +2050,9 @@
       "embedded"
     ],
     "if": "6.8",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2015,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1924,8 +2065,9 @@
       "embedded"
     ],
     "if": "1.6",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2014,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1938,8 +2080,9 @@
       "pqc"
     ],
     "if": "8.9",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2014,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1952,8 +2095,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2014,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1967,8 +2111,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2014,
+    "top": false
   },
   {
     "kind": "sci",
@@ -1981,8 +2126,9 @@
       "embedded"
     ],
     "if": "8.7",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2014,
+    "top": false
   },
   {
     "kind": "ic",
@@ -1995,8 +2141,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2013,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2009,8 +2156,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2013,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2023,8 +2171,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2013,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2037,8 +2186,9 @@
       "pqc"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2013,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2051,8 +2201,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2012,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2063,8 +2214,9 @@
     "v": "IMIS",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2012,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2077,8 +2229,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2012,
+    "top": false
   },
   {
     "kind": "sci",
@@ -2091,8 +2244,9 @@
       "pqc"
     ],
     "if": "8.1",
-    "top": false,
-    "q1": true
+    "jcr": "",
+    "jcr_y": 2012,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2105,8 +2259,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2011,
+    "top": false
   },
   {
     "kind": "kj",
@@ -2117,8 +2272,9 @@
     "v": "전자공학회논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2011,
+    "top": false
   },
   {
     "kind": "kj",
@@ -2129,8 +2285,9 @@
     "v": "정보보호학회 논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2010,
+    "top": false
   },
   {
     "kind": "sci",
@@ -2141,8 +2298,9 @@
     "v": "Computer Standards & Interfaces",
     "k": [],
     "if": "5",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2008,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2153,8 +2311,9 @@
     "v": "ICICS",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2006,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2165,8 +2324,9 @@
     "v": "CANS",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2177,8 +2337,9 @@
     "v": "WACC",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2189,8 +2350,9 @@
     "v": "TrustBus",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "kj",
@@ -2201,8 +2363,9 @@
     "v": "정보과학회논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "kj",
@@ -2213,8 +2376,9 @@
     "v": "정보과학회논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2227,8 +2391,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2005,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2239,8 +2404,9 @@
     "v": "ICCSA",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2004,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2253,8 +2419,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2003,
+    "top": false
   },
   {
     "kind": "ic",
@@ -2267,8 +2434,9 @@
       "embedded"
     ],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2003,
+    "top": false
   },
   {
     "kind": "kj",
@@ -2279,8 +2447,9 @@
     "v": "정보과학회논문지",
     "k": [],
     "if": "",
-    "top": false,
-    "q1": false
+    "jcr": "",
+    "jcr_y": 2002,
+    "top": false
   },
   {
     "kind": "pat",

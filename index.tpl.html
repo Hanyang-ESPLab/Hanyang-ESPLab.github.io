@@ -157,7 +157,9 @@ a.newsrow:hover .txt { color: var(--accent); }
 .pub-sec { font-size: 18px; font-weight: 700; padding: 16px 0 4px; display: flex; align-items: baseline; gap: 8px; }
 .pub-sec .n { font: 500 13px var(--font-mono); color: var(--muted); }
 .top { display: inline-block; font: 600 11px var(--font-mono); background: var(--award-bg); color: var(--award-fg); border-radius: 4px; padding: 1px 7px; margin-right: 8px; vertical-align: 2px; white-space: nowrap; }
-.jcr { font: 600 11px var(--font-mono); background: var(--paper-bg); color: var(--paper-fg); border-radius: 4px; padding: 1px 7px; }
+.jcr { font: 500 11px var(--font-mono); background: var(--tag-bg); color: var(--muted); border-radius: 4px; padding: 1px 7px; }
+.jcr.q1 { font-weight: 600; background: var(--paper-bg); color: var(--paper-fg); }
+.jcr.top10 { font-weight: 600; background: var(--award-bg); color: var(--award-fg); }
 .jif { font: 500 11px var(--font-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: 4px; padding: 0 6px; }
 .chip.topchip { border-color: var(--award-fg); color: var(--award-fg); }
 .chip.topchip[aria-pressed="true"] { background: var(--award-fg); border-color: var(--award-fg); color: var(--surface); }
@@ -505,7 +507,8 @@ footer img { height: 28px; filter: var(--logo-filter); opacity: .8; }
         </ul>
         <h2 data-ko="주요 활동" data-en="Service">주요 활동</h2>
         <ul class="tl">
-          <li><span class="yr">2025–</span><span data-ko="부원장, 한양양자연구원(HY-IQQ)" data-en="Deputy Director, Hanyang Institute for Quantum (HY-IQQ)">부원장, 한양양자연구원(HY-IQQ)</span></li>
+          <li><span class="yr">2025–</span><span data-ko-html="부원장, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한양양자연구원(HY-IQQ)</a>" data-en-html="Deputy Director, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Hanyang Institute for Quantum (HY-IQQ)</a>">부원장, <a href="https://iqq.hanyang.ac.kr/" target="_blank" rel="noopener">한양양자연구원(HY-IQQ)</a></span></li>
+          <li><span class="yr">–</span><span data-ko-html="기술 및 정책분과 위원장, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한국암호포럼</a>" data-en-html="Chair, Technology &amp;amp; Policy Subcommittee, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Korea Cryptography Forum</a>">기술 및 정책분과 위원장, <a href="https://kcryptoforum.or.kr/" target="_blank" rel="noopener">한국암호포럼</a></span></li>
           <li><span class="yr">–</span><span data-ko="위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회" data-en="Chair, KIISC Automotive &amp; Unmanned Mobility Security Research Group">위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회</span></li>
         </ul>
       </div>
@@ -751,11 +754,18 @@ function renderChips() {
     `<button class="chip topchip" data-top="1" aria-pressed="${state.top}">★ Top-tier<span class="n">${base.filter(p => p.top).length}</span></button>`;
 }
 
+// JCR JIF percentile badge: top 10% strong, Q1 (<= 25%) accent, otherwise plain
+function jcrBadge(p) {
+  if (p.jcr === "" || p.jcr == null) return "";
+  const v = Number(p.jcr), cls = v <= 10 ? "jcr top10" : v <= 25 ? "jcr q1" : "jcr";
+  return `<span class="${cls}">JCR ${p.jcr_y || ""} ${L("상위", "top")} ${v}%</span>`;
+}
+
 function pubRow(p) {
   const kindLabel = KINDS.find(i => i.key === p.kind);
   return `<div class="pub"><div class="yr">${esc(p.d || p.y || "")}</div><div>
       <div class="t">${p.top ? `<span class="top" title="Top-tier venue">★ Top-tier</span>` : ""}${esc(p.t)}</div><div class="a">${esc(p.a)}</div>
-      <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue">${esc(p.v)}</span>` : ""}${p.q1 ? `<span class="jcr">JCR Q1</span>` : ""}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}</div></div></div>`;
+      <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue">${esc(p.v)}</span>` : ""}${jcrBadge(p)}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}</div></div></div>`;
 }
 
 function renderPubs() {

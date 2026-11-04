@@ -7,7 +7,7 @@
   python build.py --no-excel  skip the Excel files even if they are present (data/publications.json stays as it is)
 
 Data flow:
-  Excel (LAB/...)               -> data/publications.json
+  Excel (LAB/...)               -> data/publications.json  (SCI sheet: IF, JCR 상위%, JCR 연도 columns are shown as badges)
   Google Sites (--sync-gs)      -> data/members|news|professor|about|talks.json + images/
   data/*.json + index.tpl.html  -> index.html + files.json (manifest of the images index.html uses)
   index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
@@ -30,7 +30,7 @@ DATA = HERE / "data"
 THEMES = {
     "quantum": r"(?<!post-)(?<!post )quantum(?![- ](resistant|safe))|grover|양자(?!\s?내성)|t-depth|qubit",
     "pqc": r"post-quantum|post quantum|quantum[- ](resistant|safe)|\bpqc|양자\s?내성|lattice|\blwe|rainbow|\buov\b|minrank|multivariate|다변수|\bmq\b|hybrid|하이브리드|\btls\b|certificate|인증서|\bpki\b|\bkem\b|number theoretic|\bntt\b|himq|paloma",
-    "embedded": r"\biot\b|드론|drone|robot|로봇|\bros|embedded|임베디드|fpga|sensor|센서|8비트|mcu|microcontroller|smart home|스마트 ?홈|scada|android|mobile|모바일|device|디바이스|wearable|metering|acoustic|keypad|키패드|마우스|manufactur|web-of-things|wireless sensor",
+    "embedded": r"\biot\b|드론|drone|\buavs?\b|unmanned|무인|robot|로봇|\bros|embedded|임베디드|fpga|sensor|센서|8비트|mcu|microcontroller|smart home|스마트 ?홈|scada|android|mobile|모바일|device|디바이스|wearable|metering|acoustic|keypad|키패드|마우스|manufactur|web-of-things|wireless sensor",
     "mobility": r"blockchain|블록체인|vehicle|차량|v2v|전기차|자동차|mobility|모빌리티|\bdid\b|분산\s?(신원|id)|smart contract|스마트 ?컨트랙트|킥보드|톨 티켓|crowdsens|vpp",
 }
 
@@ -38,12 +38,6 @@ THEMES = {
 TOP_TIER = [r"\bCHES\b|\bTCHES\b", r"\bWWW\b|Web Conference"]
 # Papers the spreadsheet files under the SCI sheet that are really conference papers, with the label to show.
 AS_CONFERENCE = [(r"\bTCHES\b", "CHES {y} (IACR TCHES)"), (r"\bWWW\b|Web Conference", "WWW {y} (The ACM Web Conference)")]
-# JCR Q1 journals. Check against the latest JCR before publishing; IF comes from the spreadsheet.
-JCR_Q1 = [
-    r"Internet of Things Journal", r"TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING", r"Transactions on Information Forensics and Security",
-    r"Transactions on Mobile Computing", r"Transactions on Vehicular Technology", r"Journal of Network and Computer Applications",
-    r"^Information Sciences$",
-]
 
 def tag(title):
     t = title.lower()
@@ -59,6 +53,12 @@ def year_of(v):
     y = 2000 + int(m.group(1))
     mo = m.group(2) if m.group(2) and m.group(2) != "00" else ""
     return y, f"{y}.{mo}" if mo else str(y)
+
+def header(ws):
+    """Column index of each header cell (same offset as rows()), e.g. header(ws)["JCR 상위%"]."""
+    first = next(r for r in ws.iter_rows(values_only=True) if any(c is not None for c in r))
+    off = next(i for i, c in enumerate(first) if c is not None)
+    return {clean(c): i - off for i, c in enumerate(first) if c is not None}
 
 def rows(ws):
     out = [r for r in ws.iter_rows(values_only=True) if any(c is not None for c in r)]
@@ -77,6 +77,7 @@ def load_pubs():
         kind = kinds.get(ws.title)
         if not kind:
             continue
+        hdr = header(ws)
         for r in rows(ws):
             r = list(r) + [None] * 10
             title, authors, venue = clean(r[2]), clean(r[3]), clean(r[4])
@@ -85,19 +86,23 @@ def load_pubs():
             y, d = year_of(r[1])
             # the spreadsheet has a few rows with Seong-Min Cho typed as "Seo"
             authors = authors.replace("Seong-Min Seo", "Seong-Min Cho")
-            impact = clean(r[5]) if kind == "sci" else ""
-            pubs.append({"kind": kind, "y": y, "d": d, "t": title, "a": authors, "v": venue, "k": tag(title + " " + venue),
-                         "if": impact if re.fullmatch(r"\d+(\.\d+)?", impact) else ""})
+            impact = clean(r[hdr["IF"]]) if kind == "sci" else ""
+            # JCR JIF percentile of the publication-year JCR, filled in by hand in the SCI sheet; "" until it is
+            jcr = clean(r[hdr["JCR 상위%"]]) if kind == "sci" and "JCR 상위%" in hdr else ""
+            jcr_y = clean(r[hdr["JCR 연도"]]) if kind == "sci" and "JCR 연도" in hdr else ""
+            pubs.append({"kind": kind, "y": y, "d": d, "t": title, "a": authors, "v": venue, "k": tag(title),
+                         "if": impact if re.fullmatch(r"\d+(\.\d+)?", impact) else "",
+                         "jcr": float(jcr) if re.fullmatch(r"\d+(\.\d+)?", jcr) else "",
+                         "jcr_y": int(float(jcr_y)) if re.fullmatch(r"\d{4}(\.0)?", jcr_y) else (y or "")})
     # the same journal sometimes has its IF filled in on only one row
     known_if = {p["v"].lower(): p["if"] for p in pubs if p["if"]}
     for p in pubs:
         for rx, label in AS_CONFERENCE:
             if p["kind"] == "sci" and re.search(rx, p["v"], re.I):
-                p["kind"], p["v"], p["if"] = "ic", label.format(y=p["y"]), ""
+                p["kind"], p["v"], p["if"], p["jcr"] = "ic", label.format(y=p["y"]), "", ""
         if p["kind"] == "sci" and not p["if"]:
             p["if"] = known_if.get(p["v"].lower(), "")
         p["top"] = p["kind"] == "ic" and any(re.search(rx, p["v"], re.I) for rx in TOP_TIER)
-        p["q1"] = p["kind"] == "sci" and any(re.search(rx, p["v"].strip(), re.I) for rx in JCR_Q1)
     pubs.sort(key=lambda p: (p["y"] or 0, p["d"]), reverse=True)
     return pubs
 
