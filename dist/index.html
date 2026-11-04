@@ -57,7 +57,7 @@
   --patent-bg: #143434; --patent-fg: #86d2d4; --event-bg: #3b2218; --event-fg: #f0a985;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.65; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.65; word-break: keep-all; overflow-wrap: break-word; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
