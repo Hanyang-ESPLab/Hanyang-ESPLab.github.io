@@ -1,0 +1,491 @@
+{
+  "phd": [
+    {
+      "en": "Jane Kim",
+      "ko": "김제인",
+      "img": "images/9ea4933c8c5c.jpg",
+      "section": "Full-Time Students",
+      "group": "phd",
+      "role": "Ph.D. Student",
+      "org": [],
+      "period": [],
+      "email": [],
+      "interests": [
+        "IoT security",
+        "Post-Quantum Cryptography",
+        "Transport Layer Security"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Jian Zhang",
+      "ko": "장건",
+      "img": "images/d58425759c53.jpg",
+      "section": "Full-Time Students",
+      "group": "phd",
+      "role": "M.S./Ph.D. Student",
+      "org": [],
+      "period": [],
+      "email": [],
+      "interests": [
+        "Post-Quantum Cryptography",
+        "Quantum algorithms",
+        "Quantum cryptanalysis"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Gang-Moon Seo",
+      "ko": "서강문",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "Part-Time Students",
+      "group": "phd",
+      "role": "Ph.D. Student",
+      "org": [
+        "SAMSUNG Electronics co."
+      ],
+      "period": [],
+      "email": [],
+      "interests": [
+        "IoT security",
+        "Security of embedded system"
+      ],
+      "ph": true
+    },
+    {
+      "en": "Chang-Bae Seo",
+      "ko": "서창배",
+      "img": "images/60e5078bee56.jpg",
+      "section": "Part-Time Students",
+      "group": "phd",
+      "role": "Ph.D. Student",
+      "org": [
+        "LIG D&A"
+      ],
+      "period": [],
+      "email": [],
+      "interests": [
+        "IoT security",
+        "Security of embedded system"
+      ],
+      "ph": false
+    }
+  ],
+  "ms": [
+    {
+      "en": "Chanwoong Ji",
+      "ko": "지찬웅",
+      "img": "images/75701f92f688.jpg",
+      "section": "Full-Time Students",
+      "group": "ms",
+      "role": "M.S. Student",
+      "org": [],
+      "period": [],
+      "email": [],
+      "interests": [
+        "Transport Layer Security",
+        "Post Quantum Cryptography",
+        "Blockchain"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Gaeul Park",
+      "ko": "박가을",
+      "img": "images/e20a529ce385.jpg",
+      "section": "Full-Time Students",
+      "group": "ms",
+      "role": "M.S. Student",
+      "org": [],
+      "period": [],
+      "email": [],
+      "interests": [
+        "Post Quantum Cryptography",
+        "Quantum algorithms"
+      ],
+      "ph": false
+    },
+    {
+      "en": "YeoNyeong Lee",
+      "ko": "이여녕",
+      "img": "images/62b61647b72e.jpg",
+      "section": "Full-Time Students",
+      "group": "ms",
+      "role": "M.S. Student",
+      "org": [],
+      "period": [],
+      "email": [],
+      "interests": [
+        "Transport Layer Security",
+        "Post Quantum Cryptography"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Jin-Seok Song",
+      "ko": "송진석",
+      "img": "images/353336a846ff.jpg",
+      "section": "Part-Time Students",
+      "group": "ms",
+      "role": "M.S. Students",
+      "org": [
+        "NAVER Corp."
+      ],
+      "period": [],
+      "email": [],
+      "interests": [
+        "IoT security",
+        "Security of embedded system",
+        "Network security"
+      ],
+      "ph": false
+    }
+  ],
+  "ug": [
+    {
+      "en": "Heewon Noh",
+      "ko": "노희원",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "",
+      "group": "ug",
+      "role": "",
+      "org": [],
+      "period": [],
+      "email": [
+        "gmldnjs324@hanyang.ac.kr"
+      ],
+      "interests": [
+        "Transport Layer Security",
+        "Post Quantum Cryptography"
+      ],
+      "ph": true
+    },
+    {
+      "en": "Dong-woo Nam",
+      "ko": "남동우",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "",
+      "group": "ug",
+      "role": "",
+      "org": [],
+      "period": [],
+      "email": [
+        "askska1002@hanyang.ac.kr"
+      ],
+      "interests": [],
+      "ph": true
+    },
+    {
+      "en": "Seonwoo Jang",
+      "ko": "장선우",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "",
+      "group": "ug",
+      "role": "",
+      "org": [],
+      "period": [],
+      "email": [
+        "te010600@hanyang.ac.kr"
+      ],
+      "interests": [],
+      "ph": true
+    },
+    {
+      "en": "Dongwoo Jang",
+      "ko": "장동우",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "",
+      "group": "ug",
+      "role": "",
+      "org": [],
+      "period": [],
+      "email": [
+        "dongwoojang.uk@gmail.com"
+      ],
+      "interests": [],
+      "ph": true
+    },
+    {
+      "en": "Jiwon Lee",
+      "ko": "이지원",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "",
+      "group": "ug",
+      "role": "",
+      "org": [],
+      "period": [],
+      "email": [
+        "jiwonid05@hanyang.ac.kr"
+      ],
+      "interests": [],
+      "ph": true
+    }
+  ],
+  "alumni": [
+    {
+      "en": "Seong-Min Cho",
+      "ko": "조성민",
+      "img": "images/c19a3376b4ca.jpg",
+      "section": "Ph.D. Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "한국전자통신연구원 (2025 ~)"
+      ],
+      "period": [
+        [
+          "M.S./Ph.D.",
+          "2019.03-2025.08"
+        ]
+      ],
+      "email": [
+        "smcho3315@hanyang.ac.kr",
+        "smcho3315@etri.re.kr"
+      ],
+      "interests": [
+        "Post-Quantum Cryptography",
+        "Quantum algorithms",
+        "Quantum cryptanalysis"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Soojin Lee",
+      "ko": "이수진",
+      "img": "images/6c331f791af4.jpg",
+      "section": "Ph.D. Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "한양대 ERICA 창의융합교육원 조교수 (2025 ~)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2019.03-2021.02"
+        ],
+        [
+          "Ph.D.",
+          "2021.03-2023.08"
+        ]
+      ],
+      "email": [
+        "tssn195@hanyang.ac.kr"
+      ],
+      "interests": [
+        "Blockchain",
+        "IoT security",
+        "Privacy protection"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Yuhao Bai",
+      "ko": "백우호",
+      "img": "images/33495e7d74b4.jpg",
+      "section": "Ph.D. Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "Peng Cheng Laboratory (2026 ~)"
+      ],
+      "period": [
+        [
+          "M.S./Ph.D.",
+          "2018.09-2025.08"
+        ]
+      ],
+      "email": [
+        "byh2018@hanyang.ac.kr"
+      ],
+      "interests": [
+        "Blockchain",
+        "Privacy protection",
+        "Post Quantum Cryptography"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Yoon-Seok Oh",
+      "ko": "오윤석",
+      "img": "images/3f63b2d265a6.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "LIG D&A (2022 ~)",
+        "TnGEN (2020 ~ 2022)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2017.03-2020.02"
+        ]
+      ],
+      "email": [
+        "secretbringer@gmail.com"
+      ],
+      "interests": [
+        "Drone security",
+        "Security/privacy in wireless\nnetworks and IoT"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Eungi Hong",
+      "ko": "홍은기",
+      "img": "images/ca08bc2d7f88.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "국방부 (2024~)",
+        "DreamSecurity (2020 ~ 2023)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2018.03-2020.02"
+        ]
+      ],
+      "email": [
+        "heg0403@gmail.com"
+      ],
+      "interests": [
+        "IoT security",
+        "Security of embedded systems",
+        "Post Quantum Cryptography"
+      ],
+      "ph": true
+    },
+    {
+      "en": "Junwoo Kwon",
+      "ko": "권준우",
+      "img": "images/1b6f46b0a07f.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "HYOSUNG R&D (2023 ~)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2021.03-2023.02"
+        ]
+      ],
+      "email": [
+        "kjw9628@hanyang.ac.kr"
+      ],
+      "interests": [
+        "Blockchain",
+        "IoT security",
+        "Privacy protection"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Yan Jang",
+      "ko": "장얀",
+      "img": "images/52464c63bb7e.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "Guangzhou College of Technology and Business (2024 ~)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2021.09-2023.08"
+        ]
+      ],
+      "email": [
+        "z2021189899@hanyang.ac.kr"
+      ],
+      "interests": [
+        "Blockchain",
+        "IoT security",
+        "Privacy protection"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Gyu Sup Lee",
+      "ko": "이규섭",
+      "img": "images/1f77c1fe5b04.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "WARIC R&D (2025 ~)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2022.03-2024.08"
+        ]
+      ],
+      "email": [
+        "gyu2910@waric.co.kr"
+      ],
+      "interests": [
+        "Algorithm optimization",
+        "Post Quantum Cryptography",
+        "FPGA implementation"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Changyeol Lee",
+      "ko": "이창열",
+      "img": "images/780bdfba0ae4.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "KISTI (2025 ~)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2023.03-2025.02"
+        ]
+      ],
+      "email": [
+        "lcy253898@kisti.re.kr"
+      ],
+      "interests": [
+        "Quantum algorithms",
+        "Post Quantum Cryptography"
+      ],
+      "ph": false
+    },
+    {
+      "en": "Jung-Hun Kang",
+      "ko": "강정훈",
+      "img": "images/86556dafb398.jpg",
+      "section": "Master's Alumni",
+      "group": "alumni",
+      "role": "",
+      "org": [
+        "DreamSecurity (2026 ~)",
+        "NORMA (2025 ~2026)"
+      ],
+      "period": [
+        [
+          "M.S.",
+          "2023.03-2025.02"
+        ]
+      ],
+      "email": [
+        "jh.kang@dreamsecurity.com"
+      ],
+      "interests": [
+        "Transport Layer Security",
+        "Post-Quantum Cryptography"
+      ],
+      "ph": false
+    }
+  ]
+}

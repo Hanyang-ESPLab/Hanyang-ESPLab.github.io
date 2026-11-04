@@ -1,0 +1,954 @@
+<title>ESP Lab Homepage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: sticky nav + hash-routed pages following the Google Sites tree (home / about / research / professor / members / publications / talks / news / contact); home = lab-name banner + theme cards + latest news */
+:root {
+  --bg: #f5f7f9;
+  --surface: #ffffff;
+  --ink: #0f1b2a;
+  --muted: #566476;
+  --line: #dce3ea;
+  --accent: #0e4a84;
+  --accent-soft: #e3edf7;
+  --signal: #b4561b;
+  --tag-bg: #eef2f6;
+  --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --logo-filter: none;
+  --banner-bg: #0e4a84; --banner-fg: #ffffff; --banner-muted: #c9dbee; --banner-line: #4f7fb0;
+  --award-bg: #fdf0d2; --award-fg: #8a5a00;
+  --paper-bg: #e1ecfa; --paper-fg: #1d4f8f;
+  --talk-bg: #ece6f8; --talk-fg: #5a3d99;
+  --project-bg: #e2f3ea; --project-fg: #22683f;
+  --patent-bg: #def2f2; --patent-fg: #17666a;
+  --event-bg: #f9e5dc; --event-fg: #93431b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c131c; --surface: #131d29; --ink: #e6edf4; --muted: #95a3b3; --line: #243243;
+    --accent: #7fb2e5; --accent-soft: #1a2b3e; --signal: #e8925a; --tag-bg: #1b2735;
+    --logo-filter: invert(1); color-scheme: dark;
+    --banner-bg: #15365a; --banner-fg: #eef4fa; --banner-muted: #a9c0d8; --banner-line: #3a5f86;
+    --award-bg: #3a2e12; --award-fg: #f1c770; --paper-bg: #17304f; --paper-fg: #9cc4f0;
+    --talk-bg: #2c2347; --talk-fg: #c6b3f0; --project-bg: #173526; --project-fg: #8fd6aa;
+    --patent-bg: #143434; --patent-fg: #86d2d4; --event-bg: #3b2218; --event-fg: #f0a985;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c131c; --surface: #131d29; --ink: #e6edf4; --muted: #95a3b3; --line: #243243;
+  --accent: #7fb2e5; --accent-soft: #1a2b3e; --signal: #e8925a; --tag-bg: #1b2735;
+  --logo-filter: invert(1); color-scheme: dark;
+  --banner-bg: #15365a; --banner-fg: #eef4fa; --banner-muted: #a9c0d8; --banner-line: #3a5f86;
+  --award-bg: #3a2e12; --award-fg: #f1c770; --paper-bg: #17304f; --paper-fg: #9cc4f0;
+  --talk-bg: #2c2347; --talk-fg: #c6b3f0; --project-bg: #173526; --project-fg: #8fd6aa;
+  --patent-bg: #143434; --patent-fg: #86d2d4; --event-bg: #3b2218; --event-fg: #f0a985;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.65; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+button { font: inherit; color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.draft { background: var(--accent-soft); color: var(--muted); font-size: 12.5px; }
+.draft .wrap { padding-block: 6px; }
+
+/* nav */
+header.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+header.nav .wrap { display: flex; align-items: center; gap: 20px; padding-block: 10px; }
+.brand img { height: 34px; width: auto; filter: var(--logo-filter); display: block; }
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.nav-links a { color: var(--ink); font-size: 14px; font-weight: 500; padding: 4px 9px; border-radius: 6px; white-space: nowrap; }
+.nav-links a:hover { text-decoration: none; background: var(--tag-bg); }
+.nav-links a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+.toggles { display: flex; gap: 6px; }
+.toggles button { font: 500 12px var(--font-mono); background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+.toggles button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+header.nav .mnav { display: none; }
+
+.dd { position: relative; display: flex; }
+.dd > a::after { content: ""; display: inline-block; width: 5px; height: 5px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: 0 0 3px 7px; opacity: .6; }
+.dd .menu { display: none; position: absolute; top: 100%; left: 0; z-index: 6; min-width: 180px; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px rgb(15 27 42 / 12%); flex-direction: column; }
+.dd:hover .menu, .dd:focus-within .menu { display: flex; }
+.dd .menu a { padding: 7px 10px; font-weight: 400; }
+.subtabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.subtabs a { font-size: 13.5px; font-weight: 500; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; }
+.subtabs a:hover { text-decoration: none; border-color: var(--accent); }
+.subtabs a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+
+/* pages */
+.page .wrap { padding-block: 28px 56px; display: flex; flex-direction: column; gap: 36px; }
+.page-head h1 { font-size: 30px; font-weight: 700; }
+.page-head p { color: var(--muted); margin: 6px 0 0; max-width: 70ch; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.sec-head h2 { font-size: 22px; font-weight: 700; }
+.sec-head .more { font-size: 14px; font-weight: 500; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+
+/* banner */
+.banner { background: var(--banner-bg); color: var(--banner-fg); border-radius: 16px; padding: 44px 40px; position: relative; overflow: hidden; }
+.banner::after { content: ""; position: absolute; right: -40px; top: -30px; width: 260px; height: 300px; background: var(--banner-fg); opacity: .06; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); pointer-events: none; }
+.eyebrow { font: 500 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--banner-muted); }
+.banner h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.25; font-weight: 700; margin-top: 10px; letter-spacing: -0.01em; }
+.banner .en-name { font: 500 14px var(--font-mono); color: var(--banner-muted); margin-top: 6px; }
+.banner p.lede { color: var(--banner-muted); max-width: 62ch; margin: 18px 0 0; font-size: 15.5px; }
+.cta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+.btn { display: inline-block; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+.banner .btn { background: transparent; color: var(--banner-fg); border-color: var(--banner-line); }
+.banner .btn.primary { background: var(--banner-fg); color: var(--banner-bg); border-color: var(--banner-fg); }
+
+/* theme cards */
+.themes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.theme { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; color: var(--ink); }
+.theme:hover { border-color: var(--accent); text-decoration: none; }
+.theme .ico { width: 52px; height: 52px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; }
+.theme svg { width: 30px; height: 30px; stroke: var(--accent); fill: none; stroke-width: 1.6; }
+.theme h3 { font-size: 16px; font-weight: 600; }
+.theme p { margin: 0; font-size: 13px; color: var(--muted); }
+.theme .count { font: 500 12px var(--font-mono); color: var(--accent); margin-top: auto; }
+
+/* news list */
+.newslist { padding: 4px 20px; }
+.newsrow { display: grid; grid-template-columns: 96px 76px minmax(0, 1fr); gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.newsrow:last-child { border-bottom: 0; }
+.date { font: 400 12.5px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.pill { font: 500 11px var(--font-mono); text-align: center; padding: 2px 8px; border-radius: 999px; background: var(--p-bg, var(--tag-bg)); color: var(--p-fg, var(--muted)); white-space: nowrap; }
+.pill.award { --p-bg: var(--award-bg); --p-fg: var(--award-fg); }
+.pill.paper { --p-bg: var(--paper-bg); --p-fg: var(--paper-fg); }
+.pill.talk { --p-bg: var(--talk-bg); --p-fg: var(--talk-fg); }
+.pill.project { --p-bg: var(--project-bg); --p-fg: var(--project-fg); }
+.pill.patent { --p-bg: var(--patent-bg); --p-fg: var(--patent-fg); }
+.talkrow .pill { margin-left: 6px; vertical-align: 1px; }
+.pill.event { --p-bg: var(--event-bg); --p-fg: var(--event-fg); }
+.newsrow .txt { font-size: 14.5px; min-width: 0; }
+a.newsrow { color: var(--ink); }
+a.newsrow:hover { text-decoration: none; }
+a.newsrow:hover .txt { color: var(--accent); }
+.year-h { font: 600 13px var(--font-mono); color: var(--muted); padding: 18px 0 4px; }
+
+/* filters */
+.filters { display: flex; flex-direction: column; gap: 12px; padding: 16px 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chips .lbl { font-size: 12.5px; color: var(--muted); width: 48px; }
+.chip { font-size: 13px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: 3px 12px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.chip .n { font: 400 11.5px var(--font-mono); opacity: .75; margin-left: 4px; }
+.search { width: 100%; max-width: 360px; font: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; }
+.result-n { font-size: 13px; color: var(--muted); }
+.note { font-size: 12.5px; color: var(--muted); }
+
+/* publication rows */
+.pub { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.pub .yr { font: 500 13px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.pub .t { font-weight: 600; font-size: 15px; line-height: 1.45; }
+.pub .a { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.venue { font: 500 11.5px var(--font-mono); color: var(--ink); border: 1px solid var(--line); padding: 1px 7px; border-radius: 4px; }
+.kindtag { font: 500 11px var(--font-mono); color: var(--muted); background: var(--tag-bg); padding: 1px 7px; border-radius: 4px; }
+.publists { display: flex; flex-direction: column; gap: 16px; }
+.publist { padding: 4px 20px 8px; }
+.pub-sec { font-size: 18px; font-weight: 700; padding: 16px 0 4px; display: flex; align-items: baseline; gap: 8px; }
+.pub-sec .n { font: 500 13px var(--font-mono); color: var(--muted); }
+.top { display: inline-block; font: 600 11px var(--font-mono); background: var(--award-bg); color: var(--award-fg); border-radius: 4px; padding: 1px 7px; margin-right: 8px; vertical-align: 2px; white-space: nowrap; }
+.jcr { font: 600 11px var(--font-mono); background: var(--paper-bg); color: var(--paper-fg); border-radius: 4px; padding: 1px 7px; }
+.jif { font: 500 11px var(--font-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: 4px; padding: 0 6px; }
+.chip.topchip { border-color: var(--award-fg); color: var(--award-fg); }
+.chip.topchip[aria-pressed="true"] { background: var(--award-fg); border-color: var(--award-fg); color: var(--surface); }
+
+/* research page */
+.theme-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 28px; padding: 24px; }
+.theme-detail + .theme-detail { border-top: 1px solid var(--line); }
+.theme-detail h3 { font-size: 18px; font-weight: 700; display: flex; gap: 12px; align-items: center; }
+.theme-detail h3 .ico { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-soft); display: grid; place-items: center; flex: none; }
+.theme-detail h3 svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.6; }
+.theme-detail p { color: var(--muted); margin: 10px 0 0; font-size: 14px; }
+.theme-detail ul { list-style: none; margin: 0; padding: 0; }
+.theme-detail li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.theme-detail li:last-child { border-bottom: 0; }
+.theme-detail li .v { font: 500 11.5px var(--font-mono); color: var(--muted); margin-left: 6px; }
+.projlist { padding: 0 20px; }
+.proj { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.proj:last-child { border-bottom: 0; }
+.proj .t { font-weight: 600; font-size: 15px; }
+.proj .s { font-size: 13px; color: var(--muted); }
+.proj .ag { font: 500 12px var(--font-mono); color: var(--accent); text-align: right; white-space: nowrap; }
+.proj .p { font: 400 12px var(--font-mono); color: var(--muted); text-align: right; white-space: nowrap; }
+
+/* people */
+.pi { padding: 24px; display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+.avatar { width: 120px; height: 150px; border-radius: 10px; background: var(--tag-bg); border: 1px dashed var(--line); display: grid; place-items: center; font: 500 11px var(--font-mono); color: var(--muted); }
+.pi h2 { font-size: 22px; font-weight: 700; }
+.pi .role { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.pi .contact-line { font-size: 14px; margin-top: 10px; }
+.pi h3 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 14px 0 6px; }
+.pi ul { margin: 0; padding: 0; list-style: none; font-size: 13.5px; }
+.pi li { padding: 3px 0; display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 8px; }
+.pi li.plain { display: block; }
+.pi li .yr { font: 400 12px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.members { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.member { padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.member .nm { font-weight: 600; font-size: 15.5px; }
+.member .en { font: 400 12px var(--font-mono); color: var(--muted); }
+.member .x { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+.member .note { font-size: 11.5px; color: var(--accent); }
+.alumni { padding: 0 20px; overflow-x: auto; }
+.alumni table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.alumni td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.alumni tr:last-child td { border-bottom: 0; }
+.alumni td.deg { font: 400 12.5px var(--font-mono); color: var(--muted); white-space: nowrap; }
+
+/* professor */
+.prof { padding: 28px; display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 32px; align-items: start; }
+.avatar.lg { width: 160px; height: 200px; }
+.prof .k, .advisor .k { font: 500 12px var(--font-mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.prof h1 { font-size: 32px; font-weight: 700; margin-top: 4px; }
+.prof .sub { color: var(--muted); margin-top: 2px; }
+.facts { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 6px 12px; margin: 18px 0 0; font-size: 14px; }
+.facts dt { font: 500 11.5px var(--font-mono); letter-spacing: .06em; color: var(--muted); padding-top: 2px; }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+.interests { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.chip.static { cursor: default; background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.cv-block { padding: 22px 24px; min-width: 0; }
+.cv-block h2 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.cv-block h2 + .tl { margin-bottom: 0; }
+.cv-block .tl + h2 { margin-top: 22px; }
+.tl { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.tl li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.tl li:last-child { border-bottom: 0; }
+.tl .yr { font: 400 12.5px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.advisor { display: flex; align-items: center; gap: 16px; padding: 14px 18px; color: var(--ink); }
+.advisor:hover { text-decoration: none; border-color: var(--accent); }
+.avatar.sm { width: 48px; height: 48px; border-radius: 50%; font-size: 9px; }
+.advisor .nm { font-weight: 600; font-size: 16px; }
+.advisor .go { margin-left: auto; font-size: 14px; font-weight: 500; color: var(--accent); }
+
+/* photos */
+.photo { background: var(--tag-bg); overflow: hidden; display: grid; place-items: center; color: var(--muted); font: 600 22px var(--font-display); }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
+.avatar:has(img) { border-style: solid; }
+.subhead { font: 600 13px var(--font-mono); letter-spacing: .06em; color: var(--muted); text-transform: uppercase; margin: 6px 0 10px; }
+.subhead:not(:first-child) { margin-top: 22px; }
+.mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; max-width: 100%; }
+.mgrid:has(> :nth-child(-n+3):last-child) { grid-template-columns: repeat(auto-fill, minmax(190px, 230px)); }
+.mcard { overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.mcard .photo { aspect-ratio: 4 / 5; border-bottom: 1px solid var(--line); }
+.mcard .body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.mcard .nm { font-weight: 700; font-size: 16px; }
+.mcard .en { font: 400 12px var(--font-mono); color: var(--muted); }
+.mcard .role { font-size: 12.5px; color: var(--accent); font-weight: 500; margin-top: 2px; }
+.mcard .org { font-size: 12.5px; color: var(--muted); }
+.mail { font: 400 12px var(--font-mono); color: var(--muted); overflow-wrap: normal; word-break: keep-all; }
+.photo.icon { background: #e8ebef; }
+.photo.icon img { object-fit: contain; }
+.ugrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ucard { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; align-items: center; padding: 14px 16px; min-width: 0; }
+.ucard .photo { width: 64px; height: 64px; border-radius: 50%; }
+.ucard .body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.ucard .nm { font-weight: 700; font-size: 15.5px; }
+.ucard .en { font: 400 12px var(--font-mono); color: var(--muted); margin-left: 6px; }
+.ucard .tags { margin-top: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.tags span { font-size: 11.5px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 1px 8px; }
+.agrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.acard { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 20px; padding: 18px 20px; min-width: 0; align-items: start; }
+.acard .info { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.acard .head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; line-height: 1.3; }
+.acard .aff { display: flex; flex-direction: column; gap: 2px; }
+.acard .tags { margin-top: 0; }
+.acard .photo { width: 104px; height: 130px; border-radius: 8px; }
+.acard .nm { font-weight: 700; font-size: 16px; }
+.acard .en { font: 400 12px var(--font-mono); color: var(--muted); }
+.acard .deg { font: 400 12px var(--font-mono); color: var(--muted); display: flex; flex-direction: column; gap: 2px; line-height: 1.5; }
+.acard .now { font-size: 14px; font-weight: 600; color: var(--accent); line-height: 1.45; }
+.acard .past { font-size: 12.5px; color: var(--muted); }
+
+/* news feed */
+.newsfeed { display: flex; flex-direction: column; gap: 14px; }
+.ncard { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 22px; padding: 18px; min-width: 0; }
+.ncard.noimg { grid-template-columns: minmax(0, 1fr); }
+.ncard .cover { aspect-ratio: 4 / 3; border-radius: 8px; cursor: zoom-in; border: 0; padding: 0; }
+.ncard .meta { margin-top: 0; }
+.ncard h3 { font-size: 17px; font-weight: 700; margin-top: 8px; line-height: 1.45; }
+.ncard .sub { font-size: 14px; color: var(--accent); font-weight: 500; margin-top: 2px; }
+.ncard .where { font-size: 13px; color: var(--muted); }
+.ncard .desc { margin-top: 10px; font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+.ncard .desc p { margin: 0; }
+.ncard .desc .lbl { font-weight: 600; }
+.ncard .desc ul { margin: 0; padding-left: 18px; }
+.thumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.thumbs button { width: 72px; height: 54px; border-radius: 6px; cursor: zoom-in; border: 1px solid var(--line); padding: 0; }
+.year-sep { font: 600 14px var(--font-mono); color: var(--muted); padding-top: 8px; }
+
+/* home news */
+.newsgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.hcard { overflow: hidden; display: flex; flex-direction: column; color: var(--ink); min-width: 0; }
+.hcard:hover { text-decoration: none; border-color: var(--accent); }
+.hcard .photo { aspect-ratio: 16 / 10; border-bottom: 1px solid var(--line); font-size: 13px; }
+.hcard .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
+.hcard h3 { font-size: 14.5px; font-weight: 600; line-height: 1.45; }
+
+/* about areas */
+.areas { display: flex; flex-direction: column; gap: 14px; }
+.area { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; padding: 20px; }
+.area .photo { aspect-ratio: 4 / 3; border-radius: 8px; }
+.area h3 { font-size: 18px; font-weight: 700; }
+.area p { color: var(--muted); font-size: 14.5px; margin: 8px 0 0; }
+
+/* lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 20; background: rgb(8 12 18 / 86%); display: grid; place-items: center; padding: 32px max(16px, env(safe-area-inset-left, 0px)); }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 88vh; border-radius: 8px; }
+.lb-close { position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(16px + env(safe-area-inset-right, 0px)); font-size: 30px; line-height: 1; background: none; border: 0; color: #fff; cursor: pointer; }
+
+/* tabs */
+.tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); }
+.tab { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 4px; margin-right: 16px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+.talkrow { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.talkrow:last-child { border-bottom: 0; }
+.talkrow .t { font-weight: 600; font-size: 14.5px; }
+.talkrow .ev { font-size: 13px; color: var(--muted); }
+
+/* contact */
+.join { padding: 28px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+.join h2 { font-size: 22px; font-weight: 700; }
+.join h2 em { font-style: normal; color: var(--signal); }
+.join p { margin: 8px 0 0; color: var(--muted); }
+.join ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.c-card { padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.c-card.wide { grid-column: 1 / -1; }
+.c-label { font: 500 11.5px var(--font-mono); letter-spacing: .08em; color: var(--muted); }
+.c-main { font-size: 17px; font-weight: 600; overflow-wrap: anywhere; }
+.c-sub { font-size: 13.5px; color: var(--muted); }
+.c-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.copy { font-size: 12px; background: var(--tag-bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+.places { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 6px; }
+.place { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+.place .k { font-size: 12.5px; color: var(--muted); }
+.place .v { font-size: 15.5px; font-weight: 600; margin-top: 2px; }
+.maplinks { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13.5px; font-weight: 500; margin-top: 8px; }
+
+footer .wrap { padding-block: 28px 40px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+footer img { height: 28px; filter: var(--logo-filter); opacity: .8; }
+
+@media (max-width: 900px) {
+  .newsgrid, .ugrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .agrid { grid-template-columns: minmax(0, 1fr); }
+  .ncard, .area { grid-template-columns: minmax(0, 1fr); }
+  .cv { grid-template-columns: minmax(0, 1fr); }
+  .themes, .members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .theme-detail, .join { grid-template-columns: minmax(0, 1fr); }
+  .pi { grid-template-columns: 96px minmax(0, 1fr); }
+  .pi .avatar { width: 96px; height: 120px; }
+  .pi > div:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  header.nav .mnav { display: flex; gap: 4px; overflow-x: auto; padding-block: 0 8px; }
+  .mnav a { flex: none; color: var(--ink); font-size: 13.5px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
+  .mnav a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
+}
+@media (max-width: 640px) {
+  header.nav .wrap { justify-content: space-between; }
+  .banner { padding: 30px 22px; }
+  .themes, .members, .contact, .places { grid-template-columns: minmax(0, 1fr); }
+  .pub, .talkrow { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .newsrow { grid-template-columns: auto auto minmax(0, 1fr); gap: 6px 12px; }
+  .newsrow .txt { grid-column: 1 / -1; }
+  .proj { grid-template-columns: minmax(0, 1fr); }
+  .proj .ag, .proj .p { text-align: left; }
+  .pi { grid-template-columns: minmax(0, 1fr); }
+  .chips .lbl { width: 100%; }
+  .mgrid, .mgrid:has(> :nth-child(-n+3):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .newsgrid, .ugrid { grid-template-columns: minmax(0, 1fr); }
+  .acard { grid-template-columns: 84px minmax(0, 1fr); }
+  .acard .photo { width: 84px; height: 105px; }
+  .prof { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .avatar.lg { width: 120px; height: 150px; }
+}
+@media (prefers-reduced-motion: no-preference) { .theme, .btn, .chip { transition: border-color .15s, background-color .15s; } }
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="ESP Lab home"><img src="__LOGO__" alt="ESP LAB — Embedded Security &amp; Privacy LAB"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#about" data-route="about" data-ko="연구실 소개" data-en="About Lab">연구실 소개</a>
+      <a href="#research" data-route="research" data-ko="연구" data-en="Research">연구</a>
+      <a href="#professor" data-route="professor" data-ko="교수" data-en="Professor">교수</a>
+      <div class="dd"><a href="#members" data-route="members" data-ko="구성원" data-en="Members">구성원</a><div class="menu"><a href="#members-phd" data-ko="박사과정" data-en="Ph.D. Course">박사과정</a><a href="#members-ms" data-ko="석사과정" data-en="M.S. Course">석사과정</a><a href="#members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></div></div>
+      <div class="dd"><a href="#publications" data-route="publications" data-ko="논문" data-en="Publications">논문</a><div class="menu"><a href="#publications-journals" data-ko="저널" data-en="Journals">저널</a><a href="#publications-conference" data-ko="컨퍼런스" data-en="Conferences">컨퍼런스</a><a href="#publications-domestic" data-ko="학술대회" data-en="Domestic conferences">학술대회</a><a href="#publications-patents" data-ko="특허 및 SW" data-en="Patents &amp; software">특허 및 SW</a></div></div>
+      <a href="#talks" data-route="talks" data-ko="초청 강연" data-en="Invited Talk">초청 강연</a>
+      <div class="dd"><a href="#news" data-route="news" data-ko="소식" data-en="News">소식</a><div class="menu"><a href="#news-2026" data-ko="2026" data-en="2026">2026</a><a href="#news-2025" data-ko="2025" data-en="2025">2025</a><a href="#news-2024" data-ko="2024" data-en="2024">2024</a><a href="#news-2023" data-ko="2023" data-en="2023">2023</a></div></div>
+      <a href="#contact" data-route="contact" data-ko="연락처" data-en="Contact Us">연락처</a>
+    </nav>
+    <div class="toggles">
+      <button id="lang-ko" aria-pressed="true">KO</button>
+      <button id="lang-en" aria-pressed="false">EN</button>
+      <button id="theme-btn" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </div>
+  <nav class="wrap mnav" aria-label="Main (mobile)">
+    <a href="#about" data-route="about" data-ko="연구실 소개" data-en="About Lab">연구실 소개</a>
+    <a href="#research" data-route="research" data-ko="연구" data-en="Research">연구</a>
+    <a href="#professor" data-route="professor" data-ko="교수" data-en="Professor">교수</a>
+    <a href="#members" data-route="members" data-ko="구성원" data-en="Members">구성원</a>
+    <a href="#publications" data-route="publications" data-ko="논문" data-en="Publications">논문</a>
+    <a href="#talks" data-route="talks" data-ko="초청 강연" data-en="Invited Talk">초청 강연</a>
+    <a href="#news" data-route="news" data-ko="소식" data-en="News">소식</a>
+    <a href="#contact" data-route="contact" data-ko="연락처" data-en="Contact Us">연락처</a>
+  </nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="page" data-page="home">
+  <div class="wrap">
+    <div class="banner">
+      <div class="eyebrow" data-ko="한양대학교 ERICA · 컴퓨터학부" data-en="Hanyang University ERICA · Division of Computer Science">한양대학교 ERICA · 컴퓨터학부</div>
+      <h1 data-ko="임베디드 보안 및 프라이버시 연구실" data-en="Embedded Security &amp; Privacy Lab">임베디드 보안 및 프라이버시 연구실</h1>
+      <div class="en-name" data-ko="Embedded Security &amp; Privacy Lab · ESP Lab" data-en="임베디드 보안 및 프라이버시 연구실 · ESP Lab">Embedded Security &amp; Privacy Lab · ESP Lab</div>
+      <p class="lede" data-ko="양자내성암호(PQC)의 경량 구현과 TLS·PKI 전환, 양자 알고리즘 기반 암호 분석, 드론·로봇·차량 같은 임베디드 환경의 보안을 연구합니다." data-en="Our work spans lightweight post-quantum cryptography, PQC migration for TLS and PKI, quantum cryptanalysis, and security for drones, robots and vehicles.">양자내성암호(PQC)의 경량 구현과 TLS·PKI 전환, 양자 알고리즘 기반 암호 분석, 드론·로봇·차량 같은 임베디드 환경의 보안을 연구합니다.</p>
+      <div class="cta">
+        <a class="btn primary" href="#about" data-ko="연구실 소개" data-en="About the lab">연구실 소개</a>
+        <a class="btn" href="#contact" data-ko="대학원 지원 안내" data-en="Join the lab">대학원 지원 안내</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-head"><h2 data-ko="연구 주제" data-en="Research themes">연구 주제</h2><a class="more" href="#about" data-ko="연구 분야 자세히 →" data-en="More on research areas →">연구 분야 자세히 →</a></div>
+      <div class="themes" id="home-themes"></div>
+    </div>
+
+    <div>
+      <div class="sec-head"><h2 data-ko="최근 소식" data-en="Latest news">최근 소식</h2><a class="more" href="#news" data-ko="전체 소식 →" data-en="All news →">전체 소식 →</a></div>
+      <div class="panel newslist" id="home-news"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT LAB -->
+<section class="page" data-page="about" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="연구실 소개" data-en="About Lab">연구실 소개</h1><p data-ko="임베디드 보안 및 프라이버시 연구실(ESP Lab)은 한양대학교 ERICA 컴퓨터학부 서승현 교수 연구실입니다. 양자 컴퓨터 시대에도 안전한 암호와, 자원이 제한된 기기·모빌리티 환경의 보안을 연구합니다." data-en="The Embedded Security &amp; Privacy Lab (ESP Lab) is led by Prof. Seung-Hyun Seo in the Division of Computer Science at Hanyang University ERICA. We study cryptography that stays secure in the quantum era and security for constrained devices and mobility systems.">임베디드 보안 및 프라이버시 연구실(ESP Lab)은 한양대학교 ERICA 컴퓨터학부 서승현 교수 연구실입니다. 양자 컴퓨터 시대에도 안전한 암호와, 자원이 제한된 기기·모빌리티 환경의 보안을 연구합니다.</p></div>
+    <div><div class="sec-head"><h2 data-ko="연구 분야" data-en="Research areas">연구 분야</h2></div><div class="areas" id="about-areas"></div></div>
+    <div><div class="sec-head"><h2 data-ko="세부 연구 주제" data-en="Current research themes">세부 연구 주제</h2></div><div class="panel" id="theme-details"></div></div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="page" data-page="research" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="연구" data-en="Research">연구</h1><p data-ko="연구실이 수행 중이거나 수행한 연구 과제입니다." data-en="Research projects the lab is running or has completed.">연구실이 수행 중이거나 수행한 연구 과제입니다.</p></div>
+    <div>
+      <div class="sec-head"><h2 data-ko="진행 중인 과제" data-en="On-going research projects">진행 중인 과제</h2><span class="note" id="n-ongoing"></span></div>
+      <div class="panel projlist" id="proj-ongoing"></div>
+    </div>
+    <div>
+      <div class="sec-head"><h2 data-ko="종료된 과제" data-en="Past research projects">종료된 과제</h2><span class="note" id="n-past"></span></div>
+      <div class="panel projlist" id="proj-past"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="page" data-page="publications" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="논문" data-en="Publications">논문</h1></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#publications" data-sublink="publications" data-ko="전체" data-en="All">전체</a><a href="#publications-journals" data-sublink="publications-journals" data-ko="저널" data-en="Journals">저널</a><a href="#publications-conference" data-sublink="publications-conference" data-ko="컨퍼런스" data-en="Conferences">컨퍼런스</a><a href="#publications-domestic" data-sublink="publications-domestic" data-ko="학술대회" data-en="Domestic conferences">학술대회</a><a href="#publications-patents" data-sublink="publications-patents" data-ko="특허 및 SW" data-en="Patents &amp; software">특허 및 SW</a></nav>
+    <div class="panel filters">
+      <div class="chips" id="theme-chips"></div>
+      <div class="c-row"><input class="search" id="pub-search" type="search" data-ph-ko="제목·저자·학회 검색" data-ph-en="Search title, author, venue" placeholder="제목·저자·학회 검색" aria-label="Search publications"><span class="result-n" id="pub-count"></span></div>
+    </div>
+    <div class="publists" id="pub-list"></div>
+  </div>
+</section>
+
+<!-- PROFESSOR -->
+<section class="page" data-page="professor" hidden>
+  <div class="wrap">
+    <div class="panel prof">
+      <div class="avatar lg" id="prof-photo">PHOTO</div>
+      <div class="prof-main">
+        <div class="k" data-ko="교수" data-en="Professor">교수</div>
+        <h1 data-ko="서승현" data-en="Seung-Hyun Seo">서승현</h1>
+        <div class="sub" data-ko="Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부" data-en="서승현 · Division of Computer Science, Hanyang University ERICA">Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부</div>
+        <dl class="facts">
+          <dt>EMAIL</dt><dd>seosh77@hanyang.ac.kr</dd>
+          <dt>PHONE</dt><dd>031-400-5163</dd>
+          <dt>FAX</dt><dd id="prof-fax"></dd>
+          <dt>OFFICE</dt><dd data-ko="약학대학 616호" data-en="College of Pharmacy, Room 616">약학대학 616호</dd>
+        </dl>
+        <div class="interests">
+          <span class="chip static">Embedded system security</span><span class="chip static">Intelligent security mechanisms</span><span class="chip static">IoT security</span><span class="chip static">Blockchain</span><span class="chip static">Post-quantum cryptography</span><span class="chip static">Quantum algorithms</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv">
+      <div class="panel cv-block">
+        <h2 data-ko="학력" data-en="Education">학력</h2>
+        <ul class="tl">
+          <li><span class="yr">2006</span><span data-ko="박사, 이화여자대학교 (지도교수 이상호)" data-en="Ph.D., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">박사, 이화여자대학교 (지도교수 이상호)</span></li>
+          <li><span class="yr">2002</span><span data-ko="석사, 이화여자대학교 (지도교수 이상호)" data-en="M.S., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">석사, 이화여자대학교 (지도교수 이상호)</span></li>
+          <li><span class="yr">2000</span><span data-ko="학사, 이화여자대학교 수학과" data-en="B.S. in Mathematics, Ewha Womans University">학사, 이화여자대학교 수학과</span></li>
+        </ul>
+        <h2 data-ko="주요 활동" data-en="Service">주요 활동</h2>
+        <ul class="tl">
+          <li><span class="yr">2025–</span><span data-ko="부원장, 한양양자연구원(HY-IQQ)" data-en="Deputy Director, Hanyang Institute for Quantum (HY-IQQ)">부원장, 한양양자연구원(HY-IQQ)</span></li>
+          <li><span class="yr">–</span><span data-ko="위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회" data-en="Chair, KIISC Automotive &amp; Unmanned Mobility Security Research Group">위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회</span></li>
+        </ul>
+      </div>
+      <div class="panel cv-block">
+        <h2 data-ko="경력" data-en="Career">경력</h2>
+        <ul class="tl">
+          <li><span class="yr">2020–</span><span data-ko="교수, 한양대학교 ERICA" data-en="Professor, Hanyang University ERICA">교수, 한양대학교 ERICA</span></li>
+          <li><span class="yr">2017–2020</span><span data-ko="부교수, 한양대학교 ERICA" data-en="Associate Professor, Hanyang University ERICA">부교수, 한양대학교 ERICA</span></li>
+          <li><span class="yr">2015–2017</span><span data-ko="조교수, 고려대학교 세종" data-en="Assistant Professor, Korea University Sejong">조교수, 고려대학교 세종</span></li>
+          <li><span class="yr">2014–2015</span><span data-ko="연구교수, 고려대학교 정보보호대학원" data-en="Research Professor, Korea University School of Cybersecurity">연구교수, 고려대학교 정보보호대학원</span></li>
+          <li><span class="yr">2012–2014</span><span data-ko="박사후연구원, Purdue University" data-en="Postdoctoral Researcher, Purdue University">박사후연구원, Purdue University</span></li>
+          <li><span class="yr">2010–2012</span><span data-ko="선임연구원, 한국인터넷진흥원" data-en="Senior Researcher, Korea Internet &amp; Security Agency">선임연구원, 한국인터넷진흥원</span></li>
+          <li><span class="yr">2006–2010</span><span data-ko="연구원, 금융보안연구원" data-en="Researcher, Financial Security Agency">연구원, 금융보안연구원</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel cv-block">
+      <h2 data-ko="수상" data-en="Awards">수상</h2>
+      <ul class="tl" id="prof-awards"></ul>
+    </div>
+
+    <div>
+      <div class="sec-head"><h2 data-ko="최근 초청 강연" data-en="Recent invited talks">최근 초청 강연</h2><a class="more" href="#talks" data-ko="전체 초청 강연 →" data-en="All invited talks →">전체 초청 강연 →</a></div>
+      <div class="panel newslist" id="prof-talks"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="page" data-page="members" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="구성원" data-en="Members">구성원</h1></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#members" data-sublink="members" data-ko="전체" data-en="All">전체</a><a href="#members-phd" data-sublink="members-phd" data-ko="박사과정" data-en="Ph.D. Course">박사과정</a><a href="#members-ms" data-sublink="members-ms" data-ko="석사과정" data-en="M.S. Course">석사과정</a><a href="#members-ug" data-sublink="members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-sublink="members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></nav>
+    <div data-sub="phd"><div class="sec-head"><h2 data-ko="박사과정" data-en="Ph.D. students">박사과정</h2></div><div id="m-phd"></div></div>
+    <div data-sub="ms"><div class="sec-head"><h2 data-ko="석사과정" data-en="M.S. students">석사과정</h2></div><div id="m-ms"></div></div>
+    <div data-sub="ug"><div class="sec-head"><h2 data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</h2></div><div id="m-ug"></div></div>
+    <div data-sub="alumni"><div class="sec-head"><h2 data-ko="졸업생" data-en="Alumni">졸업생</h2></div><div id="m-alumni"></div></div>
+  </div>
+</section>
+
+<!-- INVITED TALK -->
+<section class="page" data-page="talks" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="초청 강연" data-en="Invited Talks &amp; Seminars">초청 강연</h1><p data-ko="서승현 교수의 초청 강연과 세미나입니다." data-en="Invited talks and seminars by Prof. Seung-Hyun Seo.">서승현 교수의 초청 강연과 세미나입니다.</p></div>
+    <div class="panel newslist" id="talks-all"></div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="page" data-page="news" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="소식" data-en="News">소식</h1></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#news" data-sublink="news" data-ko="전체" data-en="All">전체</a><a href="#news-2026" data-sublink="news-2026" data-ko="2026" data-en="2026">2026</a><a href="#news-2025" data-sublink="news-2025" data-ko="2025" data-en="2025">2025</a><a href="#news-2024" data-sublink="news-2024" data-ko="2024" data-en="2024">2024</a><a href="#news-2023" data-sublink="news-2023" data-ko="2023" data-en="2023">2023</a></nav>
+    <div class="newsfeed" id="news-all"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" data-page="contact" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1 data-ko="지원·연락처" data-en="Join &amp; contact">지원·연락처</h1></div>
+    <div class="panel join">
+      <div>
+        <h2 data-ko-html="대학원생과 학부 연구생을 <em>모집합니다</em>" data-en-html="We are <em>recruiting</em> graduate and undergraduate researchers">대학원생과 학부 연구생을 <em>모집합니다</em></h2>
+        <p data-ko="컴퓨터·암호 보안에 관심이 있고, 책임감과 열정을 가진 학생을 찾습니다." data-en="We look for responsible, motivated students interested in computer and cryptographic security.">컴퓨터·암호 보안에 관심이 있고, 책임감과 열정을 가진 학생을 찾습니다.</p>
+      </div>
+      <ul>
+        <li data-ko="대학원생: 등록금(BK21 장학금)과 생활비 지원" data-en="Graduate students: tuition (BK21 scholarship) and living stipend">대학원생: 등록금(BK21 장학금)과 생활비 지원</li>
+        <li data-ko="석사·박사·석박통합 과정, 학부 연구생" data-en="M.S., Ph.D., integrated programs and undergraduate interns">석사·박사·석박통합 과정, 학부 연구생</li>
+        <li data-ko="면담은 이메일로 예약해 주세요" data-en="Book an interview by email">면담은 이메일로 예약해 주세요</li>
+      </ul>
+    </div>
+    <div class="contact">
+      <div class="panel c-card">
+        <div class="c-label">EMAIL</div>
+        <div class="c-row"><span class="c-main" id="mail">seosh77@hanyang.ac.kr</span><button class="copy" id="copy-mail" data-ko="복사" data-en="Copy">복사</button></div>
+        <div class="c-sub" data-ko="서승현 교수" data-en="Prof. Seung-Hyun Seo">서승현 교수</div>
+      </div>
+      <div class="panel c-card">
+        <div class="c-label">PHONE</div>
+        <div class="c-main">031-400-5163</div>
+        <div class="c-sub">+82-31-400-5163</div>
+      </div>
+      <div class="panel c-card wide">
+        <div class="c-label">LOCATION</div>
+        <div class="c-sub" data-ko="15588 경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA" data-en="55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do 15588, Korea">15588 경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA</div>
+        <div class="places">
+          <div class="place"><div class="k" data-ko="연구실" data-en="Lab">연구실</div><div class="v" data-ko="학연산클러스터 508호" data-en="Industry-Academia-Research Cluster, Room 508">학연산클러스터 508호</div></div>
+          <div class="place"><div class="k" data-ko="교수실" data-en="Professor’s office">교수실</div><div class="v" data-ko="약학대학 616호" data-en="College of Pharmacy, Room 616">약학대학 616호</div></div>
+        </div>
+        <div class="maplinks">
+          <a href="https://map.kakao.com/link/search/%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90%20ERICA%20%ED%95%99%EC%97%B0%EC%82%B0%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0" target="_blank" rel="noopener" data-ko="카카오맵에서 보기 ↗" data-en="Open in Kakao Map ↗">카카오맵에서 보기 ↗</a>
+          <a href="https://map.naver.com/p/search/%ED%95%9C%EC%96%91%EB%8C%80%ED%95%99%EA%B5%90%20ERICA%20%ED%95%99%EC%97%B0%EC%82%B0%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0" target="_blank" rel="noopener" data-ko="네이버 지도에서 보기 ↗" data-en="Open in Naver Map ↗">네이버 지도에서 보기 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox" hidden><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
+
+<footer>
+  <div class="wrap">
+    <div><img src="__LOGO__" alt="ESP LAB"></div>
+    <div>
+      <div data-ko="경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA" data-en="55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, Korea">경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA</div>
+      <div>seosh77@hanyang.ac.kr · +82-31-400-5163</div>
+    </div>
+    <div>© 2026 ESP Lab</div>
+  </div>
+</footer>
+
+<script>
+const DATA = __DATA__;
+
+const THEMES = [
+  { key: "pqc", ko: "PQC 전환·프로토콜", en: "PQC migration & protocols",
+    sko: "PQ-TLS, 하이브리드 인증서, PKI, WoT 키 전달", sen: "PQ-TLS, hybrid certificates, PKI, WoT key delivery",
+    dko: "양자내성암호를 실제 프로토콜과 인프라에 넣는 문제를 다룹니다. TLS 1.3 하이브리드 인증서 확장, PQC PKI 전환, 저사양 기기를 위한 키 전달 방식을 설계하고 벤치마킹합니다.",
+    den: "We bring post-quantum cryptography into real protocols and infrastructure: hybrid-certificate extensions for TLS 1.3, PQC PKI migration, and key delivery for constrained devices.",
+    svg: '<rect x="5" y="12" width="18" height="12" rx="2"/><path d="M9 12V8a5 5 0 0 1 10 0v4"/><path d="M14 16v4"/>' },
+  { key: "quantum", ko: "양자 암호 분석", en: "Quantum cryptanalysis",
+    sko: "양자 회로 설계, 자원 추정, MQ·LWE 안전성", sen: "Quantum circuits, resource estimation, MQ and LWE security",
+    dko: "양자 컴퓨터로 암호를 공격할 때 실제로 필요한 자원을 추정합니다. 효율적인 양자 산술 회로를 설계하고, Module-LWE와 다변수 서명의 양자 안전성을 분석합니다.",
+    den: "We estimate the real quantum resources needed to attack cryptography, design efficient quantum arithmetic circuits, and analyze the quantum security of Module-LWE and multivariate signatures.",
+    svg: '<path d="M3 9h22M3 19h22"/><circle cx="10" cy="9" r="3"/><path d="M18 6v16"/><circle cx="18" cy="19" r="3"/>' },
+  { key: "embedded", ko: "임베디드·로봇 보안", en: "Embedded & robot security",
+    sko: "드론, ROS2, IoT 기기, 산업 제어", sen: "Drones, ROS 2, IoT devices, industrial control",
+    dko: "드론·로봇·IoT 기기처럼 자원이 제한된 환경의 보안을 연구합니다. ROS2 보안 브리지, 드론 원격 식별과 인증, 기기 고유 신호 기반 식별 기술을 다룹니다.",
+    den: "We secure resource-constrained systems such as drones, robots and IoT devices: secure ROS 2 bridges, drone remote ID and authentication, and signal-based device identification.",
+    svg: '<rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M11 4v4M17 4v4M11 20v4M17 20v4M4 11h4M4 17h4M20 11h4M20 17h4"/>' },
+  { key: "mobility", ko: "모빌리티·블록체인", en: "Mobility & blockchain",
+    sko: "V2V 인증서, 전기차 충전, 분산 신원", sen: "V2V certificates, EV charging, decentralized identity",
+    dko: "차량과 모빌리티 서비스의 신뢰 문제를 블록체인과 인증 기술로 풉니다. V2V 인증서의 PQC 전환, 전기차 충전 협력 모델, 분산 신원(DID)을 연구합니다.",
+    den: "We address trust in vehicles and mobility services with blockchain and authentication: PQC migration of V2V certificates, EV charging cooperation, and decentralized identity.",
+    svg: '<path d="M4 18l2-6a3 3 0 0 1 3-2h10a3 3 0 0 1 3 2l2 6v4H4z"/><circle cx="9" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/>' },
+];
+const KINDS = [
+  { key: "sci", ko: "SCI(E) 저널", en: "SCI(E) journals" },
+  { key: "ic", ko: "국제 컨퍼런스", en: "Intl. conference" },
+  { key: "kj", ko: "국내 학술지", en: "Domestic journals" },
+  { key: "kc", ko: "국내 학술대회", en: "Domestic conferences" },
+  { key: "pat", ko: "특허", en: "Patents" },
+  { key: "sw", ko: "SW 등록", en: "Software" },
+];
+const CAT_KO = { "Workshop": "워크숍", "Patent": "특허", "New research project": "신규 과제", "Top Conference": "학회 발표", "International Cooperation": "국제 협력", "Award": "수상", "News": "소식", "Exhibition": "전시" };
+const ROUTES = ["home", "about", "research", "professor", "members", "publications", "talks", "news", "contact"];
+const GROUPS = { journals: ["sci", "kj"], conference: ["ic"], domestic: ["kc"], patents: ["pat", "sw"] };
+const PAPER_KINDS = ["sci", "ic", "kj", "kc"];
+
+let lang = "ko";
+const state = { group: "all", theme: "all", q: "", msub: "all", year: "all", top: false };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const L = (ko, en) => lang === "ko" ? ko : (en || ko);
+const split = s => { const [ko, en] = String(s || "").split("|"); return L(ko, en); };
+const svg = t => `<svg viewBox="0 0 28 28" aria-hidden="true">${t.svg}</svg>`;
+const paperCount = key => DATA.pubs.filter(p => PAPER_KINDS.includes(p.kind) && p.k.includes(key)).length;
+
+const initials = m => esc((m.ko || m.en || "?").slice(0, 1));
+const photo = (src, alt, fallback) => src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy">` : fallback;
+const catLabel = c => L(CAT_KO[c] || c, c);
+
+function newsDesc(lines) {
+  let html = "", list = null;
+  const flush = () => { if (list) { html += `<ul>${list.join("")}</ul>`; list = null; } };
+  for (const raw of lines) {
+    for (const line of raw.split("\n")) {
+      const l = line.trim();
+      if (!l) continue;
+      const m = l.match(/^(연구목표|연구내용|특허 내용|성과|행사명|주관|일시 및 장소|참석 대상)\s*:\s*(.*)$/);
+      if (m) { flush(); html += `<p><span class="lbl">${esc(m[1])}</span> ${esc(m[2])}</p>`; if (m[1] === "연구내용") list = []; continue; }
+      if (list || l.startsWith("- ")) { (list ||= []).push(`<li>${esc(l.replace(/^-\s*/, ""))}</li>`); continue; }
+      html += `<p>${esc(l)}</p>`;
+    }
+  }
+  flush();
+  return html;
+}
+
+function newsCard(n) {
+  const [cover, ...rest] = n.imgs;
+  return `<article class="panel ncard${cover ? "" : " noimg"}">
+    ${cover ? `<button class="photo cover" data-zoom="${esc(cover)}" aria-label="${L("사진 크게 보기", "View photo")}">${photo(cover, n.title)}</button>` : ""}
+    <div>
+      <div class="meta"><span class="pill ${n.type}">${esc(catLabel(n.cat))}</span><span class="date">${esc(n.date)}</span></div>
+      <h3>${esc(n.title)}</h3>
+      ${n.sub ? `<div class="sub">${esc(n.sub)}</div>` : ""}
+      ${n.where ? `<div class="where">${esc(n.where)}</div>` : ""}
+      ${n.body.length ? `<div class="desc">${newsDesc(n.body)}</div>` : ""}
+      ${rest.length ? `<div class="thumbs">${rest.map(u => `<button class="photo" data-zoom="${esc(u)}" aria-label="${L("사진 크게 보기", "View photo")}">${photo(u, "")}</button>`).join("")}</div>` : ""}
+    </div>
+  </article>`;
+}
+
+function renderHome() {
+  $("home-themes").innerHTML = THEMES.map(t => `
+    <a class="theme" href="#publications-${t.key}">
+      <div class="ico">${svg(t)}</div>
+      <h3>${esc(L(t.ko, t.en))}</h3>
+      <p>${esc(L(t.sko, t.sen))}</p>
+      <span class="count">${L(`논문 ${paperCount(t.key)}편 →`, `${paperCount(t.key)} papers →`)}</span>
+    </a>`).join("");
+  $("home-news").innerHTML = DATA.news.slice(0, 5).map(n => `<a class="newsrow" href="#news-${n.date.slice(0, 4)}"><span class="date">${esc(n.date)}</span><span class="pill ${n.type}">${esc(catLabel(n.cat))}</span><span class="txt">${esc(n.title)}${n.sub ? ` <span class="note">· ${esc(n.sub)}</span>` : ""}</span></a>`).join("");
+}
+
+function renderResearch() {
+  $("theme-details").innerHTML = THEMES.map(t => {
+    const top = DATA.pubs.filter(p => ["sci", "ic"].includes(p.kind) && p.k.includes(t.key)).slice(0, 4);
+    return `<div class="theme-detail">
+      <div>
+        <h3><span class="ico">${svg(t)}</span>${esc(L(t.ko, t.en))}</h3>
+        <p>${esc(L(t.dko, t.den))}</p>
+        <p><a href="#publications-${t.key}">${L(`관련 논문 ${paperCount(t.key)}편 보기 →`, `See ${paperCount(t.key)} related papers →`)}</a></p>
+      </div>
+      <ul>${top.map(p => `<li>${p.top ? `<span class="top">★ Top-tier</span>` : ""}${esc(p.t)}<span class="v">${esc(p.v)}${p.y && !String(p.v).includes(p.y) ? " " + p.y : ""}</span></li>`).join("")}</ul>
+    </div>`;
+  }).join("");
+  for (const k of ["ongoing", "past"]) {
+    const list = DATA.projects[k];
+    $("proj-" + k).innerHTML = list.map(p => {
+      const sub = p.en !== p.ko ? L(p.en, p.ko) : "";
+      return `<div class="proj">
+        <div class="t">${esc(L(p.ko, p.en))}</div><div class="ag">${esc(p.ag)}</div>
+        <div class="s">${esc(sub)}</div><div class="p">${esc(p.p)}</div>
+      </div>`;
+    }).join("");
+    $("n-" + k).textContent = L(`${list.length}건`, `${list.length} projects`);
+  }
+}
+
+function inGroup(p) { return state.group === "all" || GROUPS[state.group].includes(p.kind); }
+
+function renderChips() {
+  const base = DATA.pubs.filter(inGroup);
+  const themeN = k => k === "all" ? base.length : base.filter(p => p.k.includes(k)).length;
+  const chip = (key, label, n, on) => `<button class="chip" data-key="${key}" aria-pressed="${on}">${esc(label)}<span class="n">${n}</span></button>`;
+  $("theme-chips").innerHTML = `<span class="lbl">${L("주제", "Theme")}</span>` +
+    chip("all", L("전체", "All"), themeN("all"), state.theme === "all") +
+    THEMES.map(t => chip(t.key, L(t.ko, t.en), themeN(t.key), state.theme === t.key)).join("") +
+    `<button class="chip topchip" data-top="1" aria-pressed="${state.top}">★ Top-tier<span class="n">${base.filter(p => p.top).length}</span></button>`;
+}
+
+function pubRow(p) {
+  const kindLabel = KINDS.find(i => i.key === p.kind);
+  return `<div class="pub"><div class="yr">${esc(p.d || p.y || "")}</div><div>
+      <div class="t">${p.top ? `<span class="top" title="Top-tier venue">★ Top-tier</span>` : ""}${esc(p.t)}</div><div class="a">${esc(p.a)}</div>
+      <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue">${esc(p.v)}</span>` : ""}${p.q1 ? `<span class="jcr">JCR Q1</span>` : ""}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}</div></div></div>`;
+}
+
+function renderPubs() {
+  const q = state.q.trim().toLowerCase();
+  const rows = DATA.pubs.filter(p =>
+    inGroup(p) &&
+    (state.theme === "all" || p.k.includes(state.theme)) &&
+    (!state.top || p.top) &&
+    (!q || (p.t + " " + p.a + " " + p.v).toLowerCase().includes(q)));
+  const SECTIONS = [["journals", "저널", "Journals"], ["conference", "컨퍼런스", "Conferences"], ["domestic", "학술대회", "Domestic conferences"], ["patents", "특허 및 SW", "Patents & software"]];
+  let html = "";
+  for (const [g, ko, en] of SECTIONS) {
+    if (state.group !== "all" && state.group !== g) continue;
+    const list = rows.filter(p => GROUPS[g].includes(p.kind));
+    if (!list.length) continue;
+    html += `<section class="panel publist"><h2 class="pub-sec">${esc(L(ko, en))}<span class="n">${list.length}</span></h2>`;
+    let lastY = null;
+    for (const p of list) {
+      if (p.y !== lastY) { html += `<div class="year-h">${p.y || "—"}</div>`; lastY = p.y; }
+      html += pubRow(p);
+    }
+    html += `</section>`;
+  }
+  $("pub-list").innerHTML = html || `<div class="panel publist"><p class="note" style="padding:20px 0">${L("조건에 맞는 항목이 없습니다. 필터를 바꾸거나 검색어를 지워 보세요.", "Nothing matches. Change a filter or clear the search.")}</p></div>`;
+  $("pub-count").textContent = L(`${rows.length}건`, `${rows.length} items`);
+}
+
+const mail = e => { const [u, d] = e.split("@"); return `<div class="mail">${esc(u)}@<wbr>${esc(d || "")}</div>`; };
+
+function memberCard(m) {
+  if (m.group === "ug") return `<div class="panel ucard">
+    <div class="photo icon">${photo(m.img, "", initials(m))}</div>
+    <div class="body">
+      <div><span class="nm">${esc(L(m.ko, m.en))}</span><span class="en">${esc(L(m.en, m.ko))}</span></div>
+      ${m.email.map(mail).join("")}
+      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+    </div>
+  </div>`;
+  return `<div class="panel mcard">
+    <div class="photo${m.ph ? " icon" : ""}">${photo(m.img, m.ko, initials(m))}</div>
+    <div class="body">
+      <div class="nm">${esc(L(m.ko, m.en))}</div><div class="en">${esc(L(m.en, m.ko))}</div>
+      ${m.role ? `<div class="role">${esc(m.role)}</div>` : ""}
+      ${m.org.length ? `<div class="org">${esc(m.org.join(" · "))}</div>` : ""}
+      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+      ${m.email.map(mail).join("")}
+    </div>
+  </div>`;
+}
+
+function alumniCard(m) {
+  const [now, ...past] = m.org;
+  return `<div class="panel acard">
+    <div class="photo${m.ph ? " icon" : ""}">${photo(m.img, m.ko, initials(m))}</div>
+    <div class="info">
+      <div class="head"><span class="nm">${esc(L(m.ko, m.en))}</span><span class="en">${esc(L(m.en, m.ko))}</span></div>
+      ${m.period.length ? `<div class="deg">${m.period.map(([d, p]) => `<span>${esc(d)} ${esc(p.replace("-", " – "))}</span>`).join("")}</div>` : ""}
+      ${now ? `<div class="aff"><div class="now">${esc(now)}</div>${past.map(p => `<div class="past">${esc(p)}</div>`).join("")}</div>` : ""}
+      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+      ${m.email.map(mail).join("")}
+    </div>
+  </div>`;
+}
+
+function grouped(list, card, grid) {
+  const sections = [...new Set(list.map(m => m.section))];
+  const label = { "Full-Time Students": ["전일제", "Full-Time Students"], "Part-Time Students": ["파트타임", "Part-Time Students"], "Ph.D. Alumni": ["박사 졸업생", "Ph.D. Alumni"], "Master's Alumni": ["석사 졸업생", "Master's Alumni"] };
+  return sections.map(sec => `${sec && label[sec] ? `<div class="subhead">${esc(L(...label[sec]))}</div>` : ""}<div class="${grid}">${list.filter(m => m.section === sec).map(card).join("")}</div>`).join("");
+}
+
+function renderPeople() {
+  for (const k of ["phd", "ms", "ug"]) $("m-" + k).innerHTML = grouped(DATA.members[k], memberCard, k === "ug" ? "ugrid" : "mgrid");
+  $("m-alumni").innerHTML = grouped(DATA.members.alumni, alumniCard, "agrid");
+}
+
+function renderNews() {
+  let html = "", lastY = null;
+  for (const n of DATA.news) {
+    const y = n.date.slice(0, 4);
+    if (state.year !== "all" && y !== state.year) continue;
+    if (state.year === "all" && y !== lastY) { html += `<div class="year-sep">${y}</div>`; }
+    lastY = y;
+    html += newsCard(n);
+  }
+  $("news-all").innerHTML = html;
+}
+
+function renderTalks() {
+  let html = "", lastY = null;
+  for (const t of DATA.talks) {
+    if (t.y !== lastY) { html += `<div class="year-h">${t.y}</div>`; lastY = t.y; }
+    html += talkRow(t);
+  }
+  $("talks-all").innerHTML = html;
+}
+
+function talkRow(t) {
+  const title = L(t.t_ko, t.t_en);
+  return `<div class="talkrow"><span class="date">${esc(t.d)}</span><div>
+      ${title ? `<div class="t">${esc(title)}${t.planned ? ` <span class="pill talk">${L("예정", "Upcoming")}</span>` : ""}</div>` : ""}
+      <div class="ev">${esc(L(t.ev_ko, t.ev_en))}</div></div></div>`;
+}
+
+function renderProfessor() {
+  $("prof-talks").innerHTML = DATA.talks.slice(0, 6).map(talkRow).join("");
+  $("prof-photo").innerHTML = photo(DATA.prof.img, "서승현 교수", "PHOTO");
+  $("prof-fax").textContent = DATA.prof.fax;
+  $("prof-awards").innerHTML = DATA.prof.awards.map(a => `<li><span class="yr">${esc(a.y)}</span><span>${esc(L(a.ko, a.en))}</span></li>`).join("");
+}
+
+function renderAbout() {
+  const fix = a => /^IoT/.test(a.body) && /TLS/.test(a.title) ? "IoT Security" : a.title;
+  $("about-areas").innerHTML = DATA.about.map(a => `<div class="panel area">
+    <div class="photo">${photo(a.img, fix(a), "")}</div>
+    <div><h3>${esc(fix(a))}</h3><p>${esc(a.body)}</p></div>
+  </div>`).join("");
+}
+
+function renderAll() { renderHome(); renderResearch(); renderAbout(); renderProfessor(); renderChips(); renderPubs(); renderPeople(); renderNews(); renderTalks(); }
+
+function route() {
+  const h = location.hash.replace("#", "") || "home";
+  const [base, ...rest] = h.split("-");
+  const sub = rest.join("-");
+  const page = ROUTES.includes(base) ? base : "home";
+  if (page === "members") {
+    state.msub = ["phd", "ms", "ug", "alumni"].includes(sub) ? sub : "all";
+    document.querySelectorAll("[data-page=members] [data-sub]").forEach(el => {
+      el.hidden = state.msub !== "all" && el.dataset.sub !== state.msub && el.dataset.sub !== "advisor";
+    });
+  }
+  if (page === "publications") {
+    if (GROUPS[sub]) state.group = sub;
+    else if (THEMES.some(t => t.key === sub)) { state.group = "all"; state.theme = sub; }
+    else state.group = "all";
+    renderChips(); renderPubs();
+  }
+  if (page === "news") { state.year = /^20[0-9]{2}$/.test(sub) ? sub : "all"; renderNews(); }
+  const subKey = page === "publications" ? (state.group === "all" ? "publications" : "publications-" + state.group)
+    : page === "members" ? (state.msub === "all" ? "members" : "members-" + state.msub)
+    : page === "news" ? (state.year === "all" ? "news" : "news-" + state.year) : null;
+  document.querySelectorAll("[data-sublink]").forEach(el => {
+    if (el.dataset.sublink === subKey) el.setAttribute("aria-current", "page"); else el.removeAttribute("aria-current");
+  });
+  document.querySelectorAll("[data-page]").forEach(el => { el.hidden = el.dataset.page !== page; });
+  document.querySelectorAll("[data-route]").forEach(el => {
+    if (el.dataset.route === page) el.setAttribute("aria-current", "page"); else el.removeAttribute("aria-current");
+  });
+  document.activeElement?.blur?.();
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener("click", e => {
+  const z = e.target.closest("[data-zoom]");
+  if (z) { $("lb-img").src = z.dataset.zoom; $("lightbox").hidden = false; return; }
+  if (e.target.id === "lightbox" || e.target.id === "lb-close") { $("lightbox").hidden = true; return; }
+  const c = e.target.closest(".chip");
+  if (c && c.dataset.top) { state.top = !state.top; renderChips(); renderPubs(); return; }
+  if (c && c.dataset.key) { state.theme = c.dataset.key; renderChips(); renderPubs(); }
+});
+$("pub-search").addEventListener("input", e => { state.q = e.target.value; renderPubs(); });
+window.addEventListener("hashchange", route);
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("lightbox").hidden = true; });
+
+function setLang(next) {
+  lang = next;
+  document.documentElement.lang = next;
+  document.querySelectorAll("[data-ko]").forEach(el => { el.textContent = el.dataset[next]; });
+  document.querySelectorAll("[data-ko-html]").forEach(el => { el.innerHTML = el.dataset[next + "Html"]; });
+  document.querySelectorAll("[data-ph-ko]").forEach(el => { el.placeholder = next === "ko" ? el.dataset.phKo : el.dataset.phEn; });
+  $("lang-ko").setAttribute("aria-pressed", String(next === "ko"));
+  $("lang-en").setAttribute("aria-pressed", String(next === "en"));
+  renderAll();
+  try { localStorage.setItem("esplab-lang", next); } catch (e) {}
+}
+$("lang-ko").addEventListener("click", () => setLang("ko"));
+$("lang-en").addEventListener("click", () => setLang("en"));
+
+$("theme-btn").addEventListener("click", () => {
+  const root = document.documentElement;
+  const isDark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = isDark ? "light" : "dark";
+});
+
+$("copy-mail").addEventListener("click", e => {
+  const btn = e.currentTarget, text = $("mail").textContent;
+  const done = () => { btn.textContent = L("복사됨", "Copied"); setTimeout(() => { btn.textContent = btn.dataset[lang]; }, 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("mail")); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+  if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+});
+
+let saved = "ko";
+try { saved = localStorage.getItem("esplab-lang") || "ko"; } catch (e) {}
+setLang(saved);
+route();
+</script>

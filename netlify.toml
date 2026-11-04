@@ -1,0 +1,10 @@
+# Netlify publishes the pre-built dist/ folder as-is.
+# The site is built locally with `python build.py` (needs the lab's Excel files), then committed and pushed.
+[build]
+  publish = "dist"
+  command = ""
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

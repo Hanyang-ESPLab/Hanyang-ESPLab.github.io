@@ -1,0 +1,236 @@
+[
+  {
+    "d": "2026.11.19",
+    "y": 2026,
+    "planned": true,
+    "ev_en": "Financial Sector PQC Seminar",
+    "ev_ko": "금융권 PQC 세미나",
+    "t_en": "Post-Quantum Cryptography (PQC) Standardization and Migration Policy Trends — Focusing on Overseas Financial-Sector Policies",
+    "t_ko": "양자내성암호(PQC) 표준화 추진 및 전환 정책 동향 — 해외 금융권 정책 중심"
+  },
+  {
+    "d": "2026.11.13",
+    "y": 2026,
+    "planned": true,
+    "ev_en": "2026 Practical Training Program on Post-Quantum Cryptography, 2nd Session",
+    "ev_ko": "2026 양자내성암호 전문교육 실무과정 2차",
+    "t_en": "Quantum Threats, Limitations of Current Cryptography, PQC Overview, and Domestic/International Migration Trends",
+    "t_ko": "양자 위협, 기존 암호의 한계, PQC 개요 및 국내외 전환 대응 동향"
+  },
+  {
+    "d": "2026.11.4",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "2026 KpqC Conference",
+    "ev_ko": "2026 양자내성암호연구단 컨퍼런스",
+    "t_en": "Policy Trends in Post-Quantum Cryptography (PQC) Migration",
+    "t_ko": "양자내성암호(PQC) 전환 관련 정책 동향"
+  },
+  {
+    "d": "2026.10",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "Korea–Mongolia Cybersecurity Cooperation Program, KISA / MDDIC",
+    "ev_ko": "KISA–몽골 디지털개발혁신통신부 한·몽 사이버보안 협력 프로그램",
+    "t_en": "Addressing Network Overhead in PQC Migration",
+    "t_ko": "PQC 전환 시 네트워크 오버로드 대응"
+  },
+  {
+    "d": "2026.9.16",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "IT Mega Vision × IITP Tech & Future Insight Concert 2026",
+    "ev_ko": "IT 메가비전 × IITP 테크&퓨처 인사이트 콘서트 2026",
+    "t_en": "The Future of Security in the Quantum Computing Era: PQC Migration and New Cryptographic Systems",
+    "t_ko": "양자컴퓨터가 바꾸는 보안의 미래: PQC 전환과 새로운 암호체계"
+  },
+  {
+    "d": "2026.9.11",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "2026 Practical Training Program on Post-Quantum Cryptography, 1st Session",
+    "ev_ko": "2026 양자내성암호 전문교육 실무과정 1차",
+    "t_en": "Quantum Threats, Limitations of Current Cryptography, PQC Overview, and Domestic/International Migration Trends",
+    "t_ko": "양자 위협, 기존 암호의 한계, PQC 개요 및 국내외 전환 대응 동향"
+  },
+  {
+    "d": "2026.9.9",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "2026 Industry–Academia–Research Conference on Post-Quantum Cryptography",
+    "ev_ko": "2026 양자내성암호 산학연 컨퍼런스",
+    "t_en": "Policy Trends in Post-Quantum Cryptography Migration",
+    "t_ko": "양자내성암호 전환 관련 정책 동향"
+  },
+  {
+    "d": "2026.8.31",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "Future Security Technology Forum, National Security Research Institute",
+    "ev_ko": "국가보안기술연구소 미래보안기술포럼",
+    "t_en": "Global Acceleration of PQC Migration and Directions for Korea",
+    "t_ko": "글로벌 PQC 전환 본격화와 국내 대응 방향"
+  },
+  {
+    "d": "2026.8.18",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "Invited Seminar, Hanyang University",
+    "ev_ko": "한양대학교 초청 세미나",
+    "t_en": "Quantum-Safe Security",
+    "t_ko": "양자안전 보안(Quantum-Safe Security)"
+  },
+  {
+    "d": "2026.7.15",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "2nd Post-Quantum Information Security Research Meeting, Sungkyunkwan University",
+    "ev_ko": "성균관대학교 제2회 Post-Quantum 정보보안 연구회",
+    "t_en": "Cybersecurity Threats from Advances in Quantum Computing and the Security of PQC",
+    "t_ko": "양자컴퓨터 발전에 따른 기존 암호체계의 위협과 PQC의 안전성"
+  },
+  {
+    "d": "2026.6.19",
+    "y": 2026,
+    "planned": false,
+    "ev_en": "3rd Workshop on Automotive and Unmanned Vehicle Security",
+    "ev_ko": "제3회 자동차 및 무인이동체 보안 워크숍",
+    "t_en": "Breaking ROS2 Bridges: Security Risks in Multi-Robot Cross-Protocol Integration",
+    "t_ko": "ROS2 브리지의 보안 위협: 다중 로봇·이기종 프로토콜 연동 환경의 보안 위험"
+  },
+  {
+    "d": "2025.11.18",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "2025 KpqC Conference",
+    "ev_ko": "2025 양자내성암호연구단 컨퍼런스",
+    "t_en": "Comparative Analysis of National Strategies for PQC Migration",
+    "t_ko": "PQC 전환에 대한 국가별 추진 전략 비교 및 분석"
+  },
+  {
+    "d": "2025.7.11",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "HackTheon Sejong Cybersecurity Conference 2025",
+    "ev_ko": "2025 핵테온 세종 사이버보안 콘퍼런스",
+    "t_en": "Evolution of the Security Paradigm for the Quantum Era",
+    "t_ko": "양자시대를 위한 보안 패러다임의 진화"
+  },
+  {
+    "d": "2025.7.8",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "Bitgaram Energy Valley AI and Information Security Workshop",
+    "ev_ko": "빛가람 에너지밸리 AI 및 정보보안 워크숍",
+    "t_en": "PQC Migration Technologies and Issues",
+    "t_ko": "양자내성암호(PQC) 전환 기술과 이슈"
+  },
+  {
+    "d": "2025.7.3",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "KCC 2025, W-Connect Special Session",
+    "ev_ko": "한국컴퓨터종합학술대회 KCC 2025 W-Connect 특별세션",
+    "t_en": "Efficient PQC Key Delivery for Web-of-Things Environments",
+    "t_ko": "Web of Things 환경을 위한 효율적인 PQC Key Delivery 연구"
+  },
+  {
+    "d": "2025.4.18",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "Software Convergence Symposium 2025",
+    "ev_ko": "제15회 소프트웨어 컨버전스 심포지움 SWCS 2025",
+    "t_en": "The Quantum Computing Era: Time for a Paradigm Shift in Cryptography",
+    "t_ko": "양자컴퓨팅 시대, 암호기술 패러다임의 전환이 필요할 때"
+  },
+  {
+    "d": "2025.4.18",
+    "y": 2025,
+    "planned": false,
+    "ev_en": "NetSec-KR 2025",
+    "ev_ko": "제31회 정보통신망 정보보호 컨퍼런스 NetSec-KR 2025",
+    "t_en": "Intelligent Service Robots: Current Status, Future Directions, and Security Challenges",
+    "t_ko": "지능형 서비스 로봇의 현재와 미래, 그리고 보안 과제"
+  },
+  {
+    "d": "2024.10.11",
+    "y": 2024,
+    "planned": false,
+    "ev_en": "15th CPS Security Workshop",
+    "ev_ko": "제15회 CPS 보안 워크숍",
+    "t_en": "Recent Trends in Cryptographic Applications for Unmanned Vehicle Security",
+    "t_ko": "무인이동체 보안을 위한 최신 암호 응용 기술 동향"
+  },
+  {
+    "d": "2024.4.24",
+    "y": 2024,
+    "planned": false,
+    "ev_en": "NetSec-KR 2024",
+    "ev_ko": "제30회 정보통신망 정보보호 컨퍼런스 NetSec-KR 2024",
+    "t_en": "Hanyang University ERICA Presentation, 30th Anniversary University History Session",
+    "t_ko": "30주년 학교역사 세션 — 한양대학교 ERICA 발표"
+  },
+  {
+    "d": "2024.3.11",
+    "y": 2024,
+    "planned": false,
+    "ev_en": "Financial Supervisory Service, 2024 Digital Supervision Briefing",
+    "ev_ko": "금융감독원 2024년도 디지털부문 금융감독 업무설명회",
+    "t_en": "Financial Security in the Quantum Computing Era",
+    "t_ko": "양자컴퓨팅 시대의 금융보안"
+  },
+  {
+    "d": "2023.5.17",
+    "y": 2023,
+    "planned": false,
+    "ev_en": "Security SoC Design Technology Workshop",
+    "ev_ko": "대한전자공학회 보안 SoC(System on Chip) 설계 기술 워크숍",
+    "t_en": "Quantum Circuit Design for PQC Security Analysis",
+    "t_ko": "PQC 안전성 분석을 위한 양자회로 설계"
+  },
+  {
+    "d": "2023.4.20",
+    "y": 2023,
+    "planned": false,
+    "ev_en": "NetSec-KR 2023",
+    "ev_ko": "제29회 정보통신망 정보보호 컨퍼런스 NetSec-KR 2023",
+    "t_en": "Security Analysis of Multivariate Polynomial-Based Cryptography and Recent Standardization Trends",
+    "t_ko": "다변수 다항식 기반 암호에 대한 안전성 분석 현황 및 최신 표준화 동향"
+  },
+  {
+    "d": "2022.10.18",
+    "y": 2022,
+    "planned": false,
+    "ev_en": "Quantum Security Research Group Workshop 2022",
+    "ev_ko": "2022 양자보안연구회 워크숍",
+    "t_en": "Quantum Security Analysis of Rainbow, a NIST PQC Round-3 Candidate",
+    "t_ko": "NIST PQC 3라운드 표준 후보였던 Rainbow에 대한 양자안전성 분석"
+  },
+  {
+    "d": "2022.5.20",
+    "y": 2022,
+    "planned": false,
+    "ev_en": "ASK 2022 WiCSE Workshop",
+    "ev_ko": "ASK 2022 춘계학술발표대회 WiCSE Workshop",
+    "t_en": "",
+    "t_ko": ""
+  },
+  {
+    "d": "2021.8–10",
+    "y": 2021,
+    "planned": false,
+    "ev_en": "Seminar for Women Scientists and Engineers in Information Security",
+    "ev_ko": "정보보호 여성과학기술인을 위한 역량강화 세미나",
+    "t_en": "Device DNA Research for IoT Security",
+    "t_ko": "IoT 보안을 위한 디바이스 DNA 연구"
+  },
+  {
+    "d": "2021.8.6",
+    "y": 2021,
+    "planned": false,
+    "ev_en": "1st Workshop on Automotive and Unmanned Vehicle Security",
+    "ev_ko": "제1회 자동차 및 무인이동체 보안 워크숍",
+    "t_en": "Current Status of Cryptographic Technologies for Drone Security",
+    "t_ko": "드론보안을 위한 암호기술 현황"
+  }
+]

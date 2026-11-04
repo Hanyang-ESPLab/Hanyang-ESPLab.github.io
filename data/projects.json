@@ -1,0 +1,144 @@
+{
+  "ongoing": [
+    {
+      "ko": "변화하는 환경에서도 지속적으로 강화되는 침투 불가능한 다계층 AI 기반 보안 메커니즘 연구",
+      "en": "An Unbreachable Multilayer AI-based Security Mechanism that Continuously Adapts and Evolves",
+      "ag": "KEIT · MOTIE",
+      "p": "2026.04–2027.12"
+    },
+    {
+      "ko": "양자내성암호 기반 공동인증서 PKI 인프라 기술 개발·실증",
+      "en": "Development and Demonstration of PQC-Based Joint Certificate PKI Technology",
+      "ag": "IITP · MSIT",
+      "p": "2025.04–2028.12"
+    },
+    {
+      "ko": "지능형 서비스 로봇의 사이버 레질리언스 확보를 위한 보안기술 개발",
+      "en": "Development of Cyber Resilience Method for Intelligent Service Robots",
+      "ag": "NRF · MSIT",
+      "p": "2024.04–2027.12"
+    },
+    {
+      "ko": "미래컴퓨팅 환경에 대비한 계산 복잡도 기반 암호 안정성 검증 기술개발",
+      "en": "Quantum Security Evaluation of Cryptography Based on Computational Quantum Complexity",
+      "ag": "IITP · MSIT",
+      "p": "2019.04–2026.12"
+    },
+    {
+      "ko": "위협 모델 기반 지능형 항공 사이버 위험관리 기술 개발 기획",
+      "en": "Planning Threat-Model-Based Intelligent Aviation Cyber Risk Management",
+      "ag": "KAIA · MOLIT",
+      "p": "2026.09–2027.07"
+    },
+    {
+      "ko": "그룹 채팅 환경에서 작업 기반 동적 접근 제어를 통한 LLM 에이전트 채팅 권한 인증 모델 연구",
+      "en": "Task-based Dynamic Access Control for LLM Agent Chat Permissions",
+      "ag": "COSS · 교육부",
+      "p": "2026.06–2027.01"
+    },
+    {
+      "ko": "동형암호 적용 가능성 분석 및 시나리오 도출",
+      "en": "Applicability Analysis and Scenarios for Homomorphic Encryption",
+      "ag": "KISA",
+      "p": "–2026.12"
+    },
+    {
+      "ko": "고신뢰성 에너지용 지능형 시스템반도체 교육연구단",
+      "en": "Highly-Reliable Smart System-Semiconductor Education and Research Center for Energy Systems",
+      "ag": "NRF · 교육부",
+      "p": "2020.09–2027.08"
+    }
+  ],
+  "past": [
+    {
+      "ko": "양자내성암호 전환 정책 체계 및 정책 프레임워크 연구",
+      "en": "Policy Frameworks for the National PQC Transition",
+      "ag": "NSR",
+      "p": "2026.04–2026.10"
+    },
+    {
+      "ko": "양자 내성 인증을 위한 양자보안 분석 모델 연구",
+      "en": "Quantum Security Analysis Model for Quantum-Resistant Authentication",
+      "ag": "NRF · MSIT",
+      "p": "2021.09–2026.02"
+    },
+    {
+      "ko": "다기종 멀티로봇 시스템을 위한 블록체인 기반 데이터 공유 및 협력 모델 연구",
+      "en": "Blockchain-Based Data Sharing for Heterogeneous Multi-Robot Systems",
+      "ag": "COSS",
+      "p": "2025.06–2025.12"
+    },
+    {
+      "ko": "국가연구망 암호통신 강화를 위한 양자컴퓨팅 활용 양자보안비도 분석",
+      "en": "Quantum Computing for Cryptographic Strength Analysis of the National Research Network",
+      "ag": "NRF · MSIT",
+      "p": "2023.04–2025.12"
+    },
+    {
+      "ko": "국방 무인 이동체 역이용 방지 사이버 보안 기술 개발",
+      "en": "Control Rights Protection to Prevent Reverse Use of Military Unmanned Vehicles",
+      "ag": "IITP · MSIT",
+      "p": "2023.04–2025.12"
+    },
+    {
+      "ko": "양자내성암호 기반 국가 암호체계 전환 정책 및 기술 연구",
+      "en": "Policy and Technology for the National PQC Transition",
+      "ag": "NSR",
+      "p": "2025.05–2025.11"
+    },
+    {
+      "ko": "5G 기반 산업별 빅데이터 활용 딥러닝 모형 개발 및 인력양성",
+      "en": "Industrial 5G Big-Data Deep Learning Models and Workforce Training",
+      "ag": "IITP · MSIT (ITRC)",
+      "p": "2018.06–2023.12"
+    },
+    {
+      "ko": "산업융합형 웨어러블 스마트 디바이스 전문인력양성",
+      "en": "Workforce Training for Wearable Smart Devices",
+      "ag": "KIAT · MOTIE",
+      "p": "2018.03–2023.02"
+    },
+    {
+      "ko": "생애주기형 분산ID 서비스 활성화 방안 연구",
+      "en": "Study on the Utility of Life-Cycle DID Services",
+      "ag": "KISA",
+      "p": "2021.06–2021.12"
+    },
+    {
+      "ko": "블록체인 기반 시민참여형 스마트시티 시설물 운영·유지관리 플랫폼 개발",
+      "en": "Citizen-Participatory Smart City Maintenance Platform Using Blockchain",
+      "ag": "IITP · MSIT",
+      "p": "2020.06–2021.05"
+    },
+    {
+      "ko": "IoT 디바이스 특성 및 주변 신호 기반 IoT 디바이스 식별방안 연구",
+      "en": "IoT Device Identification from Device Traits and Ambient Signals",
+      "ag": "ETRI",
+      "p": "2021.05–2021.11"
+    },
+    {
+      "ko": "신호기반 IoT 디바이스 DNA 개선을 위한 주변 환경 데이터 학습 모델 연구",
+      "en": "Learning Ambient Data to Improve Signal-Based IoT Device DNA",
+      "ag": "ETRI",
+      "p": "2020.05–2020.11"
+    },
+    {
+      "ko": "주변 환경과의 상호작용을 통한 IoT 디바이스 DNA 추출 방안 연구",
+      "en": "Extracting IoT Device DNA from Interaction with the Environment",
+      "ag": "ETRI",
+      "p": "2019.04–2019.11"
+    },
+    {
+      "ko": "IoT 디바이스 센서 데이터를 활용한 동적 암호키 생성 기법 연구",
+      "en": "Dynamic Key Generation from IoT Sensor Data",
+      "ag": "ETRI",
+      "p": "2018.04–2018.10"
+    },
+    {
+      "ko": "Self-Controllable Authentication Framework for Intelligent Vehicles in Vehicular Fog Computing",
+      "en": "Self-Controllable Authentication Framework for Intelligent Vehicles in Vehicular Fog Computing",
+      "ag": "NRF",
+      "p": "2018.03–2021.02"
+    }
+  ]
+}

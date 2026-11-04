@@ -1,0 +1,450 @@
+[
+  {
+    "cat": "Workshop",
+    "type": "event",
+    "title": "2026 양자내성암호 산학연 컨퍼런스",
+    "sub": "",
+    "date": "2026.09.09",
+    "where": "",
+    "body": [
+      "행사명: 2026 양자내성암호 산학연 컨퍼런스",
+      "주관: 양자내성암호연구단, 한양대학교 ERICA 데이터보안활용 혁신융합대학 사업단",
+      "일시 및 장소: 2026년 9월 9일 (수), 서울 역삼동 한국과학기술회관 대회의실 2",
+      "참석 대상: 산·학·연 PQC 관련 전문가, PQC 전환 및 실증사업 관련 참여기관, 일반보안기업 등"
+    ],
+    "imgs": [],
+    "year": 2026
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "위협 모델 기반 지능형 항공 사이버 위험관리 기술 개발 기획",
+    "sub": "",
+    "date": "2026.09",
+    "where": "국토교통부·국토교통과학기술진흥원",
+    "body": [
+      "연구목표: 항공기·공항·운항 시스템 등 항공 생태계 전체의 사이버 공격 위협을 사전에 예측·평가하고 디지털 트윈에서 실증·방어하는 기술 개발 로드맵 및 핵심 기획안 마련",
+      "연구내용:",
+      "항공 사이버 위험관리 기술개발 로드맵 수립",
+      "항공 사이버 위험·위협 시나리오 모델링 및 위험도 평가 기술 기획",
+      "사이버 공격에 대한 방어 효과 검증 기술 기획",
+      "항공 사이버 디지털 트윈 기반 대규모 가상검증 플랫폼 기획"
+    ],
+    "imgs": [],
+    "year": 2026
+  },
+  {
+    "cat": "Workshop",
+    "type": "event",
+    "title": "2026 제3회 자동차 및 무인이동체 보안 워크숍 개최",
+    "sub": "",
+    "date": "2026.06.19",
+    "where": "한국과학기술회관 대회의실2",
+    "body": [
+      "자동차 및 무인이동체보안연구회에서 워크숍 개최\n한국정보보호학회 자동차 및 무인이동체보안연구회(위원장 서승현 교수)가 제3회 \"자동차 및 무인이동체 보안 워크숍\"을 개최하였습니다. 자율주행 AI·자동차 보안·드론 보안·로봇 및 무인이동체 보안 4개 세션으로 진행되었고, 서승현 교수님이 \"Breaking ROS2 Bridges: Security Risks in Multi-Robot Cross-Protocol Integration\"을 발표하였습니다. 산·학·연 전문가 259명이 등록하였습니다."
+    ],
+    "imgs": [
+      "images/db8d05d6aee9.jpg",
+      "images/ae7bf9310aac.jpg",
+      "images/05a7f0680a69.jpg"
+    ],
+    "year": 2026
+  },
+  {
+    "cat": "Workshop",
+    "type": "event",
+    "title": "IETF PQC Mini Workshop 2026 발표",
+    "sub": "",
+    "date": "2026.04.27",
+    "where": "온라인 (Zoom)",
+    "body": [
+      "Enhancing TLS 1.3 to Support Hybrid PQC Certificates\n서승현 교수님 발표 │ 이여녕, 김제인, Suzanne Wibada, Mike Ounsworth, Pierre-Martin Tardif, 서승현. TLS 1.3에서 하이브리드 PQC 인증서를 지원하기 위한 hybrid_cert 확장과 PQCertificateVerify 메시지를 제안하고, wolfSSL·DigiCert·Wells Fargo 등 국내외 전문가와 TLS 다중 인증서 방안을 논의하였습니다."
+    ],
+    "imgs": [
+      "images/075de1726cd6.jpg",
+      "images/61bc4df885c1.jpg"
+    ],
+    "year": 2026
+  },
+  {
+    "cat": "Patent",
+    "type": "patent",
+    "title": "미국 특허 등록 결정",
+    "sub": "",
+    "date": "2026.04",
+    "where": "US12608635B2",
+    "body": [
+      "Efficient Quantum Modular Multiplier and Quantum Modular Multiplication Method",
+      "특허 내용: 양자내성암호 양자 안전성 분석의 핵심 연산인 모듈러 2^n 및 2^n−1 곱셈에 대해 비트 간 곱셈·덧셈 순서와 캐리 전파 과정을 최적화하여, 별도의 reduction 과정이 필요 없는 효율적인 양자 모듈러 곱셈기를 설계",
+      "성과: 양자 연산 회로 연구(미래컴퓨팅 과제) 결과를 2026년 04월 미국 특허로 출원하여 등록 결정 (US12608635B2)"
+    ],
+    "imgs": [],
+    "year": 2026
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "양자내성암호 전환 정책 체계 및 정책 프레임워크 연구",
+    "sub": "",
+    "date": "2026.04",
+    "where": "국가보안기술연구소",
+    "body": [
+      "연구목표: 국가 암호체계 전환 인식 확산을 위한 산·학·연 중심 협력 및 네트워크 활성화, 국제 전환 가이드라인 분석을 통한 국내 전환 시나리오와 절차 도출",
+      "연구내용:",
+      "PQC 전환 인식 제고를 위한 핵심 질의 수집 및 답변 제공",
+      "양자내성암호 전환 기술 및 정책을 주제로 산·학·연 컨퍼런스 개최",
+      "PQC 전환에 대한 주요 오해·우려·질의를 도출하여 인식 제고 요소 정리"
+    ],
+    "imgs": [],
+    "year": 2026
+  },
+  {
+    "cat": "Award",
+    "type": "award",
+    "title": "2025 최정예 정보보호 전문인력 양성 교육 우수강사상",
+    "sub": "서승현 교수님",
+    "date": "2025.12.19",
+    "where": "한국인터넷진흥원(KISA)",
+    "body": [],
+    "imgs": [
+      "images/a94b634bd1c3.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "International Cooperation",
+    "type": "event",
+    "title": "캐나다 Université de Sherbrooke 방문 및 MOU 체결",
+    "sub": "",
+    "date": "2025.10",
+    "where": "Institut quantique, Sherbrooke, Canada",
+    "body": [
+      "한-캐나다 양자보안 공동연구 협력\nUniversité de Sherbrooke의 양자연구소(Institut quantique) 및 AlgoLab 연구진과 양자컴퓨팅 연구 내용을 교류하고, 양자 알고리즘 기반 암호 안전성 분석과 임베디드 환경의 양자내성암호 구현·벤치마킹 연구 결과를 공유하였습니다. 향후 공동연구를 위한 MOU를 체결하고 구체적인 연구 계획을 논의하였습니다."
+    ],
+    "imgs": [
+      "images/e9b4c760657f.jpg",
+      "images/8d24f04b375e.jpg",
+      "images/e2642fb70adb.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "Top Conference",
+    "type": "paper",
+    "title": "CHES 2025 논문 발표",
+    "sub": "",
+    "date": "2025.09.14",
+    "where": "Kuala Lumpur, Malaysia",
+    "body": [
+      "Quantum security analysis of Module-LWE PQC based on practical cost estimates\n조성민, 이창열, 서승현 │ IACR TCHES 2025 게재 및 CHES 2025 발표. NIST 표준 격자 기반 양자내성암호(ML-KEM, ML-DSA)를 대상으로 고전-양자 하이브리드 Sieve 공격에 필요한 양자 자원(큐비트 수, T 게이트 수, 회로 깊이)을 산출하여, 보안강도가 기존 추정보다 15~27비트 낮아질 수 있음을 제시하였습니다."
+    ],
+    "imgs": [
+      "images/1870bc1c6ae5.jpg",
+      "images/547b2de30946.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "Workshop",
+    "type": "event",
+    "title": "2025 제2회 자동차 및 무인이동체 보안 워크숍 개최",
+    "sub": "",
+    "date": "2025.08.28",
+    "where": "한국과학기술회관 대회의실2",
+    "body": [
+      "자동차 및 무인이동체보안연구회에서 워크숍 개최\n한국정보보호학회 자동차 및 무인이동체보안연구회(위원장 서승현 교수)가 \"자동차 및 무인이동체 보안 워크숍\"을 개최하였습니다. 자동차·드론·로봇 보안 동향을 주제로 4개 세션과 우수 신진 연구자 발표가 진행되었고, 산·학·연 전문가 254명이 등록하였습니다."
+    ],
+    "imgs": [
+      "images/359da68d4275.jpg",
+      "images/f8c5df2f8a39.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "Award",
+    "type": "award",
+    "title": "2025학년도 1학기 IC-PBL 및 IC-PBL+ 콘테스트 최우수상",
+    "sub": "서승현 교수님 (교과목: 하이브리드양자암호)",
+    "date": "2025.07.23",
+    "where": "한양대학교 ERICA IC-PBL교수학습센터",
+    "body": [],
+    "imgs": [
+      "images/fbaf42ca135b.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "Top Conference",
+    "type": "paper",
+    "title": "The ACM Web Conference 2025 (WWW '25) 논문 발표",
+    "sub": "",
+    "date": "2025.04.28",
+    "where": "Sydney, Australia",
+    "body": [
+      "ExpressPQDelivery: Toward Efficient and Immediately Deployable Post-Quantum Key Delivery for Web-of-Things\n김제인, 강정훈, 이현우, 서승현 │ The ACM Web Conference 2025 (WWW '25) 발표. DNS 인프라를 활용해 대용량 양자내성 키를 기존 프로토콜과 독립적으로 전달하는 즉시 배포 가능한 프로토콜을 제안하였으며, TLS 1.3 적용 시 표준 대비 네트워크 지연을 평균 27%, 256KB RAM 저사양 보드에서 34% 줄였습니다."
+    ],
+    "imgs": [
+      "images/800febdf2b91.jpg",
+      "images/3a20119d4612.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "News",
+    "type": "event",
+    "title": "한양양자연구원(HY-IQQ) 설립",
+    "sub": "서승현 교수님 부원장 참여",
+    "date": "2025.03",
+    "where": "한양대학교",
+    "body": [],
+    "imgs": [
+      "images/5224d13b461e.jpg",
+      "images/6526a6a37d69.jpg"
+    ],
+    "year": 2025
+  },
+  {
+    "cat": "News",
+    "type": "event",
+    "title": "2025 졸업생 진로",
+    "sub": "",
+    "date": "2025",
+    "where": "",
+    "body": [
+      "ESP 연구실 2025년 졸업생",
+      "박사: 조성민 (한국전자통신연구원 ETRI 연구원), 이수진 (한양대학교 ERICA 창의융합교육원 조교수), Yuhao Bai (Peng Cheng Laboratory 박사후연구원)",
+      "석사: 이창열 (KISTI 석사후연구원), 강정훈 (드림시큐리티 주임)"
+    ],
+    "imgs": [],
+    "year": 2025
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "양자내성암호 기반 공동인증서 PKI 인프라 기술 개발·실증",
+    "sub": "",
+    "date": "2025",
+    "where": "",
+    "body": [
+      "연구목표: 양자내성암호(NIST/KpqC 표준 전자서명) 기반 공동인증서 PKI 인프라(CA, Repository, Client) 기술 개발 및 실증",
+      "연구내용:",
+      "양자내성암호 알고리즘별 SW 및 통합 전자서명 라이브러리 개발",
+      "PQC 기반 공동인증서 규격 설계 및 하이브리드 서명 연구",
+      "PQC 기반 공동인증서 발급·관리 프로토콜 확장 및 하이브리드 PKI 인프라 핵심기술 개발",
+      "하이브리드 PKI 인프라 암호 민첩성(Crypto Agility) 기술 분석 및 설계"
+    ],
+    "imgs": [],
+    "year": 2025
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "양자내성암호 기반 국가 암호체계 전환 정책 및 기술 연구",
+    "sub": "",
+    "date": "2025",
+    "where": "",
+    "body": [
+      "연구목표: 국내외 양자내성암호 표준화 및 암호 전환정책 연구, 국가 암호체계 전환을 위한 기반 조성",
+      "연구내용:",
+      "양자내성암호 알고리즘의 표준화 및 정책 분석 (ISO, NIST 등)",
+      "미국 NCCoE의 PQC 암호전환 프로젝트 현황 분석",
+      "암호체계 전환을 위한 국내 산학연 협력방안 제안"
+    ],
+    "imgs": [],
+    "year": 2025
+  },
+  {
+    "cat": "Exhibition",
+    "type": "event",
+    "title": "2024 HY Inclusive Tech & Startup Fair 전시",
+    "sub": "",
+    "date": "2024.11.12",
+    "where": "한양대학교 서울캠퍼스 한양종합기술연구원(HIT)",
+    "body": [
+      "ESP 연구실 HY Inclusive Tech 전시 운영\n- 내용 설명 추가"
+    ],
+    "imgs": [
+      "images/6619598c338f.jpg",
+      "images/588071ef990a.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "Workshop",
+    "type": "event",
+    "title": "2024 자동차 및 무인이동체 보안 워크숍 개최",
+    "sub": "",
+    "date": "2024.08.30",
+    "where": "한국과학기술회관 대회의실2",
+    "body": [
+      "자동차 및 무인이동체보안연구회에서 워크숍 개최\n한국정보보호학회가 주최한 \"자동차 및 무인이동체 보안 워크숍\"을 개최하여 최신 이동체 보안 동향에 대해 업계 전문가와 연구자들이 함께 논의하는 자리를 만들었습니다."
+    ],
+    "imgs": [
+      "images/49bb794054be.jpg",
+      "images/3de60fbbd5be.jpg",
+      "images/d6f5c2b098e1.jpg",
+      "images/75ee8ddb2fe5.jpg",
+      "images/f97d361151e6.jpg",
+      "images/48f14b7d9fab.jpg",
+      "images/9914cb2119c5.jpg",
+      "images/259ac4628881.jpg",
+      "images/1455d0afe7fd.jpg",
+      "images/888faeb6aba1.jpg",
+      "images/b497d63594c2.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "Award",
+    "type": "award",
+    "title": "2024 블록체인 ESG 해커톤 장려상",
+    "sub": "박가을, 윤동현, 지찬웅",
+    "date": "2024.08.30",
+    "where": "양재 더 케이 호텔",
+    "body": [],
+    "imgs": [
+      "images/25c0ab2c687e.jpg",
+      "images/3fd00189872b.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "Exhibition",
+    "type": "event",
+    "title": "2024 Quantum KOREA 전시",
+    "sub": "",
+    "date": "2024.06.25",
+    "where": "킨텍스(KINTEX) 제2전시장",
+    "body": [
+      "ESP 연구실 Quantum KOREA 전시 부스 운영\n과학기술정보통신부가 주최한 양자 관련 국제 행사에 참여하여 양자내성암호와 암호를 검증하기 위해서 양자 시뮬레이터를 사용하여 검증하는 연구를 내용을 전시하였습니다.",
+      "양자 컴퓨터와 관련된 연구 내용 전시",
+      "Quantum Computer & Post-Quantum-Cryptography",
+      "- 기본적인 양자 컴퓨터의 작동 이론과 양자 컴퓨터의 발전에 따른 PQC 암호의 기반하는 문제를 소개하고, 최근 NIST의 동향 소개",
+      "Quantum Circuits",
+      "- 양자 컴퓨터 상에서 프로그래밍을 하기 위한 양자 회로에 사용되는 양자 게이트를 설명하고, 활용 가능한 분야에 대한 소개",
+      "Designing Efficient Quantum Arithmetic Circuits",
+      "- 양자컴퓨터 상에서 필요한 연산 회로를 구현한 연구로, Quantum Modular Multiplication과 Quantum Squaring 연산 회로에 대한 소개",
+      "Quantum Circuit Designs for Analyzing Security of PQC",
+      "- 양자 내성 암호를 대상으로 하는 클래식 공격을 양자 컴퓨터를 적용하여 실제 보안비도를 분석하는 연구로, Rainbow 암호를 대상으로 하는 MinRank Attack과 Lattice 기반으로 하는 암호를 대상으로하는 Quantum Sieve를 구현하는 연구를 소개"
+    ],
+    "imgs": [
+      "images/a3a228d652f8.jpg",
+      "images/c07f2df93725.jpg",
+      "images/1ff8a86340fb.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "Exhibition",
+    "type": "event",
+    "title": "2024 NetSec-KR 전시",
+    "sub": "",
+    "date": "2024.04.24",
+    "where": "양재 더케이 호텔",
+    "body": [
+      "ESP 연구실 NetSec-KR 전시 부스 운영\n한국인터넷진흥원이 주최한 정보통신망 정보보 행사에 참여하여 연구실 연구 분야 소개 부스를 운영"
+    ],
+    "imgs": [
+      "images/05a192dd4737.jpg",
+      "images/089bbd41b773.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "Award",
+    "type": "award",
+    "title": "2024 과학기술정보통신부 장관 표창 우수 연구자 수상",
+    "sub": "서승현 교수님",
+    "date": "2024.04.24",
+    "where": "양재 더 케이 호텔",
+    "body": [],
+    "imgs": [
+      "images/33eb2da21830.jpg",
+      "images/b8d05272058c.jpg"
+    ],
+    "year": 2024
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "지능형 서비스 로봇의 사이버 레질리언스 확보를 위한 보안기술 개발",
+    "sub": "",
+    "date": "2024",
+    "where": "",
+    "body": [
+      "연구목표: 로봇 통신 시 안전한 채널 형성과 악의적 공격 탐지를 위한 보안 기술 개발",
+      "연구내용:",
+      "로봇 통신 환경에서 안전한 데이터 공유를 위한 미들웨어 요구사항 분석",
+      "로봇 통신 환경에서 PQC Migration 적용 방안 연구",
+      "안전한 로봇 통신을 위한 PQC 기반 인증 및 키 분배 기술 연구",
+      "멀티 로봇 통신 환경에서 안전한 통신 및 데이터 공유 프레임 워크 설계"
+    ],
+    "imgs": [],
+    "year": 2024
+  },
+  {
+    "cat": "Exhibition",
+    "type": "event",
+    "title": "2023 Quantum KOREA 전시",
+    "sub": "",
+    "date": "2023.06.26",
+    "where": "동대문 디자인 플라자",
+    "body": [
+      "ESP 연구실 Quantum KOREA 전시 부스 운영\n과학기술정보통신부가 주최한 양자 관련 국제 행사에 참여하여 양자내성발전관의 부스를 운영",
+      "양자 컴퓨터와 관련된 연구 내용 전시",
+      "Quantum Computer & Post-Quantum-Cryptography",
+      "- 기본적인 양자 컴퓨터의 작동 이론과 양자 컴퓨터의 발전에 따른 PQC 암호의 현황 소개",
+      "Quantum Circuits",
+      "- 양자 컴퓨터 상에서 프로그래밍을 하기 위한 양자 회로에 사용되는 양자 게이트를 설명하고, 활용 가능한 분야에 대한 소개",
+      "Quantum Modular Multiplication",
+      "- 양자컴퓨터 상에서의 Modular Multiplication 회로에 대해 양자자원량인 Depth 측면에서 최적화한 연구 내용을 전시",
+      "Quantum Rectangular MinRank Attack on Rainbow",
+      "- Grover's algorithm을 활용한 MinRank 공격의 구현 연구와 이에 대한 자원량 분석에 기반하여 Rainbow의 보안비도를 낮춘 연구 내용에 대해 전시"
+    ],
+    "imgs": [
+      "images/31861b1cf5e0.jpg",
+      "images/161c31d41351.jpg",
+      "images/a38c6d1fcafb.jpg"
+    ],
+    "year": 2023
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "국방 무인 이동체 사이버 보안 기술 개발 과제",
+    "sub": "",
+    "date": "2023",
+    "where": "",
+    "body": [
+      "연구목표: 양자내성암호 기반의 고비도 인증 기술 및",
+      "국방 드론 경량 최적화 통신채널 보호 기술 개발",
+      "연구내용:",
+      "양자내성 기반의 드론 식별 및 인증 프로토콜 설계",
+      "드론 운영플랫폼 구성요소 간 인증을 위한 양자내성 TLS/DTLS 설계",
+      "국방 드론 운영플랫폼 구성요소 간 통신채널 보호 기술 개발"
+    ],
+    "imgs": [
+      "images/0e7cfde426b3.jpg"
+    ],
+    "year": 2023
+  },
+  {
+    "cat": "New research project",
+    "type": "project",
+    "title": "양자컴퓨팅 기반 양자이득 도전연구 과제",
+    "sub": "",
+    "date": "2023",
+    "where": "",
+    "body": [
+      "연구목표: 국가연구망 암호통신 강화를 위한 양자컴퓨팅 활용 양자보안비도 분석",
+      "연구내용:",
+      "암호분석용 양자알고리듬/양자연산회로 최적화 설계 및 양자클라우드에서 구현",
+      "후양자암호(PQC) 기반 문제 해결 고전 알고리듬 분석 및 양자컴퓨팅 환경에서의 양자이득 파트 도출",
+      "양자클라우드활용 Quantum Arithmetic 회로별 Depth(T-Depth)/Gate Count 측정 연구"
+    ],
+    "imgs": [
+      "images/1269acdf076e.jpg"
+    ],
+    "year": 2023
+  }
+]

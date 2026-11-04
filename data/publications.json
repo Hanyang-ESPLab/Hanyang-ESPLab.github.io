@@ -1,0 +1,2480 @@
+[
+  {
+    "kind": "ic",
+    "y": 2026,
+    "d": "2026.08",
+    "t": "A Blockchain-based Security Policy Management Framework for Multi-Organizational VPP/SCADA Environments",
+    "a": "Chanwoong-Ji, Soojin Lee, Seung-Hyun Seo",
+    "v": "WISA 2026",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2026,
+    "d": "2026.05",
+    "t": "Post-Quantum TLS의 애플리케이션 환경별 적용 특성 및 연구 동향 분석",
+    "a": "노희원, 김제인, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2026,
+    "d": "2026.05",
+    "t": "임베디드 환경에서의 하이브리드 PQC 인증서 벤치마킹",
+    "a": "장선우, 이여녕, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2026,
+    "d": "2026.05",
+    "t": "ocMLS: 익명 오픈 채팅 환경에서의 안전한 보안 메시징 프로토콜",
+    "a": "노희원, 이상현, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2026,
+    "d": "2026.05",
+    "t": "다기관 VPP/SCADA 환경을 위한 블록체인 기반 보안 정책 관리 프레임워크",
+    "a": "지찬웅, 이수진, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2026,
+    "d": "2026.05",
+    "t": "HCV: PQ-하이브리드 인증서 정합성 검증 프레임워크",
+    "a": "장선우, 김제인, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2026,
+    "d": "2026",
+    "t": "pqRID: Compact, Anonymous Remote Identification and Post-Quantum Authentication for Drones",
+    "a": "Jane Kim, YeoNyeong Lee, Jung-Hun Kang, Seung-Hyun Seo",
+    "v": "IEEE Internet of Things Journal",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "10.6",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "kj",
+    "y": 2025,
+    "d": "2025.12",
+    "t": "동적 리더 선택을 고려한 블록체인 기반 멀티 리더 로봇 협업 모델",
+    "a": "이수진, 이고은, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2025,
+    "d": "2025.12",
+    "t": "Multivariate Quadratic Signatures in the NIST Process: A Survey and Comparative Analysis",
+    "a": "Jian Zhang, Seong-Min Cho and Seung-Hyun Seo",
+    "v": "MobiSec 2025",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.11",
+    "t": "재난 구조 환경에서 신뢰성 있는 다중 로봇 시스템 구성 및 업무 할당 방안 분석",
+    "a": "이고은, 이수진, 서승현",
+    "v": "대한전자공학회 추계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.11",
+    "t": "PQC 하이브리드 인증서 밴치마킹 연구",
+    "a": "이여녕, 김제인, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.11",
+    "t": "국가별 양자내성암호 전환 정책 비교 및 분석",
+    "a": "노희원, 장선우, 이상현, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.11",
+    "t": "양자 취약탐지 프레임워크 적용 및 개선 방향",
+    "a": "지찬웅, 김제인, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2025,
+    "d": "2025.09",
+    "t": "Quantum security analysis of Module-LWE PQC based on practical cost estimates",
+    "a": "Seong-Min Cho, Changyeol Lee, Seung-Hyun Seo",
+    "v": "CHES 2025 (IACR TCHES)",
+    "k": [
+      "quantum",
+      "pqc"
+    ],
+    "if": "",
+    "top": true,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2025,
+    "d": "2025.07",
+    "t": "Optimized quantum folding Barrett reduction for quantum modular multipliers",
+    "a": "Jian Zhang, Seong-Min Cho, Changyeol Lee, Seung-Hyun Seo",
+    "v": "Scientific Reports",
+    "k": [
+      "quantum"
+    ],
+    "if": "3.8",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.06",
+    "t": "지능형 로봇 구성요소 기반 공격벡터 및 보안위협 분석",
+    "a": "박가을, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.06",
+    "t": "PQC 기반 하이브리드 인증서 표준 동향 분석",
+    "a": "이여녕, 김제인, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.06",
+    "t": "SROS 2에서의 PQC적용 시 고려사항",
+    "a": "지찬웅, 김제인, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.05",
+    "t": "멀티로봇 시스템에서 로봇 그룹 간 협력 임무 수행을 위한 인증 모델 연구",
+    "a": "이고은, 홍다희, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2025,
+    "d": "2025.05",
+    "t": "감정 분석을 활용한 개인 맞춤형 AI 클린봇",
+    "a": "이우열, 송희준, 장한빈, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2025,
+    "d": "2025.04",
+    "t": "ExpressPQDelivery: Toward Efficient and Immediately Deployable Post-Quantum Key Delivery for Web-of-Things",
+    "a": "Jane Kim, Jung-Hun Kang, Hyunwoo Lee, Seung-Hyun Seo",
+    "v": "WWW 2025 (The ACM Web Conference)",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": true,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2025,
+    "d": "2025.03",
+    "t": "A Blockchain-Based Electric Vehicle Charging Cooperation Model",
+    "a": "Soojin Lee, Seung-Hyun Seo, Kyubyung Kang, Qin Hu",
+    "v": "IEEE Transactions on Vehicular Technology",
+    "k": [
+      "mobility"
+    ],
+    "if": "6.8",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2025,
+    "d": "2025.02",
+    "t": "A Survey on Directed Acyclic Graph-Based Blockchain in Smart Mobility",
+    "a": "Yuhao Bai, Soojin Lee, Seung-Hyun Seo",
+    "v": "Sensors",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2025,
+    "d": "2025.01",
+    "t": "Quantum circuit designs of efficient squaring",
+    "a": "Seong-Min Cho, Changyeol Lee, Seung-Hyun Seo",
+    "v": "Quantum Information Processing",
+    "k": [
+      "quantum"
+    ],
+    "if": "2.2",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2024,
+    "d": "2024.12",
+    "t": "사이버보안에 활용되는인공지능알고리즘의 FPGA 최적화 연구동향",
+    "a": "이규섭, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "효율적인 전기차 충전을 위한 블록체인 기반 전기차 충전소 협력 모델",
+    "a": "이수진, 서승현",
+    "v": "대한전자공학회 추계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "임베디드환경에서의 PQC인증서 전송 오버헤드 분석",
+    "a": "김제인, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "멀티 로봇 시스템을 위한 블록체인 기반 리더 로봇 선정 모델 설계",
+    "a": "이수진, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "V2X 환경에서 CBOR 인코딩을 활용한 Partial Hybrid 인증서 사이즈 최적화 연구",
+    "a": "강정훈, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "ROS 기반 로봇 통신의 신뢰성 향상을 위한 연구 동향 조사",
+    "a": "박가을, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "로봇 네트워크에서 블록체인 기반 데이터 공유 모델 동향",
+    "a": "이고은, 홍다희, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "로봇 시스템 모니터링 연구 동향",
+    "a": "지찬웅, 박가을,이수진, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.11",
+    "t": "T-depth 및 KQ_T 측면 효율적인 양자 제곱 회로 설계",
+    "a": "조성민, 이창열, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2024,
+    "d": "2024.09",
+    "t": "Exclusively in-store: Acoustic location authentication for stationary business devices",
+    "a": "Sungbin Park, Changbae Seo, Xueqiang Wang, Yeonjoon Lee, Seung-Hyun Seo",
+    "v": "Journal of Network and Computer Applications",
+    "k": [
+      "embedded"
+    ],
+    "if": "7.7",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.09",
+    "t": "Remote ID의 프라이버시 노출을 고려한 드론 식별 정보 보호기법 연구 동향",
+    "a": "강정훈, 서승현",
+    "v": "정보보호학회 충청지부학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.09",
+    "t": "양자 컴퓨팅 발전을 위한양자 컴퓨팅 주요 기술 동향",
+    "a": "이고은, 홍다희, 조성민",
+    "v": "정보보호학회 충청지부학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.09",
+    "t": "그린워싱 방지를 위한 DID 기반 친환경 마크 인증 모델 연구",
+    "a": "윤동현,지찬웅,박가을,이수진,서승현",
+    "v": "정보보호학회 충청지부학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2024,
+    "d": "2024.08",
+    "t": "A study of V2V certificate Management for PQC migration",
+    "a": "강정훈, 이수진, 서승현",
+    "v": "WISA 2024",
+    "k": [
+      "pqc",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2024,
+    "d": "2024.07",
+    "t": "Quantum rectangular MinRank attack on multi-layer UOV signature schemes",
+    "a": "Seong-Min Cho, Seung-Hyun Seo",
+    "v": "Scientific Reports",
+    "k": [
+      "quantum",
+      "pqc"
+    ],
+    "if": "3.8",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "AnonymousTollPass: A Blockchain-Based Privacy-Preserving Electronic Toll Payment Model",
+    "a": "Jane Kim, Soojin Lee, CahanYeob Yoon, Seung-Hyun Seo",
+    "v": "CMC-Computers Materials & Continua",
+    "k": [
+      "mobility"
+    ],
+    "if": "2.1",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "Quantum circuit designs of efficient squaring",
+    "a": "Changyeol Lee, Seong-Min Cho, Seung-Hyun Seo",
+    "v": "SVCC",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "On the quantum resource estimation of Grover for searching vectors in quantum sieve",
+    "a": "Seong-Min Cho, Changyeol Lee, Seung-Hyun Seo",
+    "v": "SVCC",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "큰 수에 대한 모듈러 연산에 효율적인 Barret Reduction 양자 회로 구현",
+    "a": "이창열, 장건, 조성민, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "양자 NTT 회로 최적화 구현",
+    "a": "조성민, 이창열, 장건, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "quantum",
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.06",
+    "t": "양자 컴퓨팅 신뢰성 향상을 위한 양자 상태 제어 및 측정 기술 동향",
+    "a": "이고은, 홍다희, 조성민, 서승현",
+    "v": "한국정보보호학회 하계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2024,
+    "d": "2024.05",
+    "t": "프라이버시 보호를 위한 PUF 기반의 드론 식별 시스템",
+    "a": "박가을, 지찬웅, 김동준, 서승현",
+    "v": "한국정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2024,
+    "d": "2024.02",
+    "t": "Sparse 구조의 다변수 이차식 기반 서명에 대한 안전성 분석",
+    "a": "조성민, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2024,
+    "d": "2024.02",
+    "t": "FPGA를 사용한 radix-2 16 points FFT 알고리즘 가속기 구현",
+    "a": "이규섭, 조성민, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2023,
+    "d": "2023.12",
+    "t": "Anonymous Drone Swarm Identification Considering Dynamic Flight Plan",
+    "a": "이수진, 서승현",
+    "v": "MobiSec",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.12",
+    "t": "TLS 프로토콜의 PQC 마이그레이션 연구현황",
+    "a": "강정훈, 김제인, 이규섭, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.12",
+    "t": "양자 알고리즘을 통한 Sieve 알고리즘 가속화 연구 동향",
+    "a": "조성민, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.12",
+    "t": "양자 역학 특성을 활용한 양자 암호 동향",
+    "a": "이창열, 장건, 차정현, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.11",
+    "t": "FALCON 전자서명 알고리즘의 최적화 동향",
+    "a": "이규섭, 조성민, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.11",
+    "t": "쇼어 알고리즘 구현 최적화 동향",
+    "a": "이창열, 조성민, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.11",
+    "t": "효율적인 PQC TLS 통신을 위한 인증서 압축 알고리즘 분석",
+    "a": "강정훈, 김제인, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2023,
+    "d": "2023.10",
+    "t": "Efficient Remote Identification for Drone Swarms",
+    "a": "Kang-Moon Seo, Jane Kim, Soojin Lee, Junwoo Kwon, Seung-Hyun Seo",
+    "v": "CMC-Computers Materials & Continua",
+    "k": [
+      "embedded"
+    ],
+    "if": "3.1",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2023,
+    "d": "2023.10",
+    "t": "전기차 전과정평가를 위한 DID 기반 차량부품 데이터수집 모델 연구",
+    "a": "권준우, 이수진, 김제인, 서승현",
+    "v": "정보처리학회논문지: 컴퓨터 및 통신 시스템",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.09",
+    "t": "NIST PQC 전자서명 추가 공모전 동향",
+    "a": "김제인, 조성민, 강정훈, 서승현",
+    "v": "정보보호학회 충청지부학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.09",
+    "t": "통신 효율성 개선을 위한 TLS 프로토콜 최신 동향",
+    "a": "지찬웅, 윤동현, 강정훈, 서승현",
+    "v": "정보보호학회 충청지부학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2023,
+    "d": "2023.08",
+    "t": "A Blockchain-Based Mobile Crowdsensing and Its Incentive Mechanism",
+    "a": "장얀, 백우호, 이수진, Ming Li, 서승현",
+    "v": "WISA",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2023,
+    "d": "2023.07",
+    "t": "블록체인 기반 공유 전동킥보드 이용자 관리 모델",
+    "a": "이수진, 박민정, 김나희, 서승현",
+    "v": "정보처리학회논문지: 컴퓨터 및 통신 시스템",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "The core nodes identification method through adjustable network topology information",
+    "a": "Xuemei Wang, Seung-Hyun Seo, Changda Wang",
+    "v": "APNet",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "FPGA를 활용한 Number Theoretic Transform 연산의 최적화 동향",
+    "a": "이규섭, 조성민, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "TTA 표준 양자내성암호 HiMQ 안전성 분석",
+    "a": "조성민, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "데이터 공유 측면에서 블록체인 기반 디지털 트윈 설계를 위한 고려사항 분석",
+    "a": "이수진, 김제인, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "양자 컴퓨터에서의 가산기 회로 최적화 동향",
+    "a": "이창열, 차정현, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.06",
+    "t": "추적 가능한 링 서명을 활용한 차량 프라이버시를 제공하는 블록체인 기반 톨 티켓 모델",
+    "a": "김제인, 이수진, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "CNN 모델 기반의 공유 전동킥보드 주차 판단 시스템 구현",
+    "a": "박민정, 황성업, 김나희, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "FPGA를 사용한 radix-2 16-points FFT 알고리즘 가속기 구현",
+    "a": "이규섭, 조성민, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "OpenCV를 활용한 타브 악보 인식 시스템",
+    "a": "이민석, 김승우, 최혁규, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "공공 DB 기반의 식당 대기 시간 예측 모델",
+    "a": "한양원, 양승진, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "드론 하드웨어 고유특성을 이용한 식별 및 인증 기술 연구 동향",
+    "a": "강정훈, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "모바일 크라우드센싱 시스템을 위한 진실 탐지 응용 동향 분석",
+    "a": "장얀, 백우호, 이명, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2023,
+    "d": "2023.05",
+    "t": "양자 키 분배 간 양자내성암호 접목 사례 동향",
+    "a": "차정현, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "quantum",
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2023,
+    "d": "2023.02",
+    "t": "다변수 이차식 기반 전자서명 기법의 연구 동향",
+    "a": "조성민, 차정현, 서승현",
+    "v": "정보보호학회지 : 양자내성암호와 부채널분석",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.11",
+    "t": "DID 기반 전기차 전과정평가를 위한 차량부품 데이터수집 모델",
+    "a": "권준우, 김제인, 이수진, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.11",
+    "t": "블록체인 기반의 시민 참여형 공유 전동킥보드 관리 서비스 모델 연구",
+    "a": "박민정, 김나희, 이수진, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.11",
+    "t": "연합 학습에 대한 포이즌 공격 동향 분석",
+    "a": "백우호, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.11",
+    "t": "Hash 기반 PQC 알고리즘의 FPGA 최적화 기술 현황",
+    "a": "이규섭, 조성민, 서창배, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.06",
+    "t": "분산ID 기반의 제품보증서 발급 및 관리 모델 연구",
+    "a": "이수진, 권준우, 김제인, 서승현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.06",
+    "t": "자율주행차량 보안안전 기술 연구 동향",
+    "a": "김제인, 박성빈, 서승현, 이연준",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.06",
+    "t": "생애주기형 분산ID 서비스 모델 연구",
+    "a": "권준우, 김제인, 이수진, 서승현, 이강효, 박소현",
+    "v": "정보보호학회 하계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.05",
+    "t": "메타버스에서 모션인식을 활용한 사용자 인증방식",
+    "a": "이창열, 이진현, 차정현, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.05",
+    "t": "딥러닝을 이용한 보급형 페트병 분리수거 시스템",
+    "a": "김규한, 박상철, 신민석, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.05",
+    "t": "일조량에 따라 빛의 세기를 자동 조절하는 스마트 팜용 LED",
+    "a": "안심정진, 석의태, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2022,
+    "d": "2022.05",
+    "t": "전자출결시스템을 위한 SOUND-QR 인증 방안",
+    "a": "강정훈, 심현석, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2022,
+    "d": "2022.02",
+    "t": "Public Participation Consortium Blockchain for Smart City Governance",
+    "a": "Yuhao Bai, Qin Hu, Seung-Hyun Seo, Kyubyung Kang, John Lee",
+    "v": "IEEE Internet of Things Journal",
+    "k": [
+      "mobility"
+    ],
+    "if": "10.6",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2022,
+    "d": "2022.02",
+    "t": "Design of a Two Layered Blockchain-based Reputation System in Vehicular Networks",
+    "a": "Soojin Lee, Seung-Hyun Seo",
+    "v": "IEEE Transactions on Vehicular Technology",
+    "k": [
+      "mobility"
+    ],
+    "if": "6.8",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "ic",
+    "y": 2022,
+    "d": "2022.02",
+    "t": "Multivariate Quadratic Solver in GF(31) with Grover's Algorithm",
+    "a": "Seong-Min Cho, Aeyoung Kim, Seung-Hyun Seo",
+    "v": "ICEIC",
+    "k": [
+      "quantum",
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.11",
+    "t": "블록체인 기반 분산신원증명의 이해와 서비스 적용 사례",
+    "a": "권준우, 서승현, 이강효, 박소현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.11",
+    "t": "SMART-MC의 키 관리 및 데이터 보안 시스템",
+    "a": "이규섭, 서창배, 조성민, 장지웅, 서승현",
+    "v": "통신학회 추계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.11",
+    "t": "효율적인 GF(2^n) 곱셈 양자 회로",
+    "a": "조성민, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.11",
+    "t": "COVID-19 백신접종증명서 해외 연계를 위한 분산신원증명 VC 제안",
+    "a": "권준우, 김제인, 서승현, 이강효, 박소현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2021,
+    "d": "2021.10",
+    "t": "A Privacy-Preserving Payment Model for EV Charging",
+    "a": "Jane Kim, Soojin Lee, Seung-Hyun Seo",
+    "v": "WISA",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2021,
+    "d": "2021.10",
+    "t": "Echo-Guard: Acoustic-Based Anomaly Detection System for Smart Manufacturing Environments",
+    "a": "Changbae Seo, Gyu Sup Lee, Yeonjoon Lee, Seung-Hyun Seo",
+    "v": "WISA",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2021,
+    "d": "2021.07",
+    "t": "Two-Factor Device DNA-based Fuzzy Vault for Industrial IoT Device Security",
+    "a": "Eungi Hong, Sangjae Lee, Mi-Kyung Oh, Seung-Hyun Seo",
+    "v": "IEEE Access",
+    "k": [
+      "embedded"
+    ],
+    "if": "3.9",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2021,
+    "d": "2021.06",
+    "t": "다변수 이차식 기반 서명 기법 Rainbow의 공격 기법 및 보안강도 분석",
+    "a": "조성민, 김제인, 서승현",
+    "v": "정보보호학회논문지 2021년 6월호",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.05",
+    "t": "양자 소프트웨어 시뮬레이터 비교 및 분석",
+    "a": "김제인, 조성민, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2021,
+    "d": "2021.05",
+    "t": "얼굴인식을 활용한 온라인 수업 집중도 분석 시스템",
+    "a": "이규섭, 황인호, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2021,
+    "d": "2021.03",
+    "t": "Quantum Modular Adder over GF(2^n-1) without Saving the Final Carry",
+    "a": "Aeyoung Kim, Seong-Min Cho, Chang-Bae Seo, Sokjoon Lee, Seung-Hyun Seo",
+    "v": "MDPI Applied Sciences",
+    "k": [
+      "quantum"
+    ],
+    "if": "2.7",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2020,
+    "d": "2020.11",
+    "t": "Quantum Modular Multiplication",
+    "a": "Seong-Min Cho, Aeyoung Kim, Dooho Choi, Byung-Soo Choi, Seung-Hyun Seo",
+    "v": "IEEE Access",
+    "k": [
+      "quantum"
+    ],
+    "if": "3.9",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2020,
+    "d": "2020.07",
+    "t": "PCA-CIA Ensemble-based Feature Extraction for Bio-Key Generation",
+    "a": "Aeyoung Kim, Changda Wang, Seung-Hyun Seo",
+    "v": "KSII Transactions on Internet and Information Systems",
+    "k": [],
+    "if": "1.5",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2020,
+    "d": "2020.05",
+    "t": "FSR Array 마우스 패드를 이용한 사용자 인증 시스템",
+    "a": "권승호, 김태연, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2020,
+    "d": "2020.05",
+    "t": "GPS-Spoofing을 이용한 Anti-Drone",
+    "a": "권준우, 오형석, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2020,
+    "d": "2020.05",
+    "t": "스마트 컨트랙트를 활용한 공유숙박 서비스",
+    "a": "유지성, 김제인, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2020,
+    "d": "2020.04",
+    "t": "자동차보험용 스마트 컨트랙트를 위한 사고정보 기반 신뢰도 산정 모델",
+    "a": "이수진, 김애영, 서승현",
+    "v": "정보처리학회논문지: 컴퓨터 및 통신 시스템",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2020,
+    "d": "2020.04",
+    "t": "드론 보안에 적용된 암호 기술 현황",
+    "a": "조성민, 서승현",
+    "v": "정보보호학회지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2020,
+    "d": "2020.02",
+    "t": "Random Number Generator Using Sensors for Drone",
+    "a": "Seong-Min Cho, Eungi Hong, Seung-Hyun Seo",
+    "v": "IEEE Access",
+    "k": [
+      "embedded"
+    ],
+    "if": "3.9",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2019,
+    "d": "2019.11",
+    "t": "ProjectQ로 설계한 양자 Carry-Sum Adder",
+    "a": "서창배, 이재홍, 조성민, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "quantum"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2019,
+    "d": "2019.11",
+    "t": "로컬 원데이 메시지 블록체인을 활용한 차량 평판 시스템 설계",
+    "a": "이수진, 서승현",
+    "v": "정보보호학회 동계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2019,
+    "d": "2019.10",
+    "t": "A Comparison of NIST 2nd Round Candidates’ MQ-based Signature Schemes",
+    "a": "백우호, 김애영, 서승현",
+    "v": "ICTC",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2019,
+    "d": "2019.08",
+    "t": "8비트 마이크로컨트롤러 유닛 상에서 Rainbow 최적화 구현 및 분석",
+    "a": "홍은기, 조성민, 김애영, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2019,
+    "d": "2019.05",
+    "t": "차량 네트워크에 적용한 블록체인 기반 평판 시스템에 관한 분석",
+    "a": "이수진, 김애영, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2019,
+    "d": "2019.05",
+    "t": "디바이스 상 측정되는 Wi-Fi 신호강도를 이용한 디바이스 DNA 생성 제안",
+    "a": "홍은기, 김제인, 오미경, 강유성, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2019,
+    "d": "2019.05",
+    "t": "IoT 및 모바일 기기에서의 센서를 활용한 난수발생기 현황",
+    "a": "조성민, 서승현",
+    "v": "정보처리학회 춘계학술대회",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2019,
+    "d": "2019.02",
+    "t": "이중요소를 이용한 상황인지 기반 드론 제어 메커니즘 설계",
+    "a": "오윤석, 김애영, 서승현",
+    "v": "정보보호학회논문지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2018,
+    "d": "2018.11",
+    "t": "블록체인을 적용한 자동차 보험 신뢰모델 설계",
+    "a": "이수진, 김애영, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "mobility"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kc",
+    "y": 2018,
+    "d": "2018.11",
+    "t": "드론 센서를 시드로 활용한 MQ 기반 서명 기법의 변수 생성 방안",
+    "a": "조성민, 홍은기, 김애영, 서승현",
+    "v": "정보처리학회 추계학술대회",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2018,
+    "d": "2018.07",
+    "t": "IoT 오픈 플랫폼 암호기술 현황 및 보안 요구사항 분석",
+    "a": "최정인, 오윤석, 김도원, 최은영, 서승현",
+    "v": "정보처리학회논문지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2018,
+    "d": "2018.05",
+    "t": "Two-Factor Fuzzy Commitment for Unmanned IoT Devices Security",
+    "a": "Dooho Choi, Seung-Hyun Seo, Yoon-Seok Oh, Yousung Kang",
+    "v": "IEEE Internet of Things Journal",
+    "k": [
+      "embedded"
+    ],
+    "if": "10.6",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2018,
+    "d": "2018.04",
+    "t": "A Lightweight Encryption Method for Privacy Protection in Surveillance Videos",
+    "a": "Xing Zhang, Seung-Hyun Seo, Changda Wang",
+    "v": "IEEE Access",
+    "k": [],
+    "if": "3.9",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2018,
+    "d": "2018.03",
+    "t": "이중 터치를 이용한 보안 키패드 제안 및 구현",
+    "a": "송진석, 정영우, 최정인, 서승현",
+    "v": "정보처리학회논문지",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2017,
+    "d": "2017.12",
+    "t": "The Congestion Control Model for Unmanned Aircraft System Traffic Management",
+    "a": "Jung-In Choi, Seung-Hyun Seo, Taenam Cho",
+    "v": "Advances in Computer Science and Ubiquitous Computing",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2017,
+    "d": "2017.12",
+    "t": "The Congestion Control Model for Unmanned Aircraft System Traffic Management",
+    "a": "최정인, 서승현, 조태남",
+    "v": "CUTE",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2017,
+    "d": "2017.09",
+    "t": "Secure Utilization of Beacons and UAVs in Emergency Response Systems for Building Fire Hazard",
+    "a": "Seung-Hyun Seo, Jung-In Choi, Jinseok Song",
+    "v": "Sensors",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2017,
+    "d": "2017.08",
+    "t": "A Secure Shuffling Mechanism for White-Box Attack-Resistant Unmanned Vehicles",
+    "a": "Jongho Won, Seung-Hyun Seo, Elisa Bertino",
+    "v": "IEEE Transactions on Mobile Computing",
+    "k": [
+      "embedded",
+      "mobility"
+    ],
+    "if": "7.9",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2017,
+    "d": "2017.03",
+    "t": "Certificateless Cryptographic Protocols for Efficient Drone-Based Smart City Applications",
+    "a": "Jongho Won, Seung-Hyun Seo, Elisa Bertino",
+    "v": "IEEE Access",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "3.9",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2017,
+    "d": "2017.03",
+    "t": "U-헬스케어 서비스에서 스마트 기기들을 활용한 안전한 키교환 프로토콜",
+    "a": "박설하, 서승현, 이상호",
+    "v": "정보과학회논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2017,
+    "d": "2017.02",
+    "t": "Secure and Usable Bio-Passwords based on Confidence Interval",
+    "a": "Aeyoung Kim, Geunshik Han, Seung-Hyun Seo",
+    "v": "Journal of Internet Services and Information Security",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2016,
+    "d": "2016.07",
+    "t": "Preserving patient's anonymity for mobile healthcare system in IoT environment",
+    "a": "백승수, 서승현, 김승주",
+    "v": "International Journal of Distributed Sensor Networks",
+    "k": [
+      "embedded"
+    ],
+    "if": "2.3",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2016,
+    "d": "2016.06",
+    "t": "A Security Framework for a Drone Delivery Service",
+    "a": "서승현, 원종호, Elisa Bertino, 강유성, 최두호",
+    "v": "DroNet",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2016,
+    "d": "2016.05",
+    "t": "pCLSC-TKEM: a Pairing-free Certificateless Signcryption-tag Key Encapsulation Mechanism for a Privacy-Preserving IoT",
+    "a": "Seung-Hyun Seon, Jongho Won, Elisa Bertino",
+    "v": "Transaction on Data Privacy(Scoups)",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2015,
+    "d": "2015.11",
+    "t": "Scalable end-to-end security for advanced metering infrastructures",
+    "a": "Mohamed Nabeel, Xiaoyu Ding, 서승현, Elisa Bertino",
+    "v": "INFORMATION SYSTEMS",
+    "k": [
+      "embedded"
+    ],
+    "if": "3.7",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2015,
+    "d": "2015.07",
+    "t": "Preserving biosensor users' anonymity over wireless cellular network",
+    "a": "백승수, 서승현, 김승주",
+    "v": "ICUFN",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2015,
+    "d": "2015.06",
+    "t": "전방향 안전성을 만족하며 인증서 기반이 아닌 비대화형 키 교환 프로토콜",
+    "a": "이영경, 엄지은, 서승현, 이동훈",
+    "v": "정보보호학회논문지",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2015,
+    "d": "2015.04",
+    "t": "A Secure Communication Protocol for Drones and Smart Objects",
+    "a": "원종호, 서승현, Elisa Bertino",
+    "v": "ASIA CCS",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2015,
+    "d": "2015.03",
+    "t": "A Strengthened Android Signature Management Method",
+    "a": "Taenam Cho, Seung-Hyun Seo",
+    "v": "KSII TRANSACTIONS ON INTERNET AND INFORMATION SYSTEM",
+    "k": [
+      "embedded"
+    ],
+    "if": "1.5",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2015,
+    "d": "2015.02",
+    "t": "Effective Key Management in Dynamic Wireless Sensor Networks",
+    "a": "Seung-Hyun Seo, Jongho Won, Salmin Sultana, Elisa Bertino",
+    "v": "IEEE Transactions on Information Forensics and Security",
+    "k": [
+      "embedded"
+    ],
+    "if": "6.8",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2014,
+    "d": "2014.11",
+    "t": "A Remote Control System for Cloud-based Smart Homes Supporting Dynamic User Management",
+    "a": "조태남, 서승현, 유일선",
+    "v": "Journal of Internet Technology",
+    "k": [
+      "embedded"
+    ],
+    "if": "1.6",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2014,
+    "d": "2014.09",
+    "t": "An Efficient Certificateless Encryption for Secure Data Sharing in Public Clouds",
+    "a": "서승현, Mohamed Nabeel, Xiaoyu Ding, Elisa Bertino",
+    "v": "IEEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING",
+    "k": [
+      "pqc"
+    ],
+    "if": "8.9",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "sci",
+    "y": 2014,
+    "d": "2014.04",
+    "t": "Potential Privacy Vulnerabilities in Android Data Sharing between Applications",
+    "a": "조태남, 서승현, 김승주",
+    "v": "International Information Institute (Tokyo). Information",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2014,
+    "d": "2014.03",
+    "t": "POSTER: a pairing-free certificateless hybrid sign-cryption scheme for advanced metering infrastructures",
+    "a": "서승현, 원종호, Elisa Bertino",
+    "v": "CODASPY",
+    "k": [
+      "pqc",
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2014,
+    "d": "2014.02",
+    "t": "Detecting mobile malware threats to homeland security through static analysis",
+    "a": "서승현, Aditi Gupta, Asmaa Mohame Sallam, Elisa Bertino, 임강빈",
+    "v": "Journal of Network and Computer Applications",
+    "k": [
+      "embedded"
+    ],
+    "if": "8.7",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "ic",
+    "y": 2013,
+    "d": "2013.10",
+    "t": "Potential vulnerability analysis of mobile banking applications",
+    "a": "조태남, 김윤기, 한성봉, 서승현",
+    "v": "ICTC",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2013,
+    "d": "2013.10",
+    "t": "Encryption key management for secure communication in smart advanced metering infrastructures",
+    "a": "서승현, Xiaoyu Ding, Elisa Bertino",
+    "v": "SmartGridComm",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2013,
+    "d": "2013.07",
+    "t": "Vulnerabilities of Android Data Sharing and Malicious Application to Leaking Private Information",
+    "a": "조태남, 서승현, 김승주",
+    "v": "ICFUN",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2013,
+    "d": "2013.02",
+    "t": "An efficient certificateless cryptography scheme without pairing",
+    "a": "서승현, Mohamed Nabeel, Xiaoyu Ding, Elisa Bertino",
+    "v": "CODASPY",
+    "k": [
+      "pqc"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2012,
+    "d": "2012.08",
+    "t": "Mobile Malware Threats and Defenses for Homeland Security",
+    "a": "서승현, 임강빈, 유일선",
+    "v": "CD-ARES",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2012,
+    "d": "2012.07",
+    "t": "An Access Control Mechanism for Remote Control of Home Security System",
+    "a": "서승현, 조태남",
+    "v": "IMIS",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2012,
+    "d": "2012.07",
+    "t": "Analysis on Maliciousness for Mobile Applications",
+    "a": "서승현, 이동근, 임강빈",
+    "v": "IMIS",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2012,
+    "d": "2012.04",
+    "t": "Efficient Certificateless Proxy Signature Scheme with Provable Security",
+    "a": "서승현, 최규영, 황정연, 김승주",
+    "v": "Information Sciences",
+    "k": [
+      "pqc"
+    ],
+    "if": "8.1",
+    "top": false,
+    "q1": true
+  },
+  {
+    "kind": "ic",
+    "y": 2011,
+    "d": "2011.10",
+    "t": "An Improved Code-signing Scheme for Android Applications",
+    "a": "조태남, 서승현, 문남미",
+    "v": "ICCCT",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2011,
+    "d": "2011.05",
+    "t": "안전한 소셜 네트워크 서비스를 위한 그룹키 관리 프로토콜",
+    "a": "서승현, 조태남",
+    "v": "전자공학회논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2010,
+    "d": "2010.06",
+    "t": "통합인증센터를 활용한 일회용 가상카드번호 생성 및 결제 서비스 프로토콜",
+    "a": "서승현",
+    "v": "정보보호학회 논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "sci",
+    "y": 2008,
+    "d": "2008.07",
+    "t": "Identity-based universal designated multi-verifiers signature schemes",
+    "a": "서승현, 최규영, 황정연, 이동훈",
+    "v": "Computer Standards & Interfaces",
+    "k": [],
+    "if": "5",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2006,
+    "d": "2006.12",
+    "t": "Cryptanalysis of ID-based Authenticated Key Agreement Protocols from Bilinear Pairings",
+    "a": "심경아, 서승현",
+    "v": "ICICS",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2005,
+    "d": "2005.12",
+    "t": "Security Analysis of Password-Authenticated Key Agreement Protocols",
+    "a": "심경아, 서승현",
+    "v": "CANS",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2005,
+    "d": "2005.08",
+    "t": "A Schnorr-based Mediated Proxy Signature Scheme",
+    "a": "서승현, 이상호",
+    "v": "WACC",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2005,
+    "d": "2005.08",
+    "t": "A Mediated Proxy Signature Scheme with Fast Revocation for Electronic Transactions",
+    "a": "서승현, 심경아, 이상호",
+    "v": "TrustBus",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2005,
+    "d": "2005.06",
+    "t": "유연성을 가진 새로운 멀티-사인크립션 프로토콜",
+    "a": "서승현, 이상호",
+    "v": "정보과학회논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2005,
+    "d": "2005.04",
+    "t": "M-Commerce 사용자를 위한 효율적인 패스워드 기반 인증 및 키 교환 프로토콜",
+    "a": "박수진, 서승현, 이상호",
+    "v": "정보과학회논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2005,
+    "d": "2005.01",
+    "t": "Secure Mobile Agent Protocol for AMR System in Home Network Environments",
+    "a": "서승현, 조태남, 이상호",
+    "v": "ICOIN",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2004,
+    "d": "2004.05",
+    "t": "A Secure and Flexible Multi-signcryption Scheme",
+    "a": "서승현, 이상호",
+    "v": "ICCSA",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2003,
+    "d": "2003.06",
+    "t": "A Secure Mobile Agent System using Multi-Signature in Electronic Commerce",
+    "a": "서승현, 이상호",
+    "v": "HSI",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "ic",
+    "y": 2003,
+    "d": "2003.04",
+    "t": "New Nominative Proxy Signature Scheme for Mobile Communications",
+    "a": "서승현, 이상호",
+    "v": "International Conference in Security and Protection of Information",
+    "k": [
+      "embedded"
+    ],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "kj",
+    "y": 2002,
+    "d": "2002.06",
+    "t": "OTP-EKE: 원-타임-패스워드 기반의 키 교환 프로토콜",
+    "a": "서승현, 조태남, 이상호",
+    "v": "정보과학회논문지",
+    "k": [],
+    "if": "",
+    "top": false,
+    "q1": false
+  },
+  {
+    "kind": "pat",
+    "y": 2026,
+    "d": "2026.04",
+    "t": "Efficient Quantum Modular Multiplier and Quantum Modular Multiplication Method",
+    "a": "Seong-Min Cho, Seung-Hyun Seo, Aeyoung Kim",
+    "v": "US Patent US12608635B2",
+    "k": [
+      "quantum"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2025,
+    "d": "2025",
+    "t": "DNS에서의 X.509 인증서 분할 저장 및 재결합 기술",
+    "a": "김제인, 강정훈, 서승현",
+    "v": "출원 10-2025-0213553",
+    "k": [
+      "pqc"
+    ]
+  },
+  {
+    "kind": "sw",
+    "y": 2025,
+    "d": "2025",
+    "t": "ROS(로봇 운영체제)과 ROS2(로봇 운영체제 2) 간 보안 통신을 위한 브릿지 시스템",
+    "a": "서승현, 박가을",
+    "v": "SW 등록 2025.11",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "sw",
+    "y": 2025,
+    "d": "2025",
+    "t": "ROS2(로봇 운영체제 2) 에서 PQC(양자내성암호)사용을 위한 확장 보안 시스템",
+    "a": "서승현, 지찬웅",
+    "v": "SW 등록 2025.12",
+    "k": [
+      "pqc",
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2024,
+    "d": "2024",
+    "t": "효율성이 향상된 양자 가산기 및 가산 방법",
+    "a": "서창배, 조성민, 서승현, 김애영",
+    "v": "등록 10-2658003",
+    "k": [
+      "quantum"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2024,
+    "d": "2024",
+    "t": "T-depth 측면 효율적인 양자 제곱 연산 회로의 설계 방법",
+    "a": "조성민, 서승현",
+    "v": "출원 10-2023-0157828",
+    "k": [
+      "quantum"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2024,
+    "d": "2024",
+    "t": "지능형 차량 네트워크를 위한 블록체인 네트워크 신뢰성 검증 시스템 및 방법",
+    "a": "이수진, 서승현",
+    "v": "출원 10-2024-0167546",
+    "k": [
+      "mobility"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2022,
+    "d": "2022",
+    "t": "스마트 컨트랙트를 이용한 사고정보 신뢰도 기반 보험금 지급 시스템 및 방법",
+    "a": "이수진, 김애영, 서승현",
+    "v": "등록 10-2479293",
+    "k": [
+      "mobility"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2022,
+    "d": "2022",
+    "t": "마우스 패드에 구비된 압력 센서 어레이를 이용한 사용자 인증 시스템 및 방법",
+    "a": "김태연, 권승호, 서승현, 조성민",
+    "v": "등록 10-2479329",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2022,
+    "d": "2022",
+    "t": "실시간 온라인 수업 집중도 분석 시스템",
+    "a": "이규섭, 황인호, 조성민, 서승현",
+    "v": "등록 10-2479329 B1",
+    "k": []
+  },
+  {
+    "kind": "pat",
+    "y": 2021,
+    "d": "2021",
+    "t": "효율적인 양자 모듈러 곱셈기 및 양자 모듈러 곱셈 방법",
+    "a": "조성민, 서승현, 김애영",
+    "v": "등록 10-2204081",
+    "k": [
+      "quantum"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2021,
+    "d": "2021",
+    "t": "효율적인 양자 모듈러 곱셈기 및 양자 모듈러 곱셈 방법",
+    "a": "조성민, 서승현, 김애영",
+    "v": "등록 10-2214836",
+    "k": [
+      "quantum"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2020,
+    "d": "2020",
+    "t": "다변수 이차식 서명 기법을 위한 생체인식 기반 키 생성 방법",
+    "a": "김애영, 서승현",
+    "v": "등록 10-2181904",
+    "k": [
+      "pqc"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2020,
+    "d": "2020",
+    "t": "드론 센서 기반 진난수 생성 방법 및 장치",
+    "a": "조성민, 서승현",
+    "v": "등록 10-2199808",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2018,
+    "d": "2018",
+    "t": "드론의 상태 확인 방법",
+    "a": "서승현, 이영경",
+    "v": "등록 10-1827101",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2018,
+    "d": "2018",
+    "t": "터치 스크린이 구비된 디바이스에서 사용자 입력 처리 방법",
+    "a": "서승현, 송진석",
+    "v": "등록 10-1836625",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2013,
+    "d": "2013",
+    "t": "모바일 악성 행위 어플리케이션 탐지 시스템 및 방법",
+    "a": "서승현, 이동근",
+    "v": "등록 10-1324691",
+    "k": [
+      "embedded"
+    ]
+  },
+  {
+    "kind": "pat",
+    "y": 2013,
+    "d": "2013",
+    "t": "어플리케이션 보안 시스템 및 방법",
+    "a": "서승현, 이동근, 조태남, 문남미",
+    "v": "등록 10-1324693",
+    "k": []
+  }
+]

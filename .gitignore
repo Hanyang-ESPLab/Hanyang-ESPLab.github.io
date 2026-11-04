@@ -1,0 +1,6 @@
+# build caches and machine-specific files
+_cache/
+__pycache__/
+.omc/
+files.json
+.DS_Store

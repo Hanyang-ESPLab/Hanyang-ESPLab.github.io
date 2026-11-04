@@ -1,0 +1,127 @@
+{
+  "img": "images/88957f83113b.jpg",
+  "areas": [
+    "Embedded System Security",
+    "Design of Intelligent Security Mechanism",
+    "IoT (Internet of Things) Security",
+    "Blockchain",
+    "Post Quantum Cryptography & Quantum Algorithms"
+  ],
+  "career": [
+    "Professor (2020-present), Hanyang University ERICA, Ansan, Korea",
+    "Associate professor (2017-2020), Hanyang University ERICA, Ansan, Korea",
+    "Assistant professor (2015-2017), Korea University Sejong, Sejong, Korea",
+    "Research professor (2014-2015), Korea University School of Cybersecurity, Seoul, Korea",
+    "Post-doctoral researcher (2012-2014), Purdue University, Indiana, USA",
+    "Senior researcher (2010-2012), Korea Internet and Security Agency, Seoul, Korea",
+    "Researcher (2006-2010), Financial Security Agency, Seoul, Korea"
+  ],
+  "education": [
+    "Ph.D. (2006) Computer Science & Information Security, Ewha Womans University, Korea (Advisor: Prof. Sang-Ho Lee)",
+    "M.S. (2002) Computer Science & Information Security, Ewha Womans University, Korea (Advisor: Prof. Sang-Ho Lee)",
+    "B.S. (2000) Mathematics, Ewha Womans University, Korea"
+  ],
+  "awards": [
+    {
+      "y": "2025.12",
+      "ko": "2025 최정예 정보보호 전문인력 양성 교육 우수강사상, 한국인터넷진흥원",
+      "en": "Excellent Instructor Award, Elite Security Talent Training, KISA"
+    },
+    {
+      "y": "2025.07",
+      "ko": "2025학년도 1학기 IC-PBL 및 IC-PBL+ 콘테스트 최우수상 (하이브리드 양자 암호)",
+      "en": "Grand Prize, IC-PBL Contest (Hybrid Quantum Cryptography), Hanyang University ERICA"
+    },
+    {
+      "y": "2024.12",
+      "ko": "한국인터넷진흥원 K-shield 올해의 우수 강사",
+      "en": "K-shield Instructor of the Year, KISA"
+    },
+    {
+      "y": "2024",
+      "ko": "The 30th Network Security Conference Korea\n(2024 과학기술정보통신부 장관 표창 우수연구자)",
+      "en": "The 30th Network Security Conference Korea\n(2024 과학기술정보통신부 장관 표창 우수연구자)"
+    },
+    {
+      "y": "2023.12",
+      "ko": "정보처리학회 창립 30주년 ICT 분야 학문 및 산업발전 기여",
+      "en": "Contribution to ICT Research and Industry, KIPS 30th Anniversary"
+    },
+    {
+      "y": "2023",
+      "ko": "Conference on Information Security and Cryptography-Summer 2023 (CISC-S'23)\n(2023 한국정보보호학회 하계학술대회 차세대 우수 여성과학자상)",
+      "en": "Conference on Information Security and Cryptography-Summer 2023 (CISC-S'23)\n(2023 한국정보보호학회 하계학술대회 차세대 우수 여성과학자상)"
+    },
+    {
+      "y": "2023",
+      "ko": "Conference on Information Security and Cryptography-Summer 2023 (CISC-S'23) Best Paper Award\n(2023 한국정보보호학회 하계학술대회 우수논문상(정보보호학회 회장상))",
+      "en": "Conference on Information Security and Cryptography-Summer 2023 (CISC-S'23) Best Paper Award\n(2023 한국정보보호학회 하계학술대회 우수논문상(정보보호학회 회장상))"
+    },
+    {
+      "y": "2023",
+      "ko": "Conference on Information Security and Cryptography-Winter 2023 (CISC-W'23) Best Paper Award\n(2023 한국정보보호학회 동계학술대회 우수논문상(한국전자통신연구원 원장상))",
+      "en": "Conference on Information Security and Cryptography-Winter 2023 (CISC-W'23) Best Paper Award\n(2023 한국정보보호학회 동계학술대회 우수논문상(한국전자통신연구원 원장상))"
+    },
+    {
+      "y": "2023",
+      "ko": "Annual Spring Conference of KIPS 2023 (ASK 2023) Best Paper Award\n(2023 한국정보처리학회 춘계학술대회 우수논문상)",
+      "en": "Annual Spring Conference of KIPS 2023 (ASK 2023) Best Paper Award\n(2023 한국정보처리학회 춘계학술대회 우수논문상)"
+    },
+    {
+      "y": "2023",
+      "ko": "Annual Conference of KIPS 2023 (ASK 2023) Best Paper Award\n(2023 한국정보처리학회 추계학술대회 우수논문상)",
+      "en": "Annual Conference of KIPS 2023 (ASK 2023) Best Paper Award\n(2023 한국정보처리학회 추계학술대회 우수논문상)"
+    },
+    {
+      "y": "2023",
+      "ko": "Annual Conference of KIPS 2023 (ASK 2023)\n(2023 한국정보처리학회 추계학술대회 공로상)",
+      "en": "Annual Conference of KIPS 2023 (ASK 2023)\n(2023 한국정보처리학회 추계학술대회 공로상)"
+    },
+    {
+      "y": "2023",
+      "ko": "KIPS 2023 운당학술상\n(2023 운당학술상 학생논문상)",
+      "en": "KIPS 2023 운당학술상\n(2023 운당학술상 학생논문상)"
+    },
+    {
+      "y": "2022",
+      "ko": "2022 Korea Cryptocontest Special Award\n(2022 국가암호공모전 특별상)",
+      "en": "2022 Korea Cryptocontest Special Award\n(2022 국가암호공모전 특별상)"
+    },
+    {
+      "y": "2021",
+      "ko": "WISA 2021 Best Paper Award\n(\"Echo-Guard : Acoustic-based Anomaly Detection System for Smart Manufacturing Environments\" 논문 수상)",
+      "en": "WISA 2021 Best Paper Award\n(\"Echo-Guard : Acoustic-based Anomaly Detection System for Smart Manufacturing Environments\" 논문 수상)"
+    },
+    {
+      "y": "2020",
+      "ko": "2020 Hanyang University ERICA Lecture Innovation Award\n(2020 한양대학교 ERICA 강의 혁신상)",
+      "en": "2020 Hanyang University ERICA Lecture Innovation Award\n(2020 한양대학교 ERICA 강의 혁신상)"
+    },
+    {
+      "y": "2020",
+      "ko": "2020 Korea Cryptocontest Special Award\n(2020 국가암호공모전 특별상)",
+      "en": "2020 Korea Cryptocontest Special Award\n(2020 국가암호공모전 특별상)"
+    },
+    {
+      "y": "2020",
+      "ko": "Conference on Information Security and Cryptography-Summer 2020 (CISC-S'20) Best Paper Award\n(2020 한국정보보호학회 하계학술대회 우수논문상(정보보호학회 회장상))",
+      "en": "Conference on Information Security and Cryptography-Summer 2020 (CISC-S'20) Best Paper Award\n(2020 한국정보보호학회 하계학술대회 우수논문상(정보보호학회 회장상))"
+    },
+    {
+      "y": "2020",
+      "ko": "Conference on Information Security and Cryptography-Winter 2020 (CISC-W'21) Best Paper Award\n(2021 한국정보보호학회 동계학술대회 우수논문상(정보보호학회 회장상))",
+      "en": "Conference on Information Security and Cryptography-Winter 2020 (CISC-W'21) Best Paper Award\n(2021 한국정보보호학회 동계학술대회 우수논문상(정보보호학회 회장상))"
+    },
+    {
+      "y": "2019",
+      "ko": "2019 Hanyang University ERICA Best Lecturer Award\n(2019 한양대학교 ERICA 강의 우수 교수상)",
+      "en": "2019 Hanyang University ERICA Best Lecturer Award\n(2019 한양대학교 ERICA 강의 우수 교수상)"
+    },
+    {
+      "y": "2018",
+      "ko": "Conference on Information Security and Cryptography-Summer 2018 (CISC-S'18) Best Paper Award\n(2018 한국정보보호학회 하계학술대회 우수논문상 (한국인터넷진흥원 원장상))",
+      "en": "Conference on Information Security and Cryptography-Summer 2018 (CISC-S'18) Best Paper Award\n(2018 한국정보보호학회 하계학술대회 우수논문상 (한국인터넷진흥원 원장상))"
+    }
+  ],
+  "fax": "+82-31-436-8152"
+}
