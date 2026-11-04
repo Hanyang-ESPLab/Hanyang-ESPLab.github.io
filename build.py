@@ -10,7 +10,8 @@ Data flow:
   Excel (LAB/...)               -> data/publications.json
   Google Sites (--sync-gs)      -> data/members|news|professor|about|talks.json + images/
   data/*.json + index.tpl.html  -> index.html + files.json (manifest of the images index.html uses)
-  index.html + images/          -> dist/ (full HTML document, images, .nojekyll; upload this folder to the host)
+  index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
+                                   to GitHub Pages through .github/workflows/pages.yml
 data/projects.json is maintained by hand. Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
 """
 import argparse, base64, hashlib, json, re, subprocess, sys
