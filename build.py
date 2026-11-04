@@ -12,7 +12,7 @@ Data flow:
   data/*.json + index.tpl.html  -> index.html + files.json (manifest of the images index.html uses)
   index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
                                    to GitHub Pages through .github/workflows/pages.yml
-data/projects.json is maintained by hand. Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
+data/projects.json and data/theme_overrides.json (manual research-theme assignment per paper) are maintained by hand. Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
 """
 import argparse, base64, hashlib, json, re, subprocess, sys
 from pathlib import Path
@@ -261,6 +261,11 @@ def main():
         "prof": load("professor", "run build.py --sync-gs"),
         "about": load("about", "run build.py --sync-gs"),
     }
+    overrides = {k.lower(): v for k, v in load("theme_overrides", "it is maintained by hand").items() if not k.startswith("_")}
+    for p in data["pubs"]:
+        hit = next((v for k, v in overrides.items() if p["t"].lower().startswith(k)), None)
+        if hit is not None:
+            p["k"] = hit
     imgs = sorted(used_images(data))
     (HERE / "files.json").write_text(json.dumps({f"images/{n}": str(IMG / n) for n in imgs}, indent=1))
     print("images", len(imgs), sum((IMG / n).stat().st_size for n in imgs) // 1024, "KB", file=sys.stderr)

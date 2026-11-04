@@ -1,0 +1,4 @@
+{
+  "_comment": "Manual research-theme assignment. Key: start of the paper title (case-insensitive). Value: list of theme keys (pqc, quantum, embedded, mobility) that REPLACES the keyword-based tags from build.py. Only papers listed here are affected.",
+  "Quantum security analysis of Module-LWE PQC": ["quantum"]
+}
