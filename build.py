@@ -265,6 +265,7 @@ def main():
         "news": load("news", "run build.py --sync-gs"),
         "prof": load("professor", "run build.py --sync-gs"),
         "about": load("about", "run build.py --sync-gs"),
+        "site": load("site", "it is maintained by hand ({\"hero\": {img, cap_ko, cap_en}})"),
     }
     overrides = {k.lower(): v for k, v in load("theme_overrides", "it is maintained by hand").items() if not k.startswith("_")}
     for p in data["pubs"]:
