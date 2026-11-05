@@ -1,8 +1,8 @@
 {
   "_": "Maintained by hand. hero.img: photo shown next to the lab name on the home page (a file under images/); cap_ko/cap_en: its caption.",
   "hero": {
-    "img": "images/a3a228d652f8.jpg",
-    "cap_ko": "Quantum KOREA 2024 전시 부스에서",
-    "cap_en": "ESP Lab booth at Quantum KOREA 2024"
+    "img": "images/cefc41f801d0.jpg",
+    "cap_ko": "WISA 2026 (2026.08, 제주)에서",
+    "cap_en": "ESP Lab at WISA 2026, Jeju (Aug 2026)"
   }
 }
