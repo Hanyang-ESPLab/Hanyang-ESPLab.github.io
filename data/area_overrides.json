@@ -1,0 +1,12 @@
+{
+  "_comment": "Manual research-area assignment. Key: start of the paper title (case-insensitive). Value: list of area keys (crypto, quantum, mobility) that REPLACES the title-keyword tags from build.py; [] leaves the paper out of every area. Only papers listed here are affected.",
+  "Quantum security analysis of Module-LWE PQC": [
+    "quantum"
+  ],
+  "그린워싱 방지를 위한 DID 기반 친환경 마크 인증 모델": [
+    "mobility"
+  ],
+  "마우스 패드에 구비된 압력 센서 어레이를 이용한 사용자 인증": [
+    "crypto"
+  ]
+}

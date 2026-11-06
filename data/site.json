@@ -1,8 +1,154 @@
 {
-  "_": "Maintained by hand. hero.img: photo shown next to the lab name on the home page (a file under images/); cap_ko/cap_en: its caption.",
+  "_": "Maintained by hand. hero: the home photo (a file under images/) and its caption. areas: the three research areas on the home and About pages; keep the keys crypto / quantum / mobility (papers and projects refer to them). featured: the papers under 대표 연구 on the home page; areas takes area keys, img is optional (a file under images/).",
   "hero": {
     "img": "images/cefc41f801d0.jpg",
-    "cap_ko": "WISA 2026 (2026.08, 제주)에서",
-    "cap_en": "ESP Lab at WISA 2026, Jeju (Aug 2026)"
-  }
+    "cap_ko": "WISA 2026 참가 · 제주, 2026년 8월",
+    "cap_en": "ESP Lab at WISA 2026 · Jeju, August 2026"
+  },
+  "areas": [
+    {
+      "key": "crypto",
+      "ko": "암호공학",
+      "en": "Cryptographic Engineering",
+      "card_ko": "실제 시스템에 적용할 수 있는 암호 프로토콜과 인증·키관리 기술을 설계하고 구현합니다.",
+      "card_en": "We design and implement cryptographic protocols and authentication and key-management techniques that work in real systems.",
+      "kw_ko": [
+        "보안 프로토콜",
+        "TLS·PKI",
+        "인증·키관리",
+        "암호 구현"
+      ],
+      "kw_en": [
+        "Security protocols",
+        "TLS/PKI",
+        "Authentication & key management",
+        "Cryptographic implementation"
+      ],
+      "desc_ko": "암호 기술을 실제 서비스와 시스템에 적용하기 위한 프로토콜과 구현 방법을 연구합니다. 인증과 키관리, TLS·PKI 기반 보안 통신을 중심으로 안전성뿐 아니라 성능, 호환성 및 운영 환경을 함께 고려합니다.",
+      "desc_en": "We study the protocols and implementation methods needed to apply cryptography to real services and systems. Centered on authentication, key management and TLS/PKI-based secure communication, the work weighs security together with performance, compatibility and operating conditions.",
+      "topics_ko": [
+        "인증·키 교환 및 키관리 프로토콜",
+        "TLS·PKI 기반 보안 통신과 하이브리드 인증서",
+        "시스템·네트워크 환경을 고려한 암호 선택과 암호 민첩성",
+        "자원이 제한된 기기를 위한 암호 구현 및 성능 평가"
+      ],
+      "topics_en": [
+        "Authentication, key exchange and key-management protocols",
+        "TLS/PKI-based secure communication and hybrid certificates",
+        "Algorithm selection and crypto-agility for given system and network conditions",
+        "Cryptographic implementation and performance evaluation for resource-constrained devices"
+      ]
+    },
+    {
+      "key": "quantum",
+      "ko": "양자보안",
+      "en": "Quantum Security",
+      "card_ko": "양자 알고리즘을 이용해 암호의 안전성을 분석하고, 양자내성암호의 구현과 전환 기술을 연구합니다.",
+      "card_en": "We analyze the security of cryptography with quantum algorithms and study how to implement and migrate to post-quantum cryptography.",
+      "kw_ko": [
+        "양자내성암호",
+        "양자 암호 분석",
+        "양자 회로",
+        "공격 자원 추정"
+      ],
+      "kw_en": [
+        "Post-quantum cryptography",
+        "Quantum cryptanalysis",
+        "Quantum circuits",
+        "Attack resource estimation"
+      ],
+      "desc_ko": "양자컴퓨팅이 암호의 안전성에 미치는 영향을 분석하고, 양자내성암호를 실제 시스템에 적용하기 위한 전환 기술을 연구합니다. 양자 알고리즘과 회로를 설계하고 공격에 필요한 자원을 추정하며, 양자내성암호의 구현·적용 과정에서 발생하는 문제를 분석합니다.",
+      "desc_en": "We analyze how quantum computing affects the security of cryptography and study the migration techniques needed to deploy post-quantum cryptography in real systems. We design quantum algorithms and circuits, estimate the resources an attack requires, and analyze the problems that arise when post-quantum cryptography is implemented and deployed.",
+      "topics_ko": [
+        "양자 알고리즘을 이용한 암호 안전성 분석",
+        "양자 산술 회로 설계와 공격 자원 추정",
+        "격자 기반·다변수 기반 암호의 양자 안전성 평가",
+        "양자내성암호 구현 및 프로토콜·인프라 전환"
+      ],
+      "topics_en": [
+        "Security analysis of cryptography with quantum algorithms",
+        "Quantum arithmetic circuit design and attack resource estimation",
+        "Quantum security evaluation of lattice-based and multivariate cryptography",
+        "Post-quantum cryptography implementation and protocol and infrastructure migration"
+      ]
+    },
+    {
+      "key": "mobility",
+      "ko": "지능형 모빌리티 보안",
+      "en": "Intelligent Mobility Security",
+      "card_ko": "드론·로봇·차량의 안전한 통신과 운용을 위한 인증, 접근제어 및 프라이버시 보호 기술을 연구합니다.",
+      "card_en": "We study authentication, access control and privacy protection for the safe communication and operation of drones, robots and vehicles.",
+      "kw_ko": [
+        "드론·로봇 보안",
+        "V2X 인증",
+        "기기 식별",
+        "프라이버시 보호"
+      ],
+      "kw_en": [
+        "Drone & robot security",
+        "V2X authentication",
+        "Device identification",
+        "Privacy protection"
+      ],
+      "desc_ko": "드론·로봇·차량과 이들이 연결되는 서비스의 보안 및 프라이버시를 연구합니다. 기기와 사용자 인증, 접근제어, 안전한 데이터 공유를 통해 이동체의 통신과 운용을 보호하고, 실제 환경의 자원·통신 제약을 고려한 보안 기술을 개발합니다.",
+      "desc_en": "We study the security and privacy of drones, robots and vehicles and of the services they connect to. Device and user authentication, access control and secure data sharing protect how these systems communicate and operate, with security techniques built for the resource and communication limits of real environments.",
+      "topics_ko": [
+        "드론 원격 식별·인증 및 프라이버시 보호",
+        "ROS2 기반 로봇 통신 보안과 접근제어",
+        "차량 통신(V2X) 인증 및 인증서 관리",
+        "블록체인 기반 전기차 충전·모빌리티 서비스의 안전한 데이터 공유",
+        "IoT 기기 특성과 주변 신호를 이용한 식별·인증"
+      ],
+      "topics_en": [
+        "Drone remote identification, authentication and privacy protection",
+        "ROS 2-based robot communication security and access control",
+        "Vehicular (V2X) authentication and certificate management",
+        "Blockchain-based secure data sharing for EV charging and mobility services",
+        "Identification and authentication of IoT devices from device traits and ambient signals"
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "name": "ExpressPQDelivery",
+      "venue": "WWW 2025",
+      "areas": [
+        "crypto",
+        "quantum"
+      ],
+      "url": "https://doi.org/10.1145/3696410.3714944",
+      "title_ko": "Web-of-Things 환경의 효율적인 PQC 키 전달",
+      "title_en": "Efficient post-quantum key delivery for the Web of Things",
+      "paper": "ExpressPQDelivery: Toward Efficient and Immediately Deployable Post-Quantum Key Delivery for Web-of-Things",
+      "desc_ko": "양자내성암호는 키와 서명이 크기 때문에 자원이 제한된 Web-of-Things 기기에서는 TLS 연결 지연이 크게 늘어납니다. ExpressPQDelivery는 서버의 PQ 키와 서명을 나누어 DNS 레코드에 미리 올려 두고 클라이언트가 가까운 리졸버에서 받아오도록 하여, 기존 프로토콜을 수정하지 않고도 TLS 1.3 기준 평균 27%, 256 KB RAM 보드에서는 34%의 지연을 줄였습니다.",
+      "desc_en": "Post-quantum keys and signatures are large, which makes TLS noticeably slower on resource-constrained Web-of-Things devices. ExpressPQDelivery splits a server's PQ key and signature across DNS records so that clients fetch them from a nearby resolver, cutting TLS 1.3 latency by 27% on average and by 34% on a 256 KB RAM board, without changing the underlying protocol."
+    },
+    {
+      "name": "",
+      "venue": "CHES 2025 (IACR TCHES)",
+      "areas": [
+        "quantum"
+      ],
+      "url": "https://doi.org/10.46586/tches.v2025.i4.437-462",
+      "title_ko": "실제 공격 비용을 고려한 Module-LWE 양자 안전성 분석",
+      "title_en": "Quantum security analysis of Module-LWE under practical attack costs",
+      "paper": "Quantum security analysis of Module-LWE PQC based on practical cost estimates",
+      "desc_ko": "격자 기반 양자내성암호의 기반 난제인 SVP(Shortest Vector Problem)를 푸는 고전-양자 하이브리드 공격 기법을 제시하고, 이를 위한 Grover 오라클을 최적화하여 설계했습니다. ML-KEM과 ML-DSA를 대상으로 큐비트 수, T 게이트 수, 회로 깊이를 산출하고 NIST 기준에 따라 양자 공격 복잡도를 평가한 결과, 고전 sieve 알고리즘 대비 15~27비트의 복잡도 감소를 보였습니다.",
+      "desc_en": "We present a classical–quantum hybrid attack on the Shortest Vector Problem (SVP), the hardness assumption underlying lattice-based PQC, together with an optimized Grover oracle for it. For ML-KEM and ML-DSA we derive the qubit count, T-gate count and circuit depth, evaluate the quantum attack complexity under NIST's criteria, and show a 15–27-bit reduction relative to the classical sieve algorithm."
+    },
+    {
+      "name": "pqRID",
+      "venue": "IEEE Internet of Things Journal 2026",
+      "areas": [
+        "mobility",
+        "quantum"
+      ],
+      "url": "https://doi.org/10.1109/JIOT.2025.3650221",
+      "title_ko": "드론 원격 식별의 익명성과 양자내성 인증",
+      "title_en": "Anonymous remote identification and post-quantum authentication for drones",
+      "paper": "pqRID: Compact, Anonymous Remote Identification and Post-Quantum Authentication for Drones",
+      "desc_ko": "드론은 Remote ID 규정에 따라 식별자와 위치를 평문으로 방송해야 하므로 비행 경로가 그대로 노출되며, 양자내성 서명은 Bluetooth·Wi-Fi 방송의 255바이트 제한을 넘습니다. pqRID는 비행 전에 발급한 가명 인증서로 식별과 양자내성 인증을 분리하여 두 문제를 함께 해결하며, 드론에 탑재한 Raspberry Pi 4B에서 인증 메시지 생성에 9 ms가 소요됨을 확인했습니다.",
+      "desc_en": "Remote ID rules make drones broadcast their identifier and position in plaintext, exposing flight paths, and post-quantum signatures exceed the 255-byte limit of Bluetooth and Wi-Fi broadcasts. pqRID decouples identification, done with pseudonym certificates issued before flight, from post-quantum authentication to solve both, and generates an authentication message in 9 ms on a drone-mounted Raspberry Pi 4B."
+    }
+  ]
 }

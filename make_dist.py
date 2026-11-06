@@ -10,8 +10,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 TITLE = "ESP Lab | 임베디드 보안 및 프라이버시 연구실"
-DESC = ("한양대학교 ERICA 임베디드 보안 및 프라이버시 연구실(ESP Lab). 양자내성암호(PQC) 전환, 양자 암호 분석, "
-        "임베디드·로봇 보안, 모빌리티·블록체인 보안을 연구합니다.")
+DESC = "한양대학교 ERICA 임베디드 보안 및 프라이버시 연구실(ESP Lab). 암호공학, 양자보안, 지능형 모빌리티 보안을 연구합니다."
 # What the viewer's skeleton used to provide; the page CSS assumes it ([hidden] drives the hash routing).
 RESET = ("<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}"
          "body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%}"

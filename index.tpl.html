@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: sticky nav + hash-routed pages following the Google Sites tree (home / about / research / professor / members / publications / news [incl. invited talks] / contact); home = lab name + photo hero, theme cards, latest news */
-/* Palette: warm white + charcoal; burgundy (--accent) for links, buttons and selected states; teal (--accent-2) for research tags and icons; gold (--signal) only for awards */
+/* Layout: sticky nav + hash-routed pages (home / about / research [projects] / professor / members / publications / news [incl. press coverage and invited talks] / contact); home = lab name + photo hero, the three research-area cards, featured papers, latest news, recruiting */
+/* Palette: warm white + charcoal; burgundy (--accent) for links, buttons and selected states; gold (--signal) only for awards. Each research area has its own colour: burgundy = cryptographic engineering, purple (--q) = quantum security, teal (--accent-2) = intelligent mobility security */
 :root {
   --bg: #faf9f6;
   --surface: #ffffff;
@@ -16,6 +16,8 @@
   --accent-soft: #f5e9ed;
   --accent-2: #286f6b;
   --accent-2-soft: #e3efed;
+  --q: #655080;
+  --q-soft: #ece8f1;
   --signal: #a87935;
   --tag-bg: #efede8;
   --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
@@ -32,7 +34,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #151619; --surface: #1d1f24; --ink: #e9e7e2; --muted: #a3a6ad; --line: #30333a;
-    --accent: #d98ea3; --accent-soft: #3b252d; --accent-2: #7fc6be; --accent-2-soft: #1e3836; --signal: #d9ad64; --tag-bg: #26282e;
+    --accent: #d98ea3; --accent-soft: #3b252d; --accent-2: #7fc6be; --accent-2-soft: #1e3836; --q: #b7a6d6; --q-soft: #2c2638; --signal: #d9ad64; --tag-bg: #26282e;
     --logo-filter: invert(1); color-scheme: dark;
     --award-bg: #3b3018; --award-fg: #e8c279; --paper-bg: #3a252e; --paper-fg: #e3a4b6;
     --talk-bg: #1d3533; --talk-fg: #8fd1c9; --project-bg: #2a2c31; --project-fg: #b6bac2;
@@ -41,7 +43,7 @@
 }
 :root[data-theme="dark"] {
   --bg: #151619; --surface: #1d1f24; --ink: #e9e7e2; --muted: #a3a6ad; --line: #30333a;
-  --accent: #d98ea3; --accent-soft: #3b252d; --accent-2: #7fc6be; --accent-2-soft: #1e3836; --signal: #d9ad64; --tag-bg: #26282e;
+  --accent: #d98ea3; --accent-soft: #3b252d; --accent-2: #7fc6be; --accent-2-soft: #1e3836; --q: #b7a6d6; --q-soft: #2c2638; --signal: #d9ad64; --tag-bg: #26282e;
   --logo-filter: invert(1); color-scheme: dark;
   --award-bg: #3b3018; --award-fg: #e8c279; --paper-bg: #3a252e; --paper-fg: #e3a4b6;
   --talk-bg: #1d3533; --talk-fg: #8fd1c9; --project-bg: #2a2c31; --project-fg: #b6bac2;
@@ -53,7 +55,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
-h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 button { font: inherit; color: inherit; }
 .wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .draft { background: var(--accent-soft); color: var(--muted); font-size: 12.5px; }
@@ -97,7 +99,8 @@ header.nav .mnav { display: none; }
 .hero .short { font-family: var(--font-display); font-size: clamp(42px, 6vw, 68px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-top: 12px; }
 .hero h1 { font-size: clamp(19px, 2.4vw, 25px); font-weight: 600; line-height: 1.35; margin-top: 8px; }
 .hero .en-name { font: 500 13px var(--font-mono); color: var(--muted); margin-top: 4px; }
-.hero p.lede { max-width: 54ch; margin: 18px 0 0; font-size: 16.5px; line-height: 1.75; }
+.hero .fields { margin: 22px 0 0; font-size: clamp(16px, 1.9vw, 18.5px); font-weight: 700; line-height: 1.5; }
+.hero p.lede { max-width: 54ch; margin: 8px 0 0; font-size: 16.5px; line-height: 1.75; }
 .cta { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
 .btn { display: inline-block; font-weight: 600; font-size: 14.5px; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
 .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
@@ -107,16 +110,22 @@ header.nav .mnav { display: none; }
 .hero .photo { aspect-ratio: 4 / 3; border-radius: 12px; border: 1px solid var(--line); }
 .hero figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
 
-/* theme cards */
-.themes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.theme { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; color: var(--ink); }
-.theme:hover { border-color: var(--accent); text-decoration: none; }
-.theme:hover h3 { color: var(--accent); }
-.theme .ico { width: 52px; height: 52px; border-radius: 12px; background: var(--accent-2-soft); display: grid; place-items: center; }
-.theme svg { width: 30px; height: 30px; stroke: var(--accent-2); fill: none; stroke-width: 1.6; }
-.theme h3 { font-size: 16.5px; font-weight: 600; }
-.theme p { margin: 0; font-size: 13.5px; color: var(--muted); }
-.theme .more { font-size: 13px; font-weight: 500; color: var(--accent); margin-top: auto; }
+/* research areas: every element that belongs to one area takes that area's colour pair */
+.a-crypto { --a: var(--accent); --a-soft: var(--accent-soft); }
+.a-quantum { --a: var(--q); --a-soft: var(--q-soft); }
+.a-mobility { --a: var(--accent-2); --a-soft: var(--accent-2-soft); }
+.atag { font-size: 11.5px; font-weight: 500; color: var(--a); background: var(--a-soft); border-radius: 999px; padding: 1px 9px; white-space: nowrap; }
+.atags { display: flex; flex-wrap: wrap; gap: 4px; }
+.themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.theme { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-width: 0; color: var(--ink); }
+.theme:hover { border-color: var(--a); text-decoration: none; }
+.theme .ico { width: 52px; height: 52px; border-radius: 12px; background: var(--a-soft); display: grid; place-items: center; margin-bottom: 8px; }
+.theme svg { width: 30px; height: 30px; stroke: var(--a); fill: none; stroke-width: 1.6; }
+.theme h3 { font-size: 19px; font-weight: 700; }
+.theme .en { font: 500 12px var(--font-mono); color: var(--a); }
+.theme p { margin: 8px 0 0; font-size: 14.5px; }
+.theme .kw { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.theme .more { font-size: 13.5px; font-weight: 500; color: var(--a); margin-top: auto; }
 
 /* news list */
 .newslist { padding: 4px 20px; }
@@ -166,23 +175,12 @@ a.newsrow:hover .txt { color: var(--accent); }
 .jcr.top10 { font-weight: 600; background: var(--award-bg); color: var(--award-fg); }
 .jif { font: 500 11px var(--font-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: 4px; padding: 0 6px; }
 
-/* research page */
-.theme-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 28px; padding: 24px; }
-.theme-detail + .theme-detail { border-top: 1px solid var(--line); }
-.theme-detail h3 { font-size: 18px; font-weight: 700; display: flex; gap: 12px; align-items: center; }
-.theme-detail h3 .ico { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-2-soft); display: grid; place-items: center; flex: none; }
-.theme-detail h3 svg { width: 24px; height: 24px; stroke: var(--accent-2); fill: none; stroke-width: 1.6; }
-.theme-detail p { margin: 10px 0 0; font-size: 15px; }
-.theme-detail ul { list-style: none; margin: 0; padding: 0; }
-.theme-detail li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
-.theme-detail li:last-child { border-bottom: 0; }
-.theme-detail li .v { font: 500 12px var(--font-mono); color: var(--muted); margin-left: 6px; }
-.theme-detail li .v.hi { color: var(--accent); font-weight: 600; }
+/* projects */
 .projlist { padding: 0 20px; }
 .proj { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .proj:last-child { border-bottom: 0; }
 .proj .t { font-weight: 600; font-size: 15px; }
-.proj .s { font-size: 13px; color: var(--muted); }
+.proj .atags { align-self: center; }
 .proj .ag { font: 500 12px var(--font-mono); color: var(--accent-2); text-align: right; white-space: nowrap; }
 .proj .p { font: 400 12px var(--font-mono); color: var(--muted); text-align: right; white-space: nowrap; }
 
@@ -220,11 +218,16 @@ a.newsrow:hover .txt { color: var(--accent); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 .interests { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .chip.static { cursor: default; background: var(--accent-2-soft); border-color: transparent; color: var(--accent-2); }
+.chip.static.core { background: var(--a-soft); color: var(--a); font-weight: 600; }
+.chip.static.plain { background: var(--tag-bg); color: var(--ink); }
+.prof .bio { margin: 14px 0 0; font-size: 15px; max-width: 74ch; }
+.prof .bio + .bio { margin-top: 8px; }
 .cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .cv-block { padding: 22px 24px; min-width: 0; }
 .cv-block h2 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
 .cv-block h2 + .tl { margin-bottom: 0; }
 .cv-block .tl + h2 { margin-top: 22px; }
+.cv-block h3 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 16px 0 2px; }
 .tl { list-style: none; margin: 0; padding: 0; font-size: 14px; }
 .tl li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .tl li:last-child { border-bottom: 0; }
@@ -301,12 +304,40 @@ a.newsrow:hover .txt { color: var(--accent); }
 .hcard .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
 .hcard h3 { font-size: 14.5px; font-weight: 600; line-height: 1.45; }
 
-/* about areas */
+/* home: featured papers and the recruiting strip */
+.featlist { padding: 2px 24px; }
+.feat { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.feat:last-child { border-bottom: 0; }
+.feat.hasimg { grid-template-columns: 180px minmax(0, 1fr); }
+.feat .photo { aspect-ratio: 4 / 3; border-radius: 8px; border: 1px solid var(--line); }
+.feat .meta { margin-top: 0; }
+.feat h3 { font-size: 18px; font-weight: 700; line-height: 1.4; margin-top: 8px; }
+.feat .paper { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.feat p { margin: 8px 0 0; font-size: 15px; max-width: 92ch; }
+.feat .more { display: inline-block; font-size: 13.5px; font-weight: 500; margin-top: 8px; }
+.recruit { padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 14px 28px; flex-wrap: wrap; }
+.recruit h2 { font-size: 19px; font-weight: 700; }
+.recruit p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
+
+/* about: one panel per research area (description + topics | recent papers + links) */
 .areas { display: flex; flex-direction: column; gap: 14px; }
-.area { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; padding: 20px; }
-.area .photo { aspect-ratio: 4 / 3; border-radius: 8px; }
-.area h3 { font-size: 18px; font-weight: 700; }
-.area p { font-size: 15.5px; margin: 8px 0 0; }
+.area { padding: 26px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px 36px; scroll-margin-top: 84px; }
+.area .head { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; }
+.area .ico { width: 46px; height: 46px; border-radius: 11px; background: var(--a-soft); display: grid; place-items: center; flex: none; }
+.area .ico svg { width: 27px; height: 27px; stroke: var(--a); fill: none; stroke-width: 1.6; }
+.area h3 { font-size: 21px; font-weight: 700; }
+.area .en { font: 500 12.5px var(--font-mono); color: var(--a); }
+.area p { font-size: 15.5px; margin: 0; }
+.area h4 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 0 0 4px; }
+.area p + h4 { margin-top: 20px; }
+.area ul { list-style: none; margin: 0; padding: 0; }
+.area li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.area li:last-child { border-bottom: 0; }
+.area .topics li { padding-left: 16px; position: relative; }
+.area .topics li::before { content: ""; position: absolute; left: 1px; top: 18px; width: 5px; height: 5px; border-radius: 50%; background: var(--a); }
+.area li .v { font: 500 12px var(--font-mono); color: var(--muted); margin-left: 6px; }
+.area li .v.hi { color: var(--accent); font-weight: 600; }
+.area .links { display: flex; gap: 6px 20px; flex-wrap: wrap; font-size: 14px; font-weight: 500; margin-top: 14px; }
 
 /* lightbox */
 .lightbox { position: fixed; inset: 0; z-index: 20; background: rgb(8 12 18 / 86%); display: grid; place-items: center; padding: 32px max(16px, env(safe-area-inset-left, 0px)); }
@@ -322,13 +353,20 @@ a.newsrow:hover .txt { color: var(--accent); }
 .talkrow:last-child { border-bottom: 0; }
 .talkrow .t { font-weight: 600; font-size: 14.5px; }
 .talkrow .ev { font-size: 13px; color: var(--muted); }
+.talkrow .t a { color: var(--ink); }
+.talkrow .t a:hover { color: var(--accent); }
+.talkrow .ev .pill { margin: 0 6px 0 0; }
 
 /* contact */
-.join { padding: 28px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+.join { padding: 28px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px 40px; align-items: start; }
 .join h2 { font-size: 22px; font-weight: 700; }
 .join h2 em { font-style: normal; color: var(--accent); }
+.join h3 { font-size: 14.5px; font-weight: 700; margin-bottom: 4px; }
+.join h3:not(:first-child), .join p + h3 { margin-top: 18px; }
 .join p { margin: 8px 0 0; }
-.join ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.join h3 + p { margin-top: 0; font-size: 14.5px; }
+.join ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+.join .cta { margin-top: 18px; }
 .contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .c-card { padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .c-card.wide { grid-column: 1 / -1; }
@@ -352,8 +390,9 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
   .agrid { grid-template-columns: minmax(0, 1fr); }
   .ncard, .area { grid-template-columns: minmax(0, 1fr); }
   .cv { grid-template-columns: minmax(0, 1fr); }
-  .themes, .members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .theme-detail, .join { grid-template-columns: minmax(0, 1fr); }
+  .members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .themes { grid-template-columns: minmax(0, 1fr); }
+  .join { grid-template-columns: minmax(0, 1fr); }
   .pi { grid-template-columns: 96px minmax(0, 1fr); }
   .pi .avatar { width: 96px; height: 120px; }
   .pi > div:last-child { grid-column: 1 / -1; }
@@ -372,6 +411,7 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
   .newsrow .txt { grid-column: 1 / -1; }
   .proj { grid-template-columns: minmax(0, 1fr); }
   .proj .ag, .proj .p { text-align: left; }
+  .feat.hasimg { grid-template-columns: minmax(0, 1fr); }
   .pi { grid-template-columns: minmax(0, 1fr); }
   .chips .lbl { width: 100%; }
   .mgrid, .mgrid:has(> :nth-child(-n+3):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
@@ -390,10 +430,10 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
     <nav class="nav-links" aria-label="Main">
       <a href="#about" data-route="about" data-ko="연구실 소개" data-en="About Lab">연구실 소개</a>
       <a href="#professor" data-route="professor" data-ko="교수" data-en="Professor">교수</a>
-      <div class="dd"><a href="#members" data-route="members" data-ko="구성원" data-en="Members">구성원</a><div class="menu"><a href="#members-phd" data-ko="박사과정" data-en="Ph.D. Course">박사과정</a><a href="#members-ms" data-ko="석사과정" data-en="M.S. Course">석사과정</a><a href="#members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></div></div>
+      <div class="dd"><a href="#members" data-route="members" data-ko="구성원" data-en="Members">구성원</a><div class="menu"><a href="#members-phd" data-ko="박사·석박사통합과정" data-en="Ph.D. &amp; integrated">박사·석박사통합과정</a><a href="#members-ms" data-ko="석사과정" data-en="M.S. course">석사과정</a><a href="#members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></div></div>
       <a href="#research" data-route="research" data-ko="연구과제" data-en="Projects">연구과제</a>
-      <div class="dd"><a href="#publications" data-route="publications" data-ko="논문" data-en="Publications">논문</a><div class="menu"><a href="#publications-journals" data-ko="저널" data-en="Journals">저널</a><a href="#publications-conference" data-ko="컨퍼런스" data-en="Conferences">컨퍼런스</a><a href="#publications-domestic" data-ko="학술대회" data-en="Domestic conferences">학술대회</a><a href="#publications-patents" data-ko="특허 및 SW" data-en="Patents &amp; software">특허 및 SW</a></div></div>
-      <div class="dd"><a href="#news" data-route="news" data-ko="소식·활동" data-en="News &amp; Activities">소식·활동</a><div class="menu"><a href="#news-2026" data-ko="2026" data-en="2026">2026</a><a href="#news-2025" data-ko="2025" data-en="2025">2025</a><a href="#news-2024" data-ko="2024" data-en="2024">2024</a><a href="#news-2023" data-ko="2023" data-en="2023">2023</a><a href="#news-talks" data-ko="초청 강연" data-en="Invited talks">초청 강연</a></div></div>
+      <div class="dd"><a href="#publications" data-route="publications" data-ko="연구성과" data-en="Research Output">연구성과</a><div class="menu"><a href="#publications-journals" data-ko="학술지 논문" data-en="Journal papers">학술지 논문</a><a href="#publications-conference" data-ko="국제학술대회" data-en="International conferences">국제학술대회</a><a href="#publications-domestic" data-ko="국내학술대회" data-en="Domestic conferences">국내학술대회</a><a href="#publications-patents" data-ko="특허·소프트웨어" data-en="Patents &amp; software">특허·소프트웨어</a></div></div>
+      <div class="dd"><a href="#news" data-route="news" data-ko="소식·활동" data-en="News &amp; Activities">소식·활동</a><div class="menu"><a href="#news-research" data-ko="연구성과 소식" data-en="Research news">연구성과 소식</a><a href="#news-academic" data-ko="학술활동" data-en="Academic activities">학술활동</a><a href="#news-lab" data-ko="연구실 소식" data-en="Lab news">연구실 소식</a><a href="#news-press" data-ko="언론 보도" data-en="In the media">언론 보도</a><a href="#news-talks" data-ko="초청 강연" data-en="Invited talks">초청 강연</a></div></div>
       <a href="#contact" data-route="contact" data-ko="지원·연락처" data-en="Join &amp; Contact">지원·연락처</a>
     </nav>
     <div class="toggles">
@@ -407,7 +447,7 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
     <a href="#professor" data-route="professor" data-ko="교수" data-en="Professor">교수</a>
     <a href="#members" data-route="members" data-ko="구성원" data-en="Members">구성원</a>
     <a href="#research" data-route="research" data-ko="연구과제" data-en="Projects">연구과제</a>
-    <a href="#publications" data-route="publications" data-ko="논문" data-en="Publications">논문</a>
+    <a href="#publications" data-route="publications" data-ko="연구성과" data-en="Research Output">연구성과</a>
     <a href="#news" data-route="news" data-ko="소식·활동" data-en="News">소식·활동</a>
     <a href="#contact" data-route="contact" data-ko="지원·연락처" data-en="Contact">지원·연락처</a>
   </nav>
@@ -423,10 +463,11 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
         <div class="short">ESP Lab</div>
         <h1 data-ko="임베디드 보안 및 프라이버시 연구실" data-en="Embedded Security &amp; Privacy Lab">임베디드 보안 및 프라이버시 연구실</h1>
         <div class="en-name" data-ko="Embedded Security &amp; Privacy Lab" data-en="임베디드 보안 및 프라이버시 연구실">Embedded Security &amp; Privacy Lab</div>
-        <p class="lede" data-ko="양자내성암호(PQC)의 경량 구현과 TLS·PKI 전환, 양자 알고리즘 기반 암호 분석, 드론·로봇·차량 같은 임베디드 환경의 보안을 연구합니다." data-en="Our work spans lightweight post-quantum cryptography, PQC migration for TLS and PKI, quantum cryptanalysis, and security for drones, robots and vehicles.">양자내성암호(PQC)의 경량 구현과 TLS·PKI 전환, 양자 알고리즘 기반 암호 분석, 드론·로봇·차량 같은 임베디드 환경의 보안을 연구합니다.</p>
+        <p class="fields" data-ko="암호공학 · 양자보안 · 지능형 모빌리티 보안" data-en="Cryptographic Engineering · Quantum Security · Intelligent Mobility Security">암호공학 · 양자보안 · 지능형 모빌리티 보안</p>
+        <p class="lede" data-ko="안전하고 효율적인 암호 프로토콜의 설계·구현, 양자컴퓨팅 환경에서의 암호 안전성 분석과 양자내성암호 전환을 연구합니다. 드론·로봇·차량을 위한 인증과 통신 보안, 프라이버시 보호 기술을 개발합니다." data-en="We design and implement secure, efficient cryptographic protocols, analyze the security of cryptography against quantum computing, and study the migration to post-quantum cryptography. We also build authentication, secure communication and privacy protection for drones, robots and vehicles.">안전하고 효율적인 암호 프로토콜의 설계·구현, 양자컴퓨팅 환경에서의 암호 안전성 분석과 양자내성암호 전환을 연구합니다. 드론·로봇·차량을 위한 인증과 통신 보안, 프라이버시 보호 기술을 개발합니다.</p>
         <div class="cta">
-          <a class="btn primary" href="#about" data-ko="연구실 소개" data-en="About the lab">연구실 소개</a>
-          <a class="btn" href="#publications" data-ko="논문 보기" data-en="Publications">논문 보기</a>
+          <a class="btn primary" href="#about" data-ko="연구 분야 보기" data-en="Research areas">연구 분야 보기</a>
+          <a class="btn" href="#publications" data-ko="주요 논문 보기" data-en="Publications">주요 논문 보기</a>
           <a class="btn" href="#contact" data-ko="대학원 지원 안내" data-en="Join the lab">대학원 지원 안내</a>
         </div>
       </div>
@@ -434,13 +475,26 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
     </div>
 
     <div>
-      <div class="sec-head"><h2 data-ko="연구 주제" data-en="Research themes">연구 주제</h2><a class="more" href="#about" data-ko="연구 분야 자세히 →" data-en="More on research areas →">연구 분야 자세히 →</a></div>
+      <div class="sec-head"><h2 data-ko="핵심 연구 분야" data-en="Core research areas">핵심 연구 분야</h2><a class="more" href="#about" data-ko="연구실 소개 →" data-en="About the lab →">연구실 소개 →</a></div>
       <div class="themes" id="home-themes"></div>
+    </div>
+
+    <div>
+      <div class="sec-head"><h2 data-ko="대표 연구" data-en="Featured research">대표 연구</h2><a class="more" href="#publications" data-ko="전체 연구성과 →" data-en="All publications →">전체 연구성과 →</a></div>
+      <div class="panel featlist" id="home-featured"></div>
     </div>
 
     <div>
       <div class="sec-head"><h2 data-ko="최근 소식" data-en="Latest news">최근 소식</h2><a class="more" href="#news" data-ko="전체 소식 →" data-en="All news →">전체 소식 →</a></div>
       <div class="panel newslist" id="home-news"></div>
+    </div>
+
+    <div class="panel recruit">
+      <div>
+        <h2 data-ko="함께 연구할 대학원생과 학부 연구생을 모집합니다" data-en="We are recruiting graduate students and undergraduate researchers">함께 연구할 대학원생과 학부 연구생을 모집합니다</h2>
+        <p data-ko="암호공학, 양자보안, 지능형 모빌리티 보안에 관심 있는 학생을 환영합니다." data-en="Students interested in cryptographic engineering, quantum security and intelligent mobility security are welcome.">암호공학, 양자보안, 지능형 모빌리티 보안에 관심 있는 학생을 환영합니다.</p>
+      </div>
+      <a class="btn primary" href="#contact" data-ko="지원 안내 보기" data-en="How to apply">지원 안내 보기</a>
     </div>
   </div>
 </section>
@@ -448,23 +502,27 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
 <!-- ABOUT LAB -->
 <section class="page" data-page="about" hidden>
   <div class="wrap">
-    <div class="page-head"><h1 data-ko="연구실 소개" data-en="About Lab">연구실 소개</h1><p data-ko="임베디드 보안 및 프라이버시 연구실(ESP Lab)은 한양대학교 ERICA 컴퓨터학부 서승현 교수 연구실입니다. 양자 컴퓨터 시대에도 안전한 암호와, 자원이 제한된 기기·모빌리티 환경의 보안을 연구합니다." data-en="The Embedded Security &amp; Privacy Lab (ESP Lab) is led by Prof. Seung-Hyun Seo in the Division of Computer Science at Hanyang University ERICA. We study cryptography that stays secure in the quantum era and security for constrained devices and mobility systems.">임베디드 보안 및 프라이버시 연구실(ESP Lab)은 한양대학교 ERICA 컴퓨터학부 서승현 교수 연구실입니다. 양자 컴퓨터 시대에도 안전한 암호와, 자원이 제한된 기기·모빌리티 환경의 보안을 연구합니다.</p></div>
-    <div><div class="sec-head"><h2 data-ko="연구 분야" data-en="Research areas">연구 분야</h2></div><div class="areas" id="about-areas"></div></div>
-    <div><div class="sec-head"><h2 data-ko="세부 연구 주제" data-en="Current research themes">세부 연구 주제</h2></div><div class="panel" id="theme-details"></div></div>
+    <div class="page-head"><h1 data-ko="연구실 소개" data-en="About Lab">연구실 소개</h1><p data-ko="ESP Lab은 한양대학교 ERICA의 임베디드 보안 및 프라이버시 연구실로, 서승현 교수와 함께 암호공학, 양자보안, 지능형 모빌리티 보안을 연구합니다." data-en="ESP Lab is the Embedded Security &amp; Privacy Lab at Hanyang University ERICA. Together with Prof. Seung-Hyun Seo, we work on cryptographic engineering, quantum security and intelligent mobility security.">ESP Lab은 한양대학교 ERICA의 임베디드 보안 및 프라이버시 연구실로, 서승현 교수와 함께 암호공학, 양자보안, 지능형 모빌리티 보안을 연구합니다.</p><p data-ko="암호 프로토콜의 설계와 구현, 양자 알고리즘에 기반한 암호 안전성 분석, 드론·로봇·차량의 보안과 프라이버시 보호를 다룹니다. 이론적 분석과 실제 시스템 구현을 연결하여 보안 요구사항과 성능·자원 제약을 함께 고려합니다." data-en="Our work covers the design and implementation of cryptographic protocols, quantum-algorithm-based analysis of cryptographic security, and security and privacy for drones, robots and vehicles. We connect theoretical analysis with real system implementation, weighing security requirements together with performance and resource limits.">암호 프로토콜의 설계와 구현, 양자 알고리즘에 기반한 암호 안전성 분석, 드론·로봇·차량의 보안과 프라이버시 보호를 다룹니다. 이론적 분석과 실제 시스템 구현을 연결하여 보안 요구사항과 성능·자원 제약을 함께 고려합니다.</p></div>
+    <div><div class="sec-head"><h2 data-ko="핵심 연구 분야" data-en="Core research areas">핵심 연구 분야</h2></div><div class="areas" id="about-areas"></div></div>
   </div>
 </section>
 
-<!-- RESEARCH -->
+<!-- RESEARCH (projects) -->
 <section class="page" data-page="research" hidden>
   <div class="wrap">
-    <div class="page-head"><h1 data-ko="연구과제" data-en="Research Projects">연구과제</h1><p data-ko="연구실이 수행 중이거나 수행한 연구 과제입니다." data-en="Research projects the lab is running or has completed.">연구실이 수행 중이거나 수행한 연구 과제입니다.</p></div>
-    <div>
-      <div class="sec-head"><h2 data-ko="진행 중인 과제" data-en="On-going research projects">진행 중인 과제</h2><span class="note" id="n-ongoing"></span></div>
+    <div class="page-head"><h1 data-ko="연구과제" data-en="Research Projects">연구과제</h1><p data-ko="암호공학, 양자보안, 지능형 모빌리티 보안 분야에서 수행하는 연구과제를 소개합니다. 각 과제의 연구 분야와 수행 기간, 지원기관을 확인할 수 있습니다." data-en="Research projects the lab carries out in cryptographic engineering, quantum security and intelligent mobility security, with each project's research area, period and funding agency.">암호공학, 양자보안, 지능형 모빌리티 보안 분야에서 수행하는 연구과제를 소개합니다. 각 과제의 연구 분야와 수행 기간, 지원기관을 확인할 수 있습니다.</p></div>
+    <div class="panel filters"><div class="chips" id="proj-chips"></div></div>
+    <div id="sec-ongoing">
+      <div class="sec-head"><h2 data-ko="진행 중인 과제" data-en="On-going projects">진행 중인 과제</h2><span class="note" id="n-ongoing"></span></div>
       <div class="panel projlist" id="proj-ongoing"></div>
     </div>
-    <div>
-      <div class="sec-head"><h2 data-ko="종료된 과제" data-en="Past research projects">종료된 과제</h2><span class="note" id="n-past"></span></div>
+    <div id="sec-past">
+      <div class="sec-head"><h2 data-ko="완료 과제" data-en="Completed projects">완료 과제</h2><span class="note" id="n-past"></span></div>
       <div class="panel projlist" id="proj-past"></div>
+    </div>
+    <div id="sec-edu">
+      <div class="sec-head"><h2 data-ko="교육·인력양성 사업" data-en="Education and workforce programs">교육·인력양성 사업</h2><span class="note" id="n-edu"></span></div>
+      <div class="panel projlist" id="proj-edu"></div>
     </div>
   </div>
 </section>
@@ -472,11 +530,11 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
 <!-- PUBLICATIONS -->
 <section class="page" data-page="publications" hidden>
   <div class="wrap">
-    <div class="page-head"><h1 data-ko="논문" data-en="Publications">논문</h1></div>
-    <nav class="subtabs" aria-label="Sub pages"><a href="#publications" data-sublink="publications" data-ko="전체" data-en="All">전체</a><a href="#publications-journals" data-sublink="publications-journals" data-ko="저널" data-en="Journals">저널</a><a href="#publications-conference" data-sublink="publications-conference" data-ko="컨퍼런스" data-en="Conferences">컨퍼런스</a><a href="#publications-domestic" data-sublink="publications-domestic" data-ko="학술대회" data-en="Domestic conferences">학술대회</a><a href="#publications-patents" data-sublink="publications-patents" data-ko="특허 및 SW" data-en="Patents &amp; software">특허 및 SW</a></nav>
+    <div class="page-head"><h1 data-ko="연구성과" data-en="Research Output">연구성과</h1><p data-ko="ESP Lab의 논문, 특허 및 소프트웨어 성과를 소개합니다. 연구 분야와 성과 유형을 선택하거나 제목·저자로 검색할 수 있습니다. 여러 연구 분야에 해당하는 성과는 각 분야에서 함께 표시됩니다." data-en="Papers, patents and software from ESP Lab. Pick a research area or output type, or search by title or author. Work that belongs to more than one research area is listed under each of them.">ESP Lab의 논문, 특허 및 소프트웨어 성과를 소개합니다. 연구 분야와 성과 유형을 선택하거나 제목·저자로 검색할 수 있습니다. 여러 연구 분야에 해당하는 성과는 각 분야에서 함께 표시됩니다.</p></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#publications" data-sublink="publications" data-ko="전체" data-en="All">전체</a><a href="#publications-journals" data-sublink="publications-journals" data-ko="학술지 논문" data-en="Journal papers">학술지 논문</a><a href="#publications-conference" data-sublink="publications-conference" data-ko="국제학술대회" data-en="International conferences">국제학술대회</a><a href="#publications-domestic" data-sublink="publications-domestic" data-ko="국내학술대회" data-en="Domestic conferences">국내학술대회</a><a href="#publications-patents" data-sublink="publications-patents" data-ko="특허·소프트웨어" data-en="Patents &amp; software">특허·소프트웨어</a></nav>
     <div class="panel filters">
       <div class="chips" id="theme-chips"></div>
-      <div class="c-row"><input class="search" id="pub-search" type="search" data-ph-ko="제목·저자·학회 검색" data-ph-en="Search title, author, venue" placeholder="제목·저자·학회 검색" aria-label="Search publications"><span class="result-n" id="pub-count"></span></div>
+      <div class="c-row"><input class="search" id="pub-search" type="search" data-ph-ko="논문 제목·저자·학술지/학회 검색" data-ph-en="Search title, author, journal or conference" placeholder="논문 제목·저자·학술지/학회 검색" aria-label="Search publications"><span class="result-n" id="pub-count"></span></div>
     </div>
     <div class="publists" id="pub-list"></div>
   </div>
@@ -490,34 +548,34 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
       <div class="prof-main">
         <div class="k" data-ko="교수" data-en="Professor">교수</div>
         <h1 data-ko="서승현" data-en="Seung-Hyun Seo">서승현</h1>
-        <div class="sub" data-ko="Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부" data-en="서승현 · Division of Computer Science, Hanyang University ERICA">Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부</div>
+        <div class="sub" data-ko="Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부 교수 · ESP Lab 지도교수" data-en="서승현 · Professor, Division of Computer Science, Hanyang University ERICA · Head of ESP Lab">Seung-Hyun Seo · 한양대학교 ERICA 컴퓨터학부 교수 · ESP Lab 지도교수</div>
+        <p class="bio" data-ko="암호공학, 양자보안, 지능형 모빌리티 보안을 연구합니다. 암호 프로토콜과 인증·키관리 기술, 양자내성암호 전환 및 양자 알고리즘 기반 안전성 분석, 드론·로봇·차량의 보안과 프라이버시 보호를 주요 연구 주제로 다루고 있습니다." data-en="Prof. Seo works on cryptographic engineering, quantum security and intelligent mobility security: cryptographic protocols with authentication and key management, the migration to post-quantum cryptography and quantum-algorithm-based security analysis, and security and privacy for drones, robots and vehicles.">암호공학, 양자보안, 지능형 모빌리티 보안을 연구합니다. 암호 프로토콜과 인증·키관리 기술, 양자내성암호 전환 및 양자 알고리즘 기반 안전성 분석, 드론·로봇·차량의 보안과 프라이버시 보호를 주요 연구 주제로 다루고 있습니다.</p>
+        <p class="bio" data-ko="실제 시스템의 요구사항을 반영한 보안 기술을 설계하고 구현하며, 연구 결과를 산업·공공 분야의 보안 적용과 암호 전환 논의로 연결하고 있습니다." data-en="The work designs and implements security techniques that reflect the requirements of real systems, and carries its results into security deployment and cryptographic-migration discussions in industry and the public sector.">실제 시스템의 요구사항을 반영한 보안 기술을 설계하고 구현하며, 연구 결과를 산업·공공 분야의 보안 적용과 암호 전환 논의로 연결하고 있습니다.</p>
+        <div class="interests">
+          <span class="chip static core a-crypto" data-ko="암호공학" data-en="Cryptographic Engineering">암호공학</span><span class="chip static core a-quantum" data-ko="양자보안" data-en="Quantum Security">양자보안</span><span class="chip static core a-mobility" data-ko="지능형 모빌리티 보안" data-en="Intelligent Mobility Security">지능형 모빌리티 보안</span>
+        </div>
+        <div class="interests" style="margin-top:8px">
+          <span class="chip static plain" data-ko="암호 프로토콜" data-en="Cryptographic protocols">암호 프로토콜</span><span class="chip static plain" data-ko="인증·키관리" data-en="Authentication &amp; key management">인증·키관리</span><span class="chip static plain" data-ko="양자내성암호 전환" data-en="PQC migration">양자내성암호 전환</span><span class="chip static plain" data-ko="양자 암호 분석" data-en="Quantum cryptanalysis">양자 암호 분석</span><span class="chip static plain" data-ko="드론·로봇·차량 보안" data-en="Drone, robot &amp; vehicle security">드론·로봇·차량 보안</span><span class="chip static plain" data-ko="프라이버시 보호" data-en="Privacy protection">프라이버시 보호</span>
+        </div>
         <dl class="facts">
-          <dt>EMAIL</dt><dd>seosh77@hanyang.ac.kr</dd>
+          <dt>EMAIL</dt><dd><a href="mailto:seosh77@hanyang.ac.kr">seosh77@hanyang.ac.kr</a></dd>
+          <dt>OFFICE</dt><dd data-ko="약학대학 616호" data-en="College of Pharmacy, Room 616">약학대학 616호</dd>
           <dt>PHONE</dt><dd>031-400-5163</dd>
           <dt>FAX</dt><dd id="prof-fax"></dd>
-          <dt>OFFICE</dt><dd data-ko="약학대학 616호" data-en="College of Pharmacy, Room 616">약학대학 616호</dd>
         </dl>
-        <div class="interests">
-          <span class="chip static">Embedded system security</span><span class="chip static">Intelligent security mechanisms</span><span class="chip static">IoT security</span><span class="chip static">Blockchain</span><span class="chip static">Post-quantum cryptography</span><span class="chip static">Quantum algorithms</span>
-        </div>
       </div>
     </div>
 
+    <div class="panel cv-block">
+      <h2 data-ko="주요 활동" data-en="Service">주요 활동</h2>
+      <ul class="tl">
+        <li><span class="yr">2025–</span><span data-ko-html="부원장 겸 양자 네트워크 및 보안 센터장, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한양양자연구원(HY-IQQ)</a>" data-en-html="Deputy Director and Head of the Quantum Network &amp;amp; Security Center, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Hanyang Institute for Quantum (HY-IQQ)</a>">부원장 겸 양자 네트워크 및 보안 센터장, <a href="https://iqq.hanyang.ac.kr/" target="_blank" rel="noopener">한양양자연구원(HY-IQQ)</a></span></li>
+        <li><span class="yr">–</span><span data-ko-html="기술 및 정책분과 위원장, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한국암호포럼</a>" data-en-html="Chair, Technology &amp;amp; Policy Subcommittee, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Korea Cryptography Forum</a>">기술 및 정책분과 위원장, <a href="https://kcryptoforum.or.kr/" target="_blank" rel="noopener">한국암호포럼</a></span></li>
+        <li><span class="yr">–</span><span data-ko="위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회" data-en="Chair, KIISC Automotive &amp; Unmanned Mobility Security Research Group">위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회</span></li>
+      </ul>
+    </div>
+
     <div class="cv">
-      <div class="panel cv-block">
-        <h2 data-ko="주요 활동" data-en="Service">주요 활동</h2>
-        <ul class="tl">
-          <li><span class="yr">2025–</span><span data-ko-html="부원장, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한양양자연구원(HY-IQQ)</a>" data-en-html="Deputy Director, <a href=&quot;https://iqq.hanyang.ac.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Hanyang Institute for Quantum (HY-IQQ)</a>">부원장, <a href="https://iqq.hanyang.ac.kr/" target="_blank" rel="noopener">한양양자연구원(HY-IQQ)</a></span></li>
-          <li><span class="yr">–</span><span data-ko-html="기술 및 정책분과 위원장, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>한국암호포럼</a>" data-en-html="Chair, Technology &amp;amp; Policy Subcommittee, <a href=&quot;https://kcryptoforum.or.kr/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Korea Cryptography Forum</a>">기술 및 정책분과 위원장, <a href="https://kcryptoforum.or.kr/" target="_blank" rel="noopener">한국암호포럼</a></span></li>
-          <li><span class="yr">–</span><span data-ko="위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회" data-en="Chair, KIISC Automotive &amp; Unmanned Mobility Security Research Group">위원장, 한국정보보호학회 자동차 및 무인이동체보안연구회</span></li>
-        </ul>
-        <h2 data-ko="학력" data-en="Education">학력</h2>
-        <ul class="tl">
-          <li><span class="yr">2006</span><span data-ko="박사, 이화여자대학교 (지도교수 이상호)" data-en="Ph.D., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">박사, 이화여자대학교 (지도교수 이상호)</span></li>
-          <li><span class="yr">2002</span><span data-ko="석사, 이화여자대학교 (지도교수 이상호)" data-en="M.S., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">석사, 이화여자대학교 (지도교수 이상호)</span></li>
-          <li><span class="yr">2000</span><span data-ko="학사, 이화여자대학교 수학과" data-en="B.S. in Mathematics, Ewha Womans University">학사, 이화여자대학교 수학과</span></li>
-        </ul>
-      </div>
       <div class="panel cv-block">
         <h2 data-ko="경력" data-en="Career">경력</h2>
         <ul class="tl">
@@ -530,11 +588,22 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
           <li><span class="yr">2006–2010</span><span data-ko="연구원, 금융보안연구원" data-en="Researcher, Financial Security Agency">연구원, 금융보안연구원</span></li>
         </ul>
       </div>
+      <div class="panel cv-block">
+        <h2 data-ko="학력" data-en="Education">학력</h2>
+        <ul class="tl">
+          <li><span class="yr">2006</span><span data-ko="박사, 이화여자대학교 (지도교수 이상호)" data-en="Ph.D., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">박사, 이화여자대학교 (지도교수 이상호)</span></li>
+          <li><span class="yr">2002</span><span data-ko="석사, 이화여자대학교 (지도교수 이상호)" data-en="M.S., Ewha Womans University (advisor: Prof. Sang-Ho Lee)">석사, 이화여자대학교 (지도교수 이상호)</span></li>
+          <li><span class="yr">2000</span><span data-ko="학사, 이화여자대학교 수학과" data-en="B.S. in Mathematics, Ewha Womans University">학사, 이화여자대학교 수학과</span></li>
+        </ul>
+      </div>
     </div>
 
     <div class="panel cv-block">
       <h2 data-ko="수상" data-en="Awards">수상</h2>
+      <h3 data-ko="개인 수상" data-en="Individual awards">개인 수상</h3>
       <ul class="tl" id="prof-awards"></ul>
+      <h3 data-ko="논문·연구팀 수상" data-en="Paper and team awards">논문·연구팀 수상</h3>
+      <ul class="tl" id="prof-awards-team"></ul>
     </div>
 
     <div>
@@ -548,20 +617,20 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
 <section class="page" data-page="members" hidden>
   <div class="wrap">
     <div class="page-head"><h1 data-ko="구성원" data-en="Members">구성원</h1></div>
-    <nav class="subtabs" aria-label="Sub pages"><a href="#members" data-sublink="members" data-ko="전체" data-en="All">전체</a><a href="#members-phd" data-sublink="members-phd" data-ko="박사과정" data-en="Ph.D. Course">박사과정</a><a href="#members-ms" data-sublink="members-ms" data-ko="석사과정" data-en="M.S. Course">석사과정</a><a href="#members-ug" data-sublink="members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-sublink="members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></nav>
-    <div data-sub="phd"><div class="sec-head"><h2 data-ko="박사과정" data-en="Ph.D. students">박사과정</h2></div><div id="m-phd"></div></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#members" data-sublink="members" data-ko="전체" data-en="All">전체</a><a href="#members-phd" data-sublink="members-phd" data-ko="박사·석박사통합과정" data-en="Ph.D. &amp; integrated">박사·석박사통합과정</a><a href="#members-ms" data-sublink="members-ms" data-ko="석사과정" data-en="M.S. course">석사과정</a><a href="#members-ug" data-sublink="members-ug" data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</a><a href="#members-alumni" data-sublink="members-alumni" data-ko="졸업생" data-en="Alumni">졸업생</a></nav>
+    <div data-sub="phd"><div class="sec-head"><h2 data-ko="박사·석박사통합과정" data-en="Ph.D. and integrated M.S.–Ph.D. students">박사·석박사통합과정</h2></div><div id="m-phd"></div></div>
     <div data-sub="ms"><div class="sec-head"><h2 data-ko="석사과정" data-en="M.S. students">석사과정</h2></div><div id="m-ms"></div></div>
     <div data-sub="ug"><div class="sec-head"><h2 data-ko="학부 연구생" data-en="Undergraduate researchers">학부 연구생</h2></div><div id="m-ug"></div></div>
     <div data-sub="alumni"><div class="sec-head"><h2 data-ko="졸업생" data-en="Alumni">졸업생</h2></div><div id="m-alumni"></div></div>
   </div>
 </section>
 
-<!-- NEWS (incl. invited talks as the last tab) -->
+<!-- NEWS: lab news by group, plus press coverage and invited talks as the last two tabs -->
 <section class="page" data-page="news" hidden>
   <div class="wrap">
     <div class="page-head"><h1 data-ko="소식·활동" data-en="News &amp; Activities">소식·활동</h1></div>
-    <nav class="subtabs" aria-label="Sub pages"><a href="#news" data-sublink="news" data-ko="전체 소식" data-en="All news">전체 소식</a><a href="#news-2026" data-sublink="news-2026" data-ko="2026" data-en="2026">2026</a><a href="#news-2025" data-sublink="news-2025" data-ko="2025" data-en="2025">2025</a><a href="#news-2024" data-sublink="news-2024" data-ko="2024" data-en="2024">2024</a><a href="#news-2023" data-sublink="news-2023" data-ko="2023" data-en="2023">2023</a><a href="#news-talks" data-sublink="news-talks" data-ko="초청 강연" data-en="Invited talks">초청 강연</a></nav>
-    <div class="panel filters" id="news-filters"><div class="chips" id="news-cats"></div></div>
+    <nav class="subtabs" aria-label="Sub pages"><a href="#news" data-sublink="news" data-ko="전체 소식" data-en="All news">전체 소식</a><a href="#news-research" data-sublink="news-research" data-ko="연구성과" data-en="Research">연구성과</a><a href="#news-academic" data-sublink="news-academic" data-ko="학술활동" data-en="Academic activities">학술활동</a><a href="#news-lab" data-sublink="news-lab" data-ko="연구실 소식" data-en="Lab news">연구실 소식</a><a href="#news-press" data-sublink="news-press" data-ko="언론 보도" data-en="In the media">언론 보도</a><a href="#news-talks" data-sublink="news-talks" data-ko="초청 강연" data-en="Invited talks">초청 강연</a></nav>
+    <div class="panel filters" id="news-filters"><div class="chips" id="news-years"></div><div class="chips" id="news-cats"></div></div>
     <div class="newsfeed" id="news-all"></div>
   </div>
 </section>
@@ -572,14 +641,27 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
     <div class="page-head"><h1 data-ko="지원·연락처" data-en="Join &amp; contact">지원·연락처</h1></div>
     <div class="panel join">
       <div>
-        <h2 data-ko-html="대학원생과 학부 연구생을 <em>모집합니다</em>" data-en-html="We are <em>recruiting</em> graduate and undergraduate researchers">대학원생과 학부 연구생을 <em>모집합니다</em></h2>
-        <p data-ko="컴퓨터·암호 보안에 관심이 있고, 책임감과 열정을 가진 학생을 찾습니다." data-en="We look for responsible, motivated students interested in computer and cryptographic security.">컴퓨터·암호 보안에 관심이 있고, 책임감과 열정을 가진 학생을 찾습니다.</p>
+        <h2 data-ko-html="함께 연구할 대학원생과 학부 연구생을 <em>모집합니다</em>" data-en-html="We are <em>recruiting</em> graduate students and undergraduate researchers">함께 연구할 대학원생과 학부 연구생을 <em>모집합니다</em></h2>
+        <p data-ko="암호공학, 양자보안, 지능형 모빌리티 보안에 관심 있는 학생을 모집합니다. 새로운 문제를 탐구하고, 이론을 공부하며, 구현과 실험으로 연구를 발전시키고 싶은 학생을 환영합니다." data-en="We welcome students interested in cryptographic engineering, quantum security and intelligent mobility security who want to explore new problems, study the theory, and take research forward through implementation and experiments.">암호공학, 양자보안, 지능형 모빌리티 보안에 관심 있는 학생을 모집합니다. 새로운 문제를 탐구하고, 이론을 공부하며, 구현과 실험으로 연구를 발전시키고 싶은 학생을 환영합니다.</p>
+        <h3 data-ko="지원 및 면담 문의" data-en="Applying and booking a meeting">지원 및 면담 문의</h3>
+        <p data-ko="간단한 자기소개, 관심 연구 분야와 희망 참여 시기를 이메일로 보내주세요. 관련 수업, 프로젝트 또는 연구 경험이 있다면 함께 소개해 주시면 좋습니다." data-en="Email a short introduction, the research area you are interested in and when you would like to join. If you have related coursework, projects or research experience, tell us about it too.">간단한 자기소개, 관심 연구 분야와 희망 참여 시기를 이메일로 보내주세요. 관련 수업, 프로젝트 또는 연구 경험이 있다면 함께 소개해 주시면 좋습니다.</p>
+        <div class="cta"><a class="btn primary" href="mailto:seosh77@hanyang.ac.kr" data-ko="메일 보내기" data-en="Send an email">메일 보내기</a></div>
       </div>
-      <ul>
-        <li data-ko="대학원생: 등록금(BK21 장학금)과 생활비 지원" data-en="Graduate students: tuition (BK21 scholarship) and living stipend">대학원생: 등록금(BK21 장학금)과 생활비 지원</li>
-        <li data-ko="석사·박사·석박통합 과정, 학부 연구생" data-en="M.S., Ph.D., integrated programs and undergraduate interns">석사·박사·석박통합 과정, 학부 연구생</li>
-        <li data-ko="면담은 이메일로 예약해 주세요" data-en="Book an interview by email">면담은 이메일로 예약해 주세요</li>
-      </ul>
+      <div>
+        <h3 data-ko="모집 대상" data-en="Who we are looking for">모집 대상</h3>
+        <ul>
+          <li data-ko="석사·박사·석박사통합과정 진학 희망자" data-en="Prospective M.S., Ph.D. and integrated M.S.–Ph.D. students">석사·박사·석박사통합과정 진학 희망자</li>
+          <li data-ko="연구 경험을 쌓고 싶은 학부 연구생" data-en="Undergraduates who want research experience">연구 경험을 쌓고 싶은 학부 연구생</li>
+        </ul>
+        <h3 data-ko="연구 분야" data-en="Research areas">연구 분야</h3>
+        <ul>
+          <li data-ko="암호 프로토콜, 인증·키관리 및 보안 통신" data-en="Cryptographic protocols, authentication and key management, secure communication">암호 프로토콜, 인증·키관리 및 보안 통신</li>
+          <li data-ko="양자내성암호와 양자 알고리즘 기반 암호 분석" data-en="Post-quantum cryptography and quantum-algorithm-based cryptanalysis">양자내성암호와 양자 알고리즘 기반 암호 분석</li>
+          <li data-ko="드론·로봇·차량의 보안 및 프라이버시 보호" data-en="Security and privacy for drones, robots and vehicles">드론·로봇·차량의 보안 및 프라이버시 보호</li>
+        </ul>
+        <h3 data-ko="연구 지원" data-en="Support">연구 지원</h3>
+        <p data-ko="대학원생에게는 등록금(BK21 장학금)과 생활비를 지원하며, 세부 조건은 과정과 참여 형태에 따라 개별 안내합니다." data-en="Graduate students receive tuition support (BK21 scholarship) and a living stipend; the details depend on the program and form of participation and are explained individually.">대학원생에게는 등록금(BK21 장학금)과 생활비를 지원하며, 세부 조건은 과정과 참여 형태에 따라 개별 안내합니다.</p>
+      </div>
     </div>
     <div class="contact">
       <div class="panel c-card">
@@ -615,7 +697,8 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
   <div class="wrap">
     <div><img src="__LOGO__" alt="ESP LAB"></div>
     <div>
-      <div data-ko="경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA" data-en="55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, Korea">경기도 안산시 상록구 한양대학로 55, 한양대학교 ERICA</div>
+      <div data-ko="한양대학교 ERICA 소프트웨어융합대학 컴퓨터학부 · 임베디드 보안 및 프라이버시 연구실" data-en="Embedded Security &amp; Privacy Lab · Division of Computer Science, Hanyang University ERICA">한양대학교 ERICA 소프트웨어융합대학 컴퓨터학부 · 임베디드 보안 및 프라이버시 연구실</div>
+      <div data-ko="경기도 안산시 상록구 한양대학로 55" data-en="55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, Korea">경기도 안산시 상록구 한양대학로 55</div>
       <div>seosh77@hanyang.ac.kr · +82-31-400-5163</div>
     </div>
     <div>© 2026 ESP Lab</div>
@@ -625,49 +708,39 @@ footer img { height: 32px; filter: var(--logo-filter); opacity: .8; }
 <script>
 const DATA = __DATA__;
 
-const THEMES = [
-  { key: "pqc", ko: "PQC 전환·프로토콜", en: "PQC migration & protocols",
-    sko: "PQ-TLS, 하이브리드 인증서, PKI, WoT 키 전달", sen: "PQ-TLS, hybrid certificates, PKI, WoT key delivery",
-    dko: "양자내성암호를 실제 프로토콜과 인프라에 넣는 문제를 다룹니다. TLS 1.3 하이브리드 인증서 확장, PQC PKI 전환, 저사양 기기를 위한 키 전달 방식을 설계하고 벤치마킹합니다.",
-    den: "We bring post-quantum cryptography into real protocols and infrastructure: hybrid-certificate extensions for TLS 1.3, PQC PKI migration, and key delivery for constrained devices.",
-    svg: '<rect x="5" y="12" width="18" height="12" rx="2"/><path d="M9 12V8a5 5 0 0 1 10 0v4"/><path d="M14 16v4"/>' },
-  { key: "quantum", ko: "양자 암호 분석", en: "Quantum cryptanalysis",
-    sko: "양자 회로 설계, 자원 추정, MQ·LWE 안전성", sen: "Quantum circuits, resource estimation, MQ and LWE security",
-    dko: "양자 컴퓨터로 암호를 공격할 때 실제로 필요한 자원을 추정합니다. 효율적인 양자 산술 회로를 설계하고, Module-LWE와 다변수 서명의 양자 안전성을 분석합니다.",
-    den: "We estimate the real quantum resources needed to attack cryptography, design efficient quantum arithmetic circuits, and analyze the quantum security of Module-LWE and multivariate signatures.",
-    svg: '<path d="M3 9h22M3 19h22"/><circle cx="10" cy="9" r="3"/><path d="M18 6v16"/><circle cx="18" cy="19" r="3"/>' },
-  { key: "embedded", ko: "임베디드·로봇 보안", en: "Embedded & robot security",
-    sko: "드론, ROS2, IoT 기기, 산업 제어", sen: "Drones, ROS 2, IoT devices, industrial control",
-    dko: "드론·로봇·IoT 기기처럼 자원이 제한된 환경의 보안을 연구합니다. ROS2 보안 브리지, 드론 원격 식별과 인증, 기기 고유 신호 기반 식별 기술을 다룹니다.",
-    den: "We secure resource-constrained systems such as drones, robots and IoT devices: secure ROS 2 bridges, drone remote ID and authentication, and signal-based device identification.",
-    svg: '<rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M11 4v4M17 4v4M11 20v4M17 20v4M4 11h4M4 17h4M20 11h4M20 17h4"/>' },
-  { key: "mobility", ko: "모빌리티·블록체인", en: "Mobility & blockchain",
-    sko: "V2V 인증서, 전기차 충전, 분산 신원", sen: "V2V certificates, EV charging, decentralized identity",
-    dko: "차량과 모빌리티 서비스의 신뢰 문제를 블록체인과 인증 기술로 풉니다. V2V 인증서의 PQC 전환, 전기차 충전 협력 모델, 분산 신원(DID)을 연구합니다.",
-    den: "We address trust in vehicles and mobility services with blockchain and authentication: PQC migration of V2V certificates, EV charging cooperation, and decentralized identity.",
-    svg: '<path d="M4 18l2-6a3 3 0 0 1 3-2h10a3 3 0 0 1 3 2l2 6v4H4z"/><circle cx="9" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/>' },
-];
+// Research areas: names and texts come from data/site.json (DATA.site.areas); icons and colours (.a-<key>) live here.
+const ICONS = {
+  crypto: '<rect x="5" y="12" width="18" height="12" rx="2"/><path d="M9 12V8a5 5 0 0 1 10 0v4"/><path d="M14 16v4"/>',
+  quantum: '<path d="M3 9h22M3 19h22"/><circle cx="10" cy="9" r="3"/><path d="M18 6v16"/><circle cx="18" cy="19" r="3"/>',
+  mobility: '<rect x="11" y="11" width="6" height="6" rx="1.5"/><path d="M11 11 8.2 8.2M17 11l2.8-2.8M11 17l-2.8 2.8M17 17l2.8 2.8"/><circle cx="6" cy="6" r="3"/><circle cx="22" cy="6" r="3"/><circle cx="6" cy="22" r="3"/><circle cx="22" cy="22" r="3"/>',
+};
+const AREAS = DATA.site.areas;
+const OLD_AREA = { pqc: "quantum", embedded: "mobility" };  // keys of the former four-theme layout, kept so old links still filter
 const KINDS = [
-  { key: "sci", ko: "SCI(E) 저널", en: "SCI(E) journals" },
-  { key: "ic", ko: "국제 컨퍼런스", en: "Intl. conference" },
-  { key: "kj", ko: "국내 학술지", en: "Domestic journals" },
-  { key: "kc", ko: "국내 학술대회", en: "Domestic conferences" },
-  { key: "pat", ko: "특허", en: "Patents" },
-  { key: "sw", ko: "SW 등록", en: "Software" },
+  { key: "sci", ko: "SCI(E) 학술지", en: "SCI(E) journal" },
+  { key: "ic", ko: "국제학술대회", en: "Intl. conference" },
+  { key: "kj", ko: "국내 학술지", en: "Domestic journal" },
+  { key: "kc", ko: "국내학술대회", en: "Domestic conference" },
+  { key: "pat", ko: "특허", en: "Patent" },
+  { key: "sw", ko: "소프트웨어", en: "Software" },
 ];
 const CAT_KO = { "Workshop": "워크숍", "Patent": "특허", "New research project": "신규 과제", "Top Conference": "학회 발표", "International Cooperation": "국제 협력", "Award": "수상", "News": "소식", "Exhibition": "전시" };
 const ROUTES = ["home", "about", "research", "professor", "members", "publications", "news", "contact"];
 const GROUPS = { journals: ["sci", "kj"], conference: ["ic"], domestic: ["kc"], patents: ["pat", "sw"] };
-const PAPER_KINDS = ["sci", "ic", "kj", "kc"];
+
 
 let lang = "ko";
-const state = { group: "all", theme: "all", q: "", msub: "all", year: "all", cat: "all" };  // year: "all" | "2026" … | "talks"
+const state = { group: "all", theme: "all", q: "", msub: "all", ntab: "all", year: "all", cat: "all", parea: "all" };  // theme / parea: research area of the publication / project filter; ntab: "all" | research | academic | lab | press | talks
 const NEWS_CATS = ["Workshop", "Top Conference", "Award", "Exhibition", "International Cooperation", "Patent", "New research project", "News"];
+const NEWS_TABS = { research: ["Top Conference", "Patent", "Award", "New research project"], academic: ["Workshop", "Exhibition", "International Cooperation"], lab: ["News"] };
+const PRESS_KIND = { news: ["보도", "News"], interview: ["인터뷰", "Interview"], column: ["기고", "Column"] };
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const L = (ko, en) => lang === "ko" ? ko : (en || ko);
 const split = s => { const [ko, en] = String(s || "").split("|"); return L(ko, en); };
-const svg = t => `<svg viewBox="0 0 28 28" aria-hidden="true">${t.svg}</svg>`;
+const svg = key => `<svg viewBox="0 0 28 28" aria-hidden="true">${ICONS[key]}</svg>`;
+const isArea = key => AREAS.some(a => a.key === key);
+const atags = keys => keys.map(k => { const a = AREAS.find(a => a.key === k); return a ? `<span class="atag a-${k}">${esc(L(a.ko, a.en))}</span>` : ""; }).join("");
 const initials = m => esc((m.ko || m.en || "?").slice(0, 1));
 const photo = (src, alt, fallback) => src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy">` : fallback;
 const catLabel = c => L(CAT_KO[c] || c, c);
@@ -707,40 +780,51 @@ function newsCard(n) {
 function renderHome() {
   const h = DATA.site.hero;
   $("hero-photo").innerHTML = h.img ? `<div class="photo"><img src="${esc(h.img)}" alt="${esc(L(h.cap_ko, h.cap_en))}"></div><figcaption>${esc(L(h.cap_ko, h.cap_en))}</figcaption>` : "";
-  $("home-themes").innerHTML = THEMES.map(t => `
-    <a class="theme" href="#publications-${t.key}">
-      <div class="ico">${svg(t)}</div>
-      <h3>${esc(L(t.ko, t.en))}</h3>
-      <p>${esc(L(t.sko, t.sen))}</p>
-      <span class="more">${L("관련 논문 →", "Related papers →")}</span>
+  $("home-themes").innerHTML = AREAS.map(a => `
+    <a class="theme a-${a.key}" href="#about-${a.key}">
+      <div class="ico">${svg(a.key)}</div>
+      <h3>${esc(L(a.ko, a.en))}</h3>
+      <div class="en">${esc(L(a.en, a.ko))}</div>
+      <p>${esc(L(a.card_ko, a.card_en))}</p>
+      <div class="kw">${esc(L(a.kw_ko, a.kw_en).join(" · "))}</div>
+      <span class="more">${L("연구 내용 보기 →", "Research details →")}</span>
     </a>`).join("");
+  $("home-featured").innerHTML = DATA.site.featured.map(f => `
+    <article class="feat${f.img ? " hasimg" : ""}">
+      ${f.img ? `<div class="photo">${photo(f.img, f.name || f.paper, "")}</div>` : ""}
+      <div>
+        <div class="meta"><span class="venue hi">${esc(f.venue)}</span>${atags(f.areas)}</div>
+        <h3>${esc(L(f.title_ko, f.title_en))}</h3>
+        <div class="paper">${esc(f.paper)}</div>
+        <p>${esc(L(f.desc_ko, f.desc_en))}</p>
+        <a class="more" href="${esc(f.url)}" target="_blank" rel="noopener">${L("논문 보기 ↗", "Read the paper ↗")}</a>
+      </div>
+    </article>`).join("");
   $("home-news").innerHTML = DATA.news.slice(0, 5).map(n => `<a class="newsrow" href="#news-${n.date.slice(0, 4)}"><span class="date">${esc(n.date)}</span><span class="pill ${n.type}">${esc(catLabel(n.cat))}</span><span class="txt">${esc(n.title)}${n.sub ? ` <span class="note">· ${esc(n.sub)}</span>` : ""}</span></a>`).join("");
 }
 
+function projRow(p) {
+  return `<div class="proj">
+    <div class="t">${esc(L(p.ko, p.en))}</div><div class="ag">${esc(p.ag)}</div>
+    <div class="atags">${atags(p.areas || [])}</div><div class="p">${esc(p.p)}</div>
+  </div>`;
+}
+
+// projects: on-going / completed research projects, education and workforce programs apart; one research-area filter over all three
 function renderResearch() {
-  $("theme-details").innerHTML = THEMES.map(t => {
-    const top = DATA.pubs.filter(p => ["sci", "ic"].includes(p.kind) && p.k.includes(t.key)).slice(0, 4);
-    return `<div class="theme-detail">
-      <div>
-        <h3><span class="ico">${svg(t)}</span>${esc(L(t.ko, t.en))}</h3>
-        <p>${esc(L(t.dko, t.den))}</p>
-        <p><a href="#publications-${t.key}">${L("관련 논문 보기 →", "See related papers →")}</a></p>
-      </div>
-      <ul>${top.map(p => `<li>${esc(p.t)}<span class="v${p.top ? " hi" : ""}">${esc(p.v)}${p.y && !String(p.v).includes(p.y) ? " " + p.y : ""}</span></li>`).join("")}</ul>
-    </div>`;
-  }).join("");
-  for (const k of ["ongoing", "past"]) {
-    const list = DATA.projects[k];
-    $("proj-" + k).innerHTML = list.map(p => {
-      const sub = p.en !== p.ko ? L(p.en, p.ko) : "";
-      return `<div class="proj">
-        <div class="t">${esc(L(p.ko, p.en))}</div><div class="ag">${esc(p.ag)}</div>
-        <div class="s">${esc(sub)}</div><div class="p">${esc(p.p)}</div>
-      </div>`;
-    }).join("");
-    $("n-" + k).textContent = L(`${list.length}건`, `${list.length} projects`);
+  const all = ["ongoing", "past"].flatMap(st => DATA.projects[st].map(p => ({ ...p, st })));
+  const count = key => key === "all" ? all.length : all.filter(p => (p.areas || []).includes(key)).length;
+  const chip = (key, label) => `<button class="chip" data-parea="${key}" aria-pressed="${state.parea === key}">${esc(label)}<span class="n">${count(key)}</span></button>`;
+  $("proj-chips").innerHTML = `<span class="lbl">${L("분야", "Area")}</span>` + chip("all", L("전체", "All")) + AREAS.map(a => chip(a.key, L(a.ko, a.en))).join("");
+  const shown = all.filter(p => state.parea === "all" || (p.areas || []).includes(state.parea));
+  const lists = { ongoing: shown.filter(p => p.st === "ongoing" && !p.edu), past: shown.filter(p => p.st === "past" && !p.edu), edu: shown.filter(p => p.edu) };
+  for (const k of ["ongoing", "past", "edu"]) {
+    $("proj-" + k).innerHTML = lists[k].map(projRow).join("");
+    $("n-" + k).textContent = L(`${lists[k].length}건`, `${lists[k].length} projects`);
+    $("sec-" + k).hidden = !lists[k].length;
   }
 }
+
 
 function inGroup(p) { return state.group === "all" || GROUPS[state.group].includes(p.kind); }
 
@@ -748,10 +832,11 @@ function renderChips() {
   const base = DATA.pubs.filter(inGroup);
   const themeN = k => k === "all" ? base.length : base.filter(p => p.k.includes(k)).length;
   const chip = (key, label, n, on) => `<button class="chip" data-key="${key}" aria-pressed="${on}">${esc(label)}<span class="n">${n}</span></button>`;
-  $("theme-chips").innerHTML = `<span class="lbl">${L("주제", "Theme")}</span>` +
+  $("theme-chips").innerHTML = `<span class="lbl">${L("분야", "Area")}</span>` +
     chip("all", L("전체", "All"), themeN("all"), state.theme === "all") +
-    THEMES.map(t => chip(t.key, L(t.ko, t.en), themeN(t.key), state.theme === t.key)).join("");
+    AREAS.map(a => chip(a.key, L(a.ko, a.en), themeN(a.key), state.theme === a.key)).join("");
 }
+
 
 // JCR JIF percentile badge: top 10% strong, Q1 (<= 25%) accent, otherwise plain
 function jcrBadge(p) {
@@ -764,7 +849,7 @@ function pubRow(p) {
   const kindLabel = KINDS.find(i => i.key === p.kind);
   return `<div class="pub"><div class="yr">${esc(p.d || p.y || "")}</div><div>
       <div class="t">${esc(p.t)}</div><div class="a">${esc(p.a)}</div>
-      <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue${p.top ? " hi" : ""}">${esc(p.v)}</span>` : ""}${jcrBadge(p)}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}</div></div></div>`;
+      <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue${p.top ? " hi" : ""}">${esc(p.v)}</span>` : ""}${jcrBadge(p)}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}${atags(p.k)}</div></div></div>`;
 }
 
 function renderPubs() {
@@ -773,7 +858,7 @@ function renderPubs() {
     inGroup(p) &&
     (state.theme === "all" || p.k.includes(state.theme)) &&
     (!q || (p.t + " " + p.a + " " + p.v).toLowerCase().includes(q)));
-  const SECTIONS = [["journals", "저널", "Journals"], ["conference", "컨퍼런스", "Conferences"], ["domestic", "학술대회", "Domestic conferences"], ["patents", "특허 및 SW", "Patents & software"]];
+  const SECTIONS = [["journals", "학술지 논문", "Journal papers"], ["conference", "국제학술대회", "International conferences"], ["domestic", "국내학술대회", "Domestic conferences"], ["patents", "특허·소프트웨어", "Patents & software"]];
   let html = "";
   for (const [g, ko, en] of SECTIONS) {
     if (state.group !== "all" && state.group !== g) continue;
@@ -793,22 +878,28 @@ function renderPubs() {
 
 const mail = e => { const [u, d] = e.split("@"); return `<div class="mail">${esc(u)}@<wbr>${esc(d || "")}</div>`; };
 
+// Google Sites writes the same degree course and research interest in several spellings; show one.
+const ROLE = { "Ph.D. Student": ["박사과정", "Ph.D. Student"], "M.S./Ph.D. Student": ["석박사통합과정", "Integrated M.S.–Ph.D. Student"], "M.S. Student": ["석사과정", "M.S. Student"] };
+const roleText = r => { const k = r.replace(/Students$/, "Student"); return ROLE[k] ? L(...ROLE[k]) : k; };
+const interest = x => x.replace(/\s+/g, " ").replace(/^Post Quantum Cryptography$/i, "Post-Quantum Cryptography").replace(/^Security of embedded systems?$/i, "Embedded Systems Security");
+const itags = m => m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(interest(x))}</span>`).join("")}</div>` : "";
+
 function memberCard(m) {
   if (m.group === "ug") return `<div class="panel ucard">
     <div class="photo icon">${photo(m.img, "", initials(m))}</div>
     <div class="body">
       <div><span class="nm">${esc(L(m.ko, m.en))}</span><span class="en">${esc(L(m.en, m.ko))}</span></div>
       ${m.email.map(mail).join("")}
-      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+      ${itags(m)}
     </div>
   </div>`;
   return `<div class="panel mcard">
     <div class="photo${m.ph ? " icon" : ""}">${photo(m.img, m.ko, initials(m))}</div>
     <div class="body">
       <div class="nm">${esc(L(m.ko, m.en))}</div><div class="en">${esc(L(m.en, m.ko))}</div>
-      ${m.role ? `<div class="role">${esc(m.role)}</div>` : ""}
+      ${m.role ? `<div class="role">${esc(roleText(m.role))}</div>` : ""}
       ${m.org.length ? `<div class="org">${esc(m.org.join(" · "))}</div>` : ""}
-      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+      ${itags(m)}
       ${m.email.map(mail).join("")}
     </div>
   </div>`;
@@ -822,7 +913,7 @@ function alumniCard(m) {
       <div class="head"><span class="nm">${esc(L(m.ko, m.en))}</span><span class="en">${esc(L(m.en, m.ko))}</span></div>
       ${m.period.length ? `<div class="deg">${m.period.map(([d, p]) => `<span>${esc(d)} ${esc(p.replace("-", " – "))}</span>`).join("")}</div>` : ""}
       ${now ? `<div class="aff"><div class="now">${esc(now)}</div>${past.map(p => `<div class="past">${esc(p)}</div>`).join("")}</div>` : ""}
-      ${m.interests.length ? `<div class="tags">${m.interests.map(x => `<span>${esc(x)}</span>`).join("")}</div>` : ""}
+      ${itags(m)}
       ${m.email.map(mail).join("")}
     </div>
   </div>`;
@@ -840,9 +931,9 @@ function renderPeople() {
 }
 
 function renderNews() {
-  const talks = state.year === "talks";
-  $("news-filters").hidden = talks;
-  if (talks) {  // invited talks are the last tab of 소식·활동
+  const tab = state.ntab;
+  $("news-filters").hidden = tab === "talks" || tab === "press";
+  if (tab === "talks") {
     let html = "", lastY = null;
     for (const t of DATA.talks) {
       if (t.y !== lastY) { html += `<div class="year-h">${t.y}</div>`; lastY = t.y; }
@@ -851,23 +942,41 @@ function renderNews() {
     $("news-all").innerHTML = `<div class="panel newslist"><p class="note" style="margin:14px 0 0">${L("서승현 교수의 초청 강연과 세미나입니다.", "Invited talks and seminars by Prof. Seung-Hyun Seo.")}</p>${html}</div>`;
     return;
   }
-  const inYear = n => state.year === "all" || n.date.slice(0, 4) === state.year;
-  const pool = DATA.news.filter(inYear);
-  if (state.cat !== "all" && !pool.some(n => n.cat === state.cat)) state.cat = "all";  // year without that category
-  const chip = (key, label, n, on) => `<button class="chip" data-ncat="${esc(key)}" aria-pressed="${on}">${esc(label)}<span class="n">${n}</span></button>`;
+  if (tab === "press") {
+    $("news-all").innerHTML = `<div class="panel newslist"><p class="note" style="margin:14px 0 0">${L("연구실과 서승현 교수를 다룬 언론 보도, 인터뷰와 기고입니다.", "Media coverage, interviews and columns about the lab and Prof. Seung-Hyun Seo (articles are in Korean).")}</p>${DATA.press.map(pressRow).join("")}</div>`;
+    return;
+  }
+  const yearOf = n => n.date.slice(0, 4);
+  const tabbed = DATA.news.filter(n => tab === "all" || NEWS_TABS[tab].includes(n.cat));
+  const years = [...new Set(tabbed.map(yearOf))];
+  if (state.year !== "all" && !years.includes(state.year)) state.year = "all";  // tab without news in that year
+  const pool = tabbed.filter(n => state.year === "all" || yearOf(n) === state.year);
+  if (state.cat !== "all" && !pool.some(n => n.cat === state.cat)) state.cat = "all";
+  const chip = (attr, key, label, n, on) => `<button class="chip" data-${attr}="${esc(key)}" aria-pressed="${on}">${esc(label)}<span class="n">${n}</span></button>`;
+  $("news-years").innerHTML = `<span class="lbl">${L("연도", "Year")}</span>` +
+    chip("nyear", "all", L("전체", "All"), tabbed.length, state.year === "all") +
+    years.map(y => chip("nyear", y, y, tabbed.filter(n => yearOf(n) === y).length, state.year === y)).join("");
+  const cats = NEWS_CATS.filter(c => pool.some(n => n.cat === c));
+  $("news-cats").hidden = cats.length < 2;
   $("news-cats").innerHTML = `<span class="lbl">${L("분류", "Type")}</span>` +
-    chip("all", L("전체", "All"), pool.length, state.cat === "all") +
-    NEWS_CATS.filter(c => pool.some(n => n.cat === c)).map(c => chip(c, catLabel(c), pool.filter(n => n.cat === c).length, state.cat === c)).join("");
+    chip("ncat", "all", L("전체", "All"), pool.length, state.cat === "all") +
+    cats.map(c => chip("ncat", c, catLabel(c), pool.filter(n => n.cat === c).length, state.cat === c)).join("");
   let html = "", lastY = null;
   for (const n of pool) {
     if (state.cat !== "all" && n.cat !== state.cat) continue;
-    const y = n.date.slice(0, 4);
-    if (state.year === "all" && y !== lastY) { html += `<div class="year-sep">${y}</div>`; }
-    lastY = y;
+    if (state.year === "all" && yearOf(n) !== lastY) { html += `<div class="year-sep">${yearOf(n)}</div>`; }
+    lastY = yearOf(n);
     html += newsCard(n);
   }
   $("news-all").innerHTML = html || `<div class="panel" style="padding:20px"><p class="note" style="margin:0">${L("해당 분류의 소식이 없습니다.", "No news in this category.")}</p></div>`;
 }
+
+function pressRow(p) {
+  return `<div class="talkrow"><span class="date">${esc(p.d)}</span><div>
+      <div class="t"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)} ↗</a></div>
+      <div class="ev"><span class="pill ${p.kind === "column" ? "talk" : p.kind === "interview" ? "award" : "paper"}">${esc(L(...PRESS_KIND[p.kind]))}</span>${esc(L(p.outlet_ko, p.outlet_en))}</div></div></div>`;
+}
+
 
 function talkRow(t) {
   const title = L(t.t_ko, t.t_en);
@@ -880,8 +989,12 @@ function renderProfessor() {
   $("prof-talks").innerHTML = DATA.talks.slice(0, 6).map(talkRow).join("");
   $("prof-photo").innerHTML = photo(DATA.prof.img, "서승현 교수", "PHOTO");
   $("prof-fax").textContent = DATA.prof.fax;
-  $("prof-awards").innerHTML = DATA.prof.awards.map(a => `<li><span class="yr">${esc(a.y)}</span><span>${esc(awardText(a))}</span></li>`).join("");
+  const row = a => `<li><span class="yr">${esc(a.y)}</span><span>${esc(awardText(a))}</span></li>`;
+  const team = a => /Best Paper|논문상|공모전|Cryptocontest/i.test(a.ko + a.en);  // paper and team awards, listed apart from the professor's own
+  $("prof-awards").innerHTML = DATA.prof.awards.filter(a => !team(a)).map(row).join("");
+  $("prof-awards-team").innerHTML = DATA.prof.awards.filter(team).map(row).join("");
 }
+
 
 // Google Sites awards carry "English line\n(Korean line)" in both ko and en; show one language instead of both.
 function awardText(a) {
@@ -895,12 +1008,24 @@ function awardText(a) {
 }
 
 function renderAbout() {
-  const fix = a => /^IoT/.test(a.body) && /TLS/.test(a.title) ? "IoT Security" : a.title;
-  $("about-areas").innerHTML = DATA.about.map(a => `<div class="panel area">
-    <div class="photo">${photo(a.img, fix(a), "")}</div>
-    <div><h3>${esc(fix(a))}</h3><p>${esc(a.body)}</p></div>
-  </div>`).join("");
+  $("about-areas").innerHTML = AREAS.map(a => {
+    const recent = DATA.pubs.filter(p => ["sci", "ic"].includes(p.kind) && p.k.includes(a.key)).slice(0, 4);
+    return `<section class="panel area a-${a.key}" id="area-${a.key}">
+      <div class="head"><span class="ico">${svg(a.key)}</span><div><h3>${esc(L(a.ko, a.en))}</h3><div class="en">${esc(L(a.en, a.ko))}</div></div></div>
+      <div>
+        <p>${esc(L(a.desc_ko, a.desc_en))}</p>
+        <h4>${L("주요 연구 주제", "Research topics")}</h4>
+        <ul class="topics">${L(a.topics_ko, a.topics_en).map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+      </div>
+      <div>
+        <h4>${L("최근 논문", "Recent papers")}</h4>
+        <ul>${recent.map(p => `<li>${esc(p.t)}<span class="v${p.top ? " hi" : ""}">${esc(p.v)}${p.y && !String(p.v).includes(p.y) ? " " + p.y : ""}</span></li>`).join("")}</ul>
+        <div class="links"><a href="#publications-${a.key}">${L("관련 논문 보기 →", "Related publications →")}</a><a href="#research-${a.key}">${L("관련 연구과제 보기 →", "Related projects →")}</a></div>
+      </div>
+    </section>`;
+  }).join("");
 }
+
 
 function renderAll() { renderHome(); renderResearch(); renderAbout(); renderProfessor(); renderChips(); renderPubs(); renderPeople(); renderNews(); }
 
@@ -908,7 +1033,7 @@ function route() {
   const h = location.hash.replace("#", "") || "home";
   if (h === "talks") { location.replace("#news-talks"); return; }  // old URL of the invited-talks page
   const [base, ...rest] = h.split("-");
-  const sub = rest.join("-");
+  let sub = rest.join("-");
   const page = ROUTES.includes(base) ? base : "home";
   if (page === "members") {
     state.msub = ["phd", "ms", "ug", "alumni"].includes(sub) ? sub : "all";
@@ -917,15 +1042,22 @@ function route() {
     });
   }
   if (page === "publications") {
+    sub = OLD_AREA[sub] || sub;
     if (GROUPS[sub]) state.group = sub;
-    else if (THEMES.some(t => t.key === sub)) { state.group = "all"; state.theme = sub; }
+    else if (isArea(sub)) { state.group = "all"; state.theme = sub; }
     else state.group = "all";
     renderChips(); renderPubs();
   }
-  if (page === "news") { state.year = sub === "talks" || /^20[0-9]{2}$/.test(sub) ? sub : "all"; renderNews(); }
+  if (page === "research") { state.parea = isArea(sub) ? sub : "all"; renderResearch(); }
+  if (page === "news") {
+    if (/^20[0-9]{2}$/.test(sub)) { state.ntab = "all"; state.year = sub; }  // year links (home page, old bookmarks)
+    else { state.ntab = sub === "press" || sub === "talks" || NEWS_TABS[sub] ? sub : "all"; state.year = "all"; }
+    state.cat = "all";
+    renderNews();
+  }
   const subKey = page === "publications" ? (state.group === "all" ? "publications" : "publications-" + state.group)
     : page === "members" ? (state.msub === "all" ? "members" : "members-" + state.msub)
-    : page === "news" ? (state.year === "all" ? "news" : "news-" + state.year) : null;
+    : page === "news" ? (state.ntab === "all" ? "news" : "news-" + state.ntab) : null;
   document.querySelectorAll("[data-sublink]").forEach(el => {
     if (el.dataset.sublink === subKey) el.setAttribute("aria-current", "page"); else el.removeAttribute("aria-current");
   });
@@ -934,8 +1066,10 @@ function route() {
     if (el.dataset.route === page) el.setAttribute("aria-current", "page"); else el.removeAttribute("aria-current");
   });
   document.activeElement?.blur?.();
-  window.scrollTo(0, 0);
+  const area = page === "about" && isArea(sub) ? $("area-" + sub) : null;  // #about-quantum opens the About page at that area
+  if (area) area.scrollIntoView(); else window.scrollTo(0, 0);
 }
+
 
 document.addEventListener("click", e => {
   const z = e.target.closest("[data-zoom]");
@@ -943,6 +1077,8 @@ document.addEventListener("click", e => {
   if (e.target.id === "lightbox" || e.target.id === "lb-close") { $("lightbox").hidden = true; return; }
   const c = e.target.closest(".chip");
   if (c && c.dataset.ncat) { state.cat = c.dataset.ncat; renderNews(); return; }
+  if (c && c.dataset.nyear) { state.year = c.dataset.nyear; renderNews(); return; }
+  if (c && c.dataset.parea) { state.parea = c.dataset.parea; renderResearch(); return; }
   if (c && c.dataset.key) { state.theme = c.dataset.key; renderChips(); renderPubs(); }
 });
 $("pub-search").addEventListener("input", e => { state.q = e.target.value; renderPubs(); });

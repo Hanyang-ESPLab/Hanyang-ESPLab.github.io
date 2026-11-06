@@ -3,16 +3,18 @@
   python build.py             read the Excel files if present -> data/publications.json; render data/*.json -> index.html, files.json;
                               then make_dist.py turns index.html into the deployable site in dist/ (skip with --no-dist)
   python build.py --sync-gs   also fetch the Google Sites pages (cached in _cache/gs/), download their photos into images/
-                              and rewrite data/{members,news,professor,about,talks}.json
+                              and rewrite data/{members,news,professor,talks}.json
   python build.py --no-excel  skip the Excel files even if they are present (data/publications.json stays as it is)
 
 Data flow:
   Excel (LAB/...)               -> data/publications.json  (SCI sheet: IF, JCR 상위%, JCR 연도 columns are shown as badges)
-  Google Sites (--sync-gs)      -> data/members|news|professor|about|talks.json + images/
+  Google Sites (--sync-gs)      -> data/members|news|professor|talks.json + images/
   data/*.json + index.tpl.html  -> index.html + files.json (manifest of the images index.html uses)
   index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
                                    to GitHub Pages through .github/workflows/pages.yml
-data/projects.json and data/theme_overrides.json (manual research-theme assignment per paper) are maintained by hand. Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
+Maintained by hand: data/site.json (home photo, the three research areas, featured papers), data/projects.json,
+data/press.json (media coverage) and data/area_overrides.json (research-area assignment per paper, replacing the
+title-keyword tags below). Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
 """
 import argparse, base64, hashlib, json, re, subprocess, sys
 from pathlib import Path
@@ -27,11 +29,15 @@ LAB = Path("/Users/yn4103/ESP Lab Dropbox/ESPLAB/연구실 실적")
 EXCEL = [LAB / "논문실적/ESP 논문실적 (최신).xlsx", LAB / "특허_소프트웨어_실적/ESP 특허실적 (최신).xlsx"]
 DATA = HERE / "data"
 
-THEMES = {
-    "quantum": r"(?<!post-)(?<!post )quantum(?![- ](resistant|safe))|grover|양자(?!\s?내성)|t-depth|qubit",
-    "pqc": r"post-quantum|post quantum|quantum[- ](resistant|safe)|\bpqc|양자\s?내성|lattice|\blwe|rainbow|\buov\b|minrank|multivariate|다변수|\bmq\b|hybrid|하이브리드|\btls\b|certificate|인증서|\bpki\b|\bkem\b|number theoretic|\bntt\b|himq|paloma",
-    "embedded": r"\biot\b|드론|drone|\buavs?\b|unmanned|무인|robot|로봇|\bros|embedded|임베디드|fpga|sensor|센서|8비트|mcu|microcontroller|smart home|스마트 ?홈|scada|android|mobile|모바일|device|디바이스|wearable|metering|acoustic|keypad|키패드|마우스|manufactur|web-of-things|wireless sensor",
-    "mobility": r"blockchain|블록체인|vehicle|차량|v2v|전기차|자동차|mobility|모빌리티|\bdid\b|분산\s?(신원|id)|smart contract|스마트 ?컨트랙트|킥보드|톨 티켓|crowdsens|vpp",
+# The lab's three research areas. A paper can sit in more than one; the regexes read the (lower-cased) title only,
+# so anything they get wrong is corrected in data/area_overrides.json.
+#   crypto   암호공학: protocols, authentication and key management, TLS/PKI, certificates
+#   quantum  양자보안: post-quantum cryptography, quantum circuits and cryptanalysis
+#   mobility 지능형 모빌리티 보안: drones, robots, vehicles, plus the IoT, blockchain and device/mobile security work
+AREAS = {
+    "crypto": r"\btls\b|\bpki\b|certificate|인증서|x\.509|signcryption|sign-cryption|사인크립션|proxy signature|multi-?signature|multi-verifiers|code-signing|signature management|링 서명|key (agreement|exchange|management|generation|encapsulation|delivery)|키\s?(교환|관리|생성)|키교환|그룹키|암호키|protocol|프로토콜|encryption|암호화|password|패스워드|\botp\b|인증|authenticat|\bmls\b|messaging|메시징|random number|난수|fuzzy (vault|commitment)|bio-?(key|password)|white-box|암호 ?기술|cryptograph|동형암호",
+    "quantum": r"quantum|양자|\bpqc|\bpq-|grover|qubit|t-depth|lattice|격자|\blwe|rainbow|\buov\b|minrank|multivariate|다변수|\bmq\b|himq|paloma|falcon|쇼어|\bshor|sieve|number theoretic|\bntt\b|hybrid 인증서|하이브리드 인증서",
+    "mobility": r"drone|드론|\buavs?\b|unmanned|무인|aircraft|robot|로봇|\bs?ros\b|\bs?ros ?2|vehic|차량|\bv2[vx]\b|전기차|자동차|자율주행|\bev\b|charging|충전|mobility|모빌리티|킥보드|toll|톨 티켓|blockchain|블록체인|\bdid\b|분산\s?(신원|id)|smart contract|스마트 ?컨트랙트|smart city|스마트 ?시티|smart home|home (network|security)|스마트 ?홈|\biot\b|sensor|센서|device|디바이스|wearable|metering|scada|\bvpp\b|crowdsens|크라우드센싱|manufactur|digital twin|디지털 트윈|android|mobile(?! agent)|모바일|어플리케이션|healthcare|헬스케어|beacon|gps|keypad|키패드",
 }
 
 # Only these conferences carry the "Top-tier" badge.
@@ -41,7 +47,9 @@ AS_CONFERENCE = [(r"\bTCHES\b", "CHES {y} (IACR TCHES)"), (r"\bWWW\b|Web Confere
 
 def tag(title):
     t = title.lower()
-    return [k for k, rx in THEMES.items() if re.search(rx, t)]
+    hit = [k for k, rx in AREAS.items() if re.search(rx, t, re.ASCII)]  # ASCII: a Korean particle after "TLS" still ends the word
+    # post-quantum work in a mobility setting (drone or V2X authentication) is filed under those two areas
+    return [k for k in hit if k != "crypto"] if len(hit) == 3 else hit
 
 def year_of(v):
     s = str(v).strip()
@@ -84,8 +92,8 @@ def load_pubs():
             if not title:
                 continue
             y, d = year_of(r[1])
-            # the spreadsheet has a few rows with Seong-Min Cho typed as "Seo"
-            authors = authors.replace("Seong-Min Seo", "Seong-Min Cho")
+            # the spreadsheet has a few rows with Seong-Min Cho typed as "Seo", and one with the professor typed as "Seon"
+            authors = authors.replace("Seong-Min Seo", "Seong-Min Cho").replace("Seung-Hyun Seon,", "Seung-Hyun Seo,")
             impact = clean(r[hdr["IF"]]) if kind == "sci" else ""
             # JCR JIF percentile of the publication-year JCR, filled in by hand in the SCI sheet; "" until it is
             jcr = clean(r[hdr["JCR 상위%"]]) if kind == "sci" and "JCR 상위%" in hdr else ""
@@ -239,15 +247,11 @@ def sync_gs():
         awards.append({"y": y.group(0) if y else "", "ko": a["ko"], "en": a["en"]})
     prof["awards"] = sorted(awards + EXTRA_AWARDS, key=lambda a: a["y"], reverse=True)
     save("professor", prof)
-    about = fresh("about-lab", gs_parse.about)
-    for a in about:
-        a["img"] = local_img(a["img"])
-    save("about", about)
     save("talks", fresh("invited-talk", load_talks))
 
 def main():
     ap = argparse.ArgumentParser(description="Render data/*.json + index.tpl.html into index.html; see the module docstring.")
-    ap.add_argument("--sync-gs", action="store_true", help="re-fetch the Google Sites pages and photos, rewrite data/{members,news,professor,about,talks}.json")
+    ap.add_argument("--sync-gs", action="store_true", help="re-fetch the Google Sites pages and photos, rewrite data/{members,news,professor,talks}.json")
     ap.add_argument("--no-excel", action="store_true", help="do not read the Excel files even if they are present")
     ap.add_argument("--no-dist", action="store_true", help="do not rebuild dist/ after index.html")
     args = ap.parse_args()
@@ -260,14 +264,16 @@ def main():
     data = {
         "pubs": load("publications", "run build.py with the Excel files present (without --no-excel)"),
         "talks": load("talks", "run build.py --sync-gs"),
-        "projects": load("projects", "it is maintained by hand ({\"ongoing\": [...], \"past\": [...]} of {ko, en, ag, p})"),
+        "projects": {k: v for k, v in load("projects", "it is maintained by hand ({\"ongoing\": [...], \"past\": [...]} of {ko, en, ag, p, areas, edu})").items() if not k.startswith("_")},
         "members": load("members", "run build.py --sync-gs"),
         "news": load("news", "run build.py --sync-gs"),
         "prof": load("professor", "run build.py --sync-gs"),
-        "about": load("about", "run build.py --sync-gs"),
-        "site": load("site", "it is maintained by hand ({\"hero\": {img, cap_ko, cap_en}})"),
+        "site": load("site", "it is maintained by hand (hero photo, areas, featured papers)"),
+        "press": sorted(load("press", "it is maintained by hand ({\"items\": [{d, kind, title, outlet_ko, outlet_en, url}]})")["items"], key=lambda x: x["d"], reverse=True),
     }
-    overrides = {k.lower(): v for k, v in load("theme_overrides", "it is maintained by hand").items() if not k.startswith("_")}
+    overrides = {k.lower(): v for k, v in load("area_overrides", "it is maintained by hand").items() if not k.startswith("_")}
+    for p in data["pubs"]:  # publications.json may predate a change to AREAS when the Excel files are absent
+        p["k"] = tag(p["t"])
     for p in data["pubs"]:
         hit = next((v for k, v in overrides.items() if p["t"].lower().startswith(k)), None)
         if hit is not None:
@@ -276,7 +282,10 @@ def main():
     (HERE / "files.json").write_text(json.dumps({f"images/{n}": str(IMG / n) for n in imgs}, indent=1))
     print("images", len(imgs), sum((IMG / n).stat().st_size for n in imgs) // 1024, "KB", file=sys.stderr)
     counts = {k: sum(1 for p in data["pubs"] if p["kind"] == k) for k in ["sci", "ic", "kj", "kc", "pat", "sw"]}
-    themed = {k: sum(1 for p in data["pubs"] if k in p["k"]) for k in THEMES}
+    themed = {k: sum(1 for p in data["pubs"] if k in p["k"]) for k in AREAS}
+    bad = [x for p in data["pubs"] for x in p["k"] if x not in AREAS] + [x for g in ("ongoing", "past") for p in data["projects"][g] for x in p.get("areas", []) if x not in AREAS]
+    if bad:
+        sys.exit(f"build.py: unknown research area key(s) {sorted(set(bad))}; use {list(AREAS)}")
     untagged = sum(1 for p in data["pubs"] if not p["k"])
     print("counts", counts, "themes", themed, "untagged", untagged, "talks", len(data["talks"]), "news", len(data["news"]), file=sys.stderr)
     logo = "data:image/png;base64," + base64.b64encode((HERE / "logo.png").read_bytes()).decode()

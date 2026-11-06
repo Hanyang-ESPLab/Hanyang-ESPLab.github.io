@@ -1,0 +1,53 @@
+{
+  "_": "Maintained by hand: media coverage shown under 소식·활동 > 언론 보도. d: date (YYYY.MM.DD, or just the year when the page gives none); kind: news | interview | column; title: the article's own title; url: the article. The 한국대학신문 page spells the ministry '과기술정통부'; the title here uses the standard '과기정통부'.",
+  "items": [
+    {
+      "d": "2025.09.30",
+      "kind": "news",
+      "title": "전자공학부 조성민 동문, 박사학위 취득 후 한국전자통신연구원(ETRI) 소속으로 새 출발",
+      "outlet_ko": "한양대학교 ERICA 공식 블로그",
+      "outlet_en": "Hanyang University ERICA official blog",
+      "url": "https://m.blog.naver.com/hyerica4473/224026804775"
+    },
+    {
+      "d": "2025.09.22",
+      "kind": "news",
+      "title": "한양대 ERICA 서승현 교수팀, 국제 표준 양자내성암호 안전성 분석 성과... CHES 2025 발표",
+      "outlet_ko": "한겨레",
+      "outlet_en": "The Hankyoreh",
+      "url": "https://www.hani.co.kr/arti/economy/biznews/1220041.html"
+    },
+    {
+      "d": "2024.04.26",
+      "kind": "news",
+      "title": "한양대 ERICA 서승현 교수, 정보보호 발전 기여 과기정통부 장관 표창",
+      "outlet_ko": "한국대학신문",
+      "outlet_en": "University News Network",
+      "url": "https://news.unn.net/news/articleView.html?idxno=562474"
+    },
+    {
+      "d": "2024.04.02",
+      "kind": "column",
+      "title": "[한국정보보호학회 칼럼] 로봇 대중화의 시대, 우리의 삶이 위협받지 않으려면",
+      "outlet_ko": "보안뉴스",
+      "outlet_en": "Boan News",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=128435"
+    },
+    {
+      "d": "2024",
+      "kind": "interview",
+      "title": "안전한 ICT 융합 서비스를 제공하기 위한 보안 시스템 개발",
+      "outlet_ko": "HY ERICA 웹진 vol.106",
+      "outlet_en": "HY ERICA Webzine vol. 106",
+      "url": "http://hy-erica.com/vol106/post21.html"
+    },
+    {
+      "d": "2022.12.20",
+      "kind": "column",
+      "title": "[ET단상] 양자컴퓨팅 시대, 우리가 사이버 주권을 지키려면",
+      "outlet_ko": "전자신문",
+      "outlet_en": "Electronic Times (ETNews)",
+      "url": "https://www.etnews.com/20221220000203"
+    }
+  ]
+}
