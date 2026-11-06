@@ -162,6 +162,9 @@ a.newsrow:hover .txt { color: var(--accent); }
 .pub .yr { font: 500 13px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
 .pub .t { font-weight: 600; font-size: 15.5px; line-height: 1.45; }
 .pub .a { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+/* a paper title is a link when data/pub_links.json has one for it */
+.pub .t a, .area li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.pub .t a:hover, .area li a:hover { color: var(--accent); text-decoration-color: currentColor; }
 .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
 .venue { font: 500 12px var(--font-mono); color: var(--ink); border: 1px solid var(--line); padding: 1px 7px; border-radius: 4px; }
 .venue.hi { font-weight: 600; color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }  /* flagship venues (CHES, WWW) */
@@ -845,10 +848,12 @@ function jcrBadge(p) {
   return `<span class="${cls}">JCR ${p.jcr_y || ""} ${L("상위", "top")} ${v}%</span>`;
 }
 
+const ptitle = p => p.u ? `<a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(p.t)}</a>` : esc(p.t);
+
 function pubRow(p) {
   const kindLabel = KINDS.find(i => i.key === p.kind);
   return `<div class="pub"><div class="yr">${esc(p.d || p.y || "")}</div><div>
-      <div class="t">${esc(p.t)}</div><div class="a">${esc(p.a)}</div>
+      <div class="t">${ptitle(p)}</div><div class="a">${esc(p.a)}</div>
       <div class="meta"><span class="kindtag">${esc(L(kindLabel.ko, kindLabel.en))}</span>${p.v ? `<span class="venue${p.top ? " hi" : ""}">${esc(p.v)}</span>` : ""}${jcrBadge(p)}${p.if ? `<span class="jif">IF ${esc(p.if)}</span>` : ""}${atags(p.k)}</div></div></div>`;
 }
 
@@ -1019,7 +1024,7 @@ function renderAbout() {
       </div>
       <div>
         <h4>${L("최근 논문", "Recent papers")}</h4>
-        <ul>${recent.map(p => `<li>${esc(p.t)}<span class="v${p.top ? " hi" : ""}">${esc(p.v)}${p.y && !String(p.v).includes(p.y) ? " " + p.y : ""}</span></li>`).join("")}</ul>
+        <ul>${recent.map(p => `<li>${ptitle(p)}<span class="v${p.top ? " hi" : ""}">${esc(p.v)}${p.y && !String(p.v).includes(p.y) ? " " + p.y : ""}</span></li>`).join("")}</ul>
         <div class="links"><a href="#publications-${a.key}">${L("관련 논문 보기 →", "Related publications →")}</a><a href="#research-${a.key}">${L("관련 연구과제 보기 →", "Related projects →")}</a></div>
       </div>
     </section>`;

@@ -13,8 +13,9 @@ Data flow:
   index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
                                    to GitHub Pages through .github/workflows/pages.yml
 Maintained by hand: data/site.json (home photo, the three research areas, featured papers), data/projects.json,
-data/press.json (media coverage) and data/area_overrides.json (research-area assignment per paper, replacing the
-title-keyword tags below). Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
+data/press.json (media coverage), data/area_overrides.json (research-area assignment per paper, replacing the
+title-keyword tags below) and data/pub_links.json (the link behind each paper title, usually its DOI).
+Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
 """
 import argparse, base64, hashlib, json, re, subprocess, sys
 from pathlib import Path
@@ -278,6 +279,23 @@ def main():
         hit = next((v for k, v in overrides.items() if p["t"].lower().startswith(k)), None)
         if hit is not None:
             p["k"] = hit
+    # data/pub_links.json: {kind: {paper title: URL}}; a title is matched within its kind because a conference
+    # paper and its journal version can share one title
+    squash = lambda s: re.sub(r"\s+", " ", s).strip().lower()
+    links = {(kind, squash(t)): u for kind, m in load("pub_links", "it is maintained by hand ({kind: {paper title: URL}})").items()
+             if not kind.startswith("_") for t, u in m.items()}
+    bad_url = sorted(u for u in links.values() if u and not re.match(r"https?://\S+$", u))
+    if bad_url:
+        sys.exit(f"build.py: data/pub_links.json has value(s) that are not http(s) URLs: {bad_url}")
+    on_site = {(p["kind"], squash(p["t"])) for p in data["pubs"]}
+    for p in data["pubs"]:
+        url = links.get((p["kind"], squash(p["t"])))
+        if url:
+            p["u"] = url
+    stale = sorted(f"{kind}: {t}" for kind, t in links if (kind, t) not in on_site)
+    if stale:
+        print("pub_links.json keys that match no paper:", stale, file=sys.stderr)
+    print("paper links", sum(1 for p in data["pubs"] if p.get("u")), "of", len(data["pubs"]), file=sys.stderr)
     imgs = sorted(used_images(data))
     (HERE / "files.json").write_text(json.dumps({f"images/{n}": str(IMG / n) for n in imgs}, indent=1))
     print("images", len(imgs), sum((IMG / n).stat().st_size for n in imgs) // 1024, "KB", file=sys.stderr)
