@@ -1,10 +1,13 @@
-# Publish the pre-built dist/ folder to GitHub Pages on every push to main.
-# The site itself is built locally with `python build.py` (needs the lab's Excel files) and committed.
-name: Deploy to GitHub Pages
+# Build the site from its sources and publish it to GitHub Pages on every push to main.
+# Sources: index.tpl.html, data/*.json, images/, logo.png (see README.md). The lab's Excel achievement lists
+# are not in the repository, so the build uses the committed data/publications.json (--no-excel).
+# A pull request only runs the build, as a check; nothing is deployed until it is merged into main.
+name: Build and deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -13,20 +16,30 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python build.py --no-excel
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4

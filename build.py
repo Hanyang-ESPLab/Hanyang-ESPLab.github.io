@@ -10,14 +10,17 @@ Data flow:
   Excel (LAB/...)               -> data/publications.json  (SCI sheet: IF, JCR 상위%, JCR 연도 columns are shown as badges)
   Google Sites (--sync-gs)      -> data/members|news|professor|talks.json + images/
   data/*.json + index.tpl.html  -> index.html + files.json (manifest of the images index.html uses)
-  index.html + images/          -> dist/ (full HTML document, images, .nojekyll); pushing main publishes dist/
-                                   to GitHub Pages through .github/workflows/pages.yml
+  index.html + images/          -> dist/ (full HTML document, images, .nojekyll)
+index.html, files.json and dist/ are generated and not committed: on every push to main, .github/workflows/pages.yml
+runs `python build.py --no-excel` and publishes dist/ to GitHub Pages. See README.md for the editing workflow.
 Maintained by hand: data/site.json (home photo, the three research areas, featured papers), data/projects.json,
 data/press.json (media coverage), data/area_overrides.json (research-area assignment per paper, replacing the
 title-keyword tags below) and data/pub_links.json (the link behind each paper title, usually its DOI).
 Run with a Python that has openpyxl and beautifulsoup4 (requirements.txt).
+The Excel files are read from the lab's Dropbox team folder, "ESP Lab Dropbox/ESPLAB/연구실 실적" in the home
+directory; set ESPLAB_LAB_DIR to that folder's path when Dropbox is mounted elsewhere.
 """
-import argparse, base64, hashlib, json, re, subprocess, sys
+import argparse, base64, hashlib, json, os, re, subprocess, sys
 from pathlib import Path
 import openpyxl
 from bs4 import BeautifulSoup
@@ -26,7 +29,7 @@ import gs_parse
 import make_dist
 
 HERE = Path(__file__).parent
-LAB = Path("/Users/yn4103/ESP Lab Dropbox/ESPLAB/연구실 실적")
+LAB = Path(os.environ.get("ESPLAB_LAB_DIR") or Path.home() / "ESP Lab Dropbox/ESPLAB/연구실 실적")
 EXCEL = [LAB / "논문실적/ESP 논문실적 (최신).xlsx", LAB / "특허_소프트웨어_실적/ESP 특허실적 (최신).xlsx"]
 DATA = HERE / "data"
 
