@@ -172,8 +172,8 @@ a.newsrow:hover .txt { color: var(--accent); }
 .pub .t { font-weight: 600; font-size: 15.5px; line-height: 1.45; }
 .pub .a { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
 /* a paper title is a link when data/pub_links.json has one for it */
-.pub .t a, .area li a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.pub .t a:hover, .area li a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.pub .t a, .area li a { color: var(--ink); text-decoration: none; }
+.pub .t a:hover, .area li a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
 .venue { font: 500 12px var(--font-mono); color: var(--ink); border: 1px solid var(--line); padding: 1px 7px; border-radius: 4px; }
 .venue.hi { font-weight: 600; color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }  /* flagship venues (CHES, WWW) */
